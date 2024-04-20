@@ -1,0 +1,174 @@
+【ファイル構造】
+foundation/
+  ├── _base.scss
+  ├── _color.scss
+  ├── _font.scss
+  ├── _function.scss
+  ├── _mixin.scss
+  ├── _reset.scss
+  └── _variable.scss
+layout/
+  ├── _footer.scss
+  ├── _header.scss
+  ├── _main.scss
+  └── ...
+object/
+  ├── component/
+  │   ├── _button.scss
+  │   ├── _heading.scss
+  │   └── ...
+  ├── project/
+  │   ├── _index.scss
+  │   ├── _about.scss
+  │   ├── _company.scss
+  │   └── ...
+  ├── utility/
+  │   ├── _utility.scss
+  │   └── ...
+lib/ （必要な人のみ）
+  └── ...
+style.scss
+
+【foundation】
+  ✅_color.scss（色の変数管理）
+    //優先度1:接頭辞-セマンティック（意味・役割がわある）な命名
+      $c-base: #***;
+      $c-main: #***;
+      $c-accent: #***;
+      $c-primary: #***;
+      $c-secondary: #***;
+    // 優先度2:接頭辞-セマンティックな命名-明るさ
+      $c-accent-lightest: #***:
+      $c-accent-lighter: #***;
+      $c-accent-light: #***:
+      $c-accent-dark: #***;
+      $c-accent-darker: #***;
+      $c-accent-darkest: #***;
+    // 優先度3:接頭辞-セマンティックな命名-明るさ連番（できるだけ使わない）
+      $c-accent-lighter02: #***;
+      $c-accent-lighter03: #***;
+          ⭐️デザインの時点で色の使われ方が決まっていない場合はc-、
+            決まっている場合はbg-やtext-といった接頭辞も積極的に使うのがいいと思います。
+
+  ✅_variable.scss（色以外の変数管理）
+    // ホバー時のtransitionの秒数
+      $hover-transition: 300ms;
+    // innerのwidth
+      $inner-width: 960px;
+
+    // 「プロパティ名-値」を変数名にする
+    // opacityに使用（06は連番ではなく値なのでハイフンが入ります）
+      $opacity-06: 0.6;
+    // line-heightに使用（「.」は使えないので代わりにdotとする）
+      $line-height-1dot5: 1.5;
+    // box-shadowに使用（命名が無理すぎるので値の大きさを変数名にする）
+      $box-shadow-sm: 0 5px 10px 0 rgba(#000000, 0.1);
+      $box-shadow-md: 0 10px 20px 0 rgba(#000000, 0.1);
+    // box-shadowに使用（連番）
+      $box-shadow01: 0 5px 10px 0 rgba(#000000, 0.1);
+      $box-shadow02: 0 10px 20px 0 rgba(#000000, 0.1);
+
+  ✅_font.scss(フォントの変数管理)
+    // Times New Roman
+      $times-new-roman: 'Times New Roman', serif;
+    // Noto Serif JP
+      $noto-serif: 'Noto Serif JP', serif;
+  ✅_mixin.scss(主にbreakpoint等の変数を管理)
+    @use "sass:map"; //重要-map.get()を使用するため
+
+    $mq-breakpoints: (
+      'xs': 321px,
+      'sp': 375px, //デフォルト
+      'sm': 576px,
+      'md': 768px,
+      'lg': 1024px,
+      'xl': 1280px,
+      // 'xxl': 1920px,
+    ) !default;
+    @mixin mq($breakpoint: md, $rule: min) {
+      $breakpoint: map.get($mq-breakpoints, $breakpoint);
+      @if $rule == max {
+        $breakpoint: $breakpoint - 1px;
+      }
+      @media screen and (#{$rule}-width: $breakpoint) {
+        @content;
+      }
+    }
+
+    // 使う時（min-width）
+    .element01 {
+      // ここにsp用スタイル
+      @include mq {
+        // @media screen and (min-width: 768px)と同じ
+      }
+      @include mq(lg) {
+        // @media screen and (min-width: 1024px)と同じ
+      }
+    }
+
+    // 使う時（max-width）
+    .element02 {
+      // ここにpc用スタイル
+      @include mq(lg, max) {
+        // @media screen and (max-width: 1023px)と同じ
+      }
+      @include mq(md, max) {
+        // @media screen and (max-width: 767px)と同じ
+      }
+    }
+
+  ✅_function.scss(関数を管理)
+    // pxをremに変換
+      @function rem($px, $basepx: 16px) {
+        @return $px / $basepx * 1rem;
+      }
+    // 使う時
+    .text {
+      font-size: rem(20px);
+    }
+
+    // コンパイル後CSS
+    .text {
+      font-size: 1.25rem;
+    }
+
+  ✅_reset.scss
+    ⭐️_reset.scssで重要なことは、ダウンロードしてきたものを編集しないことです。
+      編集しまうとそのスタイルは元々書いてあったのか自分で書き足したのかわからなくなってしまいます。
+      リセットしきれなかったスタイルや、デフォルトとして指定したい他のスタイルは後述の_base.scssに書きます。
+  ✅_base.scss
+    body {
+      font-size: 16px;
+      line-height: 1.5;
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      color: #333;
+    }
+
+
+
+
+【Component】
+.c-button {
+  // コンポーネント本体には共通のスタイルのみ
+  padding: 10px 20px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  // Modifierでスタイルを拡張
+  &--primary {
+    background-color: #1aa6e0;
+  }
+  &--secondary {
+    background-color: #e0891a;
+  }  
+  &--full-width {
+    width: 100%;
+    display: block;
+  }
+}
+//こんな感じで使う
+<a href="#!" class="c-button c-button--primary">primary</a>
+※スタイルが全く異なる場合、Modifireで対応するのではなく、
+[コンポーネント名]-[ユニーク名]で別コンポーネントを作成する

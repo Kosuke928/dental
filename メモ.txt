@@ -1,0 +1,71 @@
+【全体構成】
+✅トップページ                  (index.php)
+✅当院について                  (page-about.php)
+✅診療案内                      (page-guid.php)
+✅スタッフ紹介                  (page-staff.php)
+✅スタッフブログ                (archive.php)
+  ⭕️カテゴリ別                  (category.php)
+✅スタッフブログ-記事             (single.php)
+✅お問い合わせ                  (page-contact.php)
+✅お問い合わせ完了              (page-contacted.php)
+✅WEB予約                      (page-book.php)
+✅WEB予約完了                   (page-booked.php)
+
+
+【FLOCSS】
+✅読み込む順番
+  ⭕️Foundation
+  l-⭕️Layout
+  c-⭕️Component
+  p-⭕️Project
+  u-⭕️Utility
+✅余白は「Element」でのみつける(B__E--MのE)
+
+【ファイル構造】
+✅css
+  ⭕️style.css(自動生成)
+✅sass
+  ⭕️style.scss
+    @use "foundation";
+    @use "layout";
+    @use "component";
+    @use "project";
+    @use "utility";
+    ⭐️必ず上記の順番で記述
+  ✅foundation
+    ⭕️_index.scss
+      @use "reset";
+      @use "base";
+    ⭕️_base.scss
+    ⭕️_reset.scss
+  ✅global
+    ⭕️_index.scss
+      @forward "setting";
+      @forward "mixin";
+      @forward "functions";
+    ⭕️_setting.scss
+    ⭕️_mixin.scss
+    ⭕️_functions.scss
+  ✅layout
+    ⭕️_index.scss
+    ⭕️_l-inner.scss
+    ⭕️_l-header.scss
+    ⭕️_l-footer.scss
+    ⭕️_l-main.scss
+    ⭕️_l-sidebar.scss
+    ⭕️_各セクション.scss
+  ✅component
+    ⭕️_index.scss
+    ⭕️_c-btn.scss
+    ⭕️_c-section-title.scss
+  ✅project
+    ⭕️_index.scss
+    ⭕️_p-~~.scss
+  ✅utility
+    ⭕️_index.scss
+    ⭕️_u-hidden-pc.scss
+
+  「@use "../global" as global;」
+
+
+_style.scss
