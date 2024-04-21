@@ -9,16 +9,22 @@
 
     <!-- サイトタイトル,サイト詳細 -->
     <title>みなみ歯科クリニック</title>
-    <meta name="description" content="" />
+    <meta name="description" content="街の皆さまの笑顔を守るアットホームな歯医者さん" />
 
     <!-- OGP設定 -->
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
+    <meta property="og:title" content="みなみ歯科クリニック" />
+    <meta property="og:description" content="街の皆さまの笑顔を守るアットホームな歯医者さん" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://kosuke-blog.com/" />
     <meta property="og:image" content="https://kosuke-blog.com/img/ogp.webp" />
 
     <!-- GoogleFont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- ファビコン,Swiper,リセットCSS,CSSリンク -->
     <link rel="icon" href="./favicon.ico" />
@@ -26,11 +32,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
+    <p>test</p>
     <header class="l-header">
       <div class="l-header__inner">
         <h1 class="l-header__left">
@@ -164,7 +170,7 @@
             </p>
             <div class="p-header-infomation__tel">
               <figure class="p-header-infomation__tel-img">
-                <img src="" alt="" />
+                <img src="./img/tel.webp" alt="" />
               </figure>
               <span class="p-header-infomation__tel-number">03-1234-5678</span>
             </div>
@@ -345,14 +351,14 @@
               <div class="p-news-topic__heading">
                 <div class="p-news-topic__left">
                   <p class="p-news-topic__left-title">お知らせ</p>
-                  <span class="p-news-topic__left-news c-en-title">NEWS</span>
+                  <span class="p-news-topic__left-news c-title-en">NEWS</span>
                 </div>
                 <a href="#" class="p-news-topic-box__right"
                   >過去のお知らせはこちら</a
                 >
               </div>
               <a href="#" class="p-news-topic__contents c-arrow-link">
-                <time class="p-news-topic_date">2021.01.01</time>
+                <time class="p-news-topic_date" datetime="2021-01-01">2021.01.01</time>
                 <p class="p-news-topic_text">年末年始の営業時間のお知らせ</p>
               </a>
             </div>
@@ -369,8 +375,8 @@
               <img src="./img/index_concept_01.webp" alt="" />
             </figure>
             <div class="p-about-concept__contents">
-              <p class="p-about-concept__en-title c-en-title">CONCEPT</p>
-              <h2 class="p-about-concept__ja-title c-ja-title">
+              <p class="p-about-concept__title-en c-title-en">CONCEPT</p>
+              <h2 class="p-about-concept__title-ja c-title-ja">
                 健康的で素敵な笑顔あふれる<br />街づくりを目指して
               </h2>
               <p class="p-about-concept__text">
@@ -378,7 +384,7 @@
                 お子様からご高齢の方まで、快適な空間で治療が受けられる場を作り、地域医療に貢献しきたいと考えております。
               </p>
               <div class="p-about-concept__button">
-                <a href="#" class="c-button c-link-arrow">当院について</a>
+                <a href="#" class="c-button-cir-sm c-arrow-link">当院について</a>
               </div>
             </div>
           </div>
@@ -388,7 +394,7 @@
       <section id="recommend" class="p-recommend">
         <div class="p-recommend__inner l-inner">
           <div class="p-recommend__container">
-            <h2 class="p-recommend__title c-title-section">
+            <h2 class="p-recommend__title c-title-sec">
               当院の3つのおすすめ
             </h2>
             <ul class="p-recommend__list p-recommend-box">
@@ -425,8 +431,8 @@
 
       <section id="guid" class="p-guid">
         <div class="p-guid__inner l-inner">
-          <ul class="p-guid__container">
-            <h2 class="p-guid__title c-title-section">診療案内</h2>
+          <div class="p-guid__container">
+            <h2 class="p-guid__title c-title-sec">診療案内</h2>
             <div class="p-guid__contents p-guid-box">
               <ul class="p-guid-box__thumbnails">
                 <li class="p-guid-box__thumbnail">
@@ -461,14 +467,14 @@
                 </p>
               </div>
             </div>
-          </ul>
+          </div>
         </div>
       </section>
 
       <section id="blog" class="p-blog">
         <div class="p-blog__inner l-inner">
           <div class="p-blog__container">
-            <h2 class="p-blog__title c-title-section"></h2>
+            <h2 class="p-blog__title c-title-sec">スタッフブログ</h2>
             <div class="p-blog__contents p-blog-box">
               <ul class="p-blog-box__thumbnails">
                 <li class="p-blog-box__thumbnail">
@@ -594,50 +600,54 @@
                 (年中無休 AM9:00〜PM22:00)
               </p>
               <div class="p-access-box__buttons">
-                <a href="#" class="p-access-box__bokking c-button">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="20"
-                    viewBox="0 0 30 20"
-                    fill="none"
-                  >
-                    <path
-                      d="M26.988 6.36243H22.0414C21.4562 6.36243 20.9814 6.83721 20.9814 7.42241V16.6089C20.9814 17.1941 21.4562 17.6689 22.0414 17.6689H26.988C27.5732 17.6689 28.048 17.1941 28.048 16.6089V7.42241C28.048 6.83721 27.5732 6.36243 26.988 6.36243ZM24.5147 16.9623C24.1239 16.9623 23.8081 16.6465 23.8081 16.2556C23.8081 15.8647 24.1239 15.5489 24.5147 15.5489C24.9056 15.5489 25.2214 15.8647 25.2214 16.2556C25.2214 16.6465 24.9056 16.9623 24.5147 16.9623ZM26.988 14.5773C26.988 14.723 26.8688 14.8423 26.723 14.8423H22.3064C22.1607 14.8423 22.0414 14.723 22.0414 14.5773V7.6874C22.0414 7.54166 22.1607 7.42241 22.3064 7.42241H26.723C26.8688 7.42241 26.988 7.54166 26.988 7.6874V14.5773Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M18.1274 3H4.37522C3.61598 3 3 3.61598 3 4.37521V13.5433C3 14.3025 3.61598 14.9185 4.37522 14.9185H9.87609L9.41769 16.2937H7.35486C6.97381 16.2937 6.66725 16.6003 6.66725 16.9814C6.66725 17.3624 6.97381 17.669 7.35486 17.669H15.1478C15.5288 17.669 15.8354 17.3624 15.8354 16.9814C15.8354 16.6003 15.5288 16.2937 15.1478 16.2937H13.0849L12.6265 14.9185H18.1274C18.8866 14.9185 19.5026 14.3025 19.5026 13.5433V4.37521C19.5026 3.61598 18.8866 3 18.1274 3ZM17.669 13.0849H4.83362V4.83362H17.669V13.0849Z"
-                      fill="white"
-                    />
-                  </svg>
-                  WEB予約
-                </a>
-                <a href="#" class="p-access-box__contact c-button">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M4 3.99976H20C21.1 3.99976 22 4.89976 22 5.99976V17.9998C22 19.0998 21.1 19.9998 20 19.9998H4C2.9 19.9998 2 19.0998 2 17.9998V5.99976C2 4.89976 2.9 3.99976 4 3.99976Z"
-                      stroke="#1391E6"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M22 6.13599L12 13.6125L2 6.13599"
-                      stroke="#1391E6"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  お問い合わせ
-                </a>
+                <div class="p-access-box__bokking">
+                  <a href="#" class="c-button-cir-md--main">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="20"
+                      viewBox="0 0 30 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M26.988 6.36243H22.0414C21.4562 6.36243 20.9814 6.83721 20.9814 7.42241V16.6089C20.9814 17.1941 21.4562 17.6689 22.0414 17.6689H26.988C27.5732 17.6689 28.048 17.1941 28.048 16.6089V7.42241C28.048 6.83721 27.5732 6.36243 26.988 6.36243ZM24.5147 16.9623C24.1239 16.9623 23.8081 16.6465 23.8081 16.2556C23.8081 15.8647 24.1239 15.5489 24.5147 15.5489C24.9056 15.5489 25.2214 15.8647 25.2214 16.2556C25.2214 16.6465 24.9056 16.9623 24.5147 16.9623ZM26.988 14.5773C26.988 14.723 26.8688 14.8423 26.723 14.8423H22.3064C22.1607 14.8423 22.0414 14.723 22.0414 14.5773V7.6874C22.0414 7.54166 22.1607 7.42241 22.3064 7.42241H26.723C26.8688 7.42241 26.988 7.54166 26.988 7.6874V14.5773Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M18.1274 3H4.37522C3.61598 3 3 3.61598 3 4.37521V13.5433C3 14.3025 3.61598 14.9185 4.37522 14.9185H9.87609L9.41769 16.2937H7.35486C6.97381 16.2937 6.66725 16.6003 6.66725 16.9814C6.66725 17.3624 6.97381 17.669 7.35486 17.669H15.1478C15.5288 17.669 15.8354 17.3624 15.8354 16.9814C15.8354 16.6003 15.5288 16.2937 15.1478 16.2937H13.0849L12.6265 14.9185H18.1274C18.8866 14.9185 19.5026 14.3025 19.5026 13.5433V4.37521C19.5026 3.61598 18.8866 3 18.1274 3ZM17.669 13.0849H4.83362V4.83362H17.669V13.0849Z"
+                        fill="white"
+                      />
+                    </svg>
+                    WEB予約
+                  </a>
+                </div>
+                <div class="p-access-box__contact">
+                  <a href="#" class="c-button-cir-md">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M4 3.99976H20C21.1 3.99976 22 4.89976 22 5.99976V17.9998C22 19.0998 21.1 19.9998 20 19.9998H4C2.9 19.9998 2 19.0998 2 17.9998V5.99976C2 4.89976 2.9 3.99976 4 3.99976Z"
+                        stroke="#1391E6"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M22 6.13599L12 13.6125L2 6.13599"
+                        stroke="#1391E6"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    お問い合わせ
+                  </a>
+                </div>
               </div>
               <div class="p-access-box__calendar">
                 <div class="p-access-box__calendar-img">
@@ -726,7 +736,7 @@
           <p class="p-footer-cta__business-hours">(年中無休 AM9:00〜PM22:00)</p>
         </div>
         <div class="p-footer-cta__right">
-          <a href="#" class="p-footer-cta__bukking c-button">
+          <a href="#" class="c-button-squ-lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="46"
