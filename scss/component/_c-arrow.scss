@@ -1,4 +1,18 @@
 @use "../global" as global;
 
-.c-arrow-link {
+.c-arrow-link::after {
+  // position: relative;
+}
+.c-arrow-link::after {
+  // position: absolute;
+  // top: 0;
+  // right: 0;
+  // width: 20px;
+  // height: 20px;
+  // background-color: blue;
+  // display: block;
+}
+
+svg:hover .list-icon{
+  // stroke: red;
 }

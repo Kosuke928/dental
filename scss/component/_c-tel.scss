@@ -2,8 +2,22 @@
 
 //*---------- Header ----------*/
 .c-tel {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 .c-tel__img {
+  width: 28px;
+  height: 28px;
 }
 .c-tel__number {
+  display: block;
+  color: #1391e6;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.64px;
+  @include global.mq(pc) {
+    letter-spacing: 0px;
+  }
 }

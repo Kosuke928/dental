@@ -2,6 +2,46 @@
 
 //*---------- Header ----------*/
 .c-hamburger {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 32px;
 }
 .c-hamburger__parts {
+  position: absolute;
+  right: 2px;
+  width: 27px;
+  height: 2px;
+  background-color: global.$c-main;
+  transition: all .3s;
+}
+.c-hamburger__parts:nth-of-type(1) {
+  top: 8px;
+  transition: all .3s;
+}
+.c-hamburger__parts:nth-of-type(2) {
+  top: 15px;
+}
+.c-hamburger__parts:nth-of-type(3) {
+  top: 22px;
+  transition: all .3ss;
+}
+
+.c-hamburger.is-open {
+  .c-hamburger__parts {
+    background-color: global.$c-base-light;
+  }
+  .c-hamburger__parts:nth-of-type(1) {
+    top: 16px;
+    right: 0px;
+    transform: rotate(-45deg);
+  }
+  .c-hamburger__parts:nth-of-type(2) {
+    display: none;
+  }
+  .c-hamburger__parts:nth-of-type(3) {
+    top: 16px;
+    right: 0px;
+    transform: rotate(45deg);
+  }
 }

@@ -1,11 +1,67 @@
 @use "../global" as global;
 
-//*---------- 基本設定 ----------*/
-.u-pc-hidden {
+//*---------- sm(375px)以上の時のみ表示 ----------*/
+.u-sm-show {
+  display: none;
+  @include global.mq(sm) {
+    display: block;
+  }
+}
+//
+//*---------- md(1000px)以上の時のみ表示 ----------*/
+.u-md-show {
+  display: none;
+  @include global.mq(md) {
+    display: block;
+  }
+}
+//
+//*---------- lg(1000px)以上の時のみ表示 ----------*/
+.u-lg-show {
+  display: none;
+  @include global.mq(lg) {
+    display: block;
+  }
+}
+//
+//*---------- pc(1280px)以上の時のみ表示 ----------*/
+.u-pc-show {
+  display: none;
+  @include global.mq(pc) {
+    display: block;
+  }
 }
 //
 
-//*---------- 基本設定 ----------*/
-.u-sp-hidden {
+//*---------- sm(768px)以上の時のみ非表示 ----------*/
+.u-sm-hidden {
+  display: block;
+  @include global.mq(sm) {
+    display: none;
+  }
+}
+//
+//*---------- md(1000px)以上の時のみ非表示 ----------*/
+.u-md-hidden {
+  display: block;
+  @include global.mq(md) {
+    display: none;
+  }
+}
+//
+//*---------- lg(1200px)以上の時のみ非表示 ----------*/
+.u-lg-hidden {
+  display: block;
+  @include global.mq(lg) {
+    display: none;
+  }
+}
+//
+//*---------- pc(1280px)以上の時のみ非表示 ----------*/
+.u-pc-hidden {
+  display: block;
+  @include global.mq(pc) {
+    display: none;
+  }
 }
 //
