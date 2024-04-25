@@ -4,8 +4,27 @@
 Front-page_Header & Drawer
 ----------------------------------------------------------*/
 .l-header {
+  position: fixed;
+  z-index: global.$z-index-header;
+  width: 100vw;
+  height: 60px;
+  background-color: global.$c-base-light;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  @include global.mq(sm) {
+    height: 80px;
+  }
 }
 .l-header__inner {
+  position: relative;
+  padding-block: 14px;
+  padding-inline: 20px;
+  height: 100%;
+  @include global.mq(sm) {
+    padding-block: 24px;
+    padding-inline: 40px;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 //*---------- ヘッダーロゴ ----------*/
@@ -15,27 +34,88 @@ Front-page_Header & Drawer
 
 //*---------- ハンバーガーボタン ----------*/
 .l-header__button {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  z-index: global.$z-index-hamburger;
 }
 //
 
 //*---------- ヘッダーナビ ----------*/
 .l-header__right {
+  display: none;
+  @include global.mq(lg) {
+    display: flex;
+    align-items: center;
+    gap: 33px;
+  }
 }
 
 .p-gnav {
 }
+.p-gnav__list {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+}
 .p-gnav__item {
 }
 .p-gnav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .btn__icon-path {
+    fill: global.$c-base-dark;
+  }
 }
 .p-gnav__text {
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 6px;
+  position: relative;
+}
+.p-gnav__item.is-active {
+  .p-gnav__link {
+    color: global.$c-main;
+    .btn__icon-path {
+      fill: global.$c-main;
+    }
+    .p-gnav__text::after {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 2px;
+      position: absolute;
+      bottom: -6px;
+      left: 6px;
+      background-color: global.$c-main;
+    }
+  }
 }
 //
 
 //*---------- 住所・電話番号 ----------*/
 .p-header-infomation {
+  position: relative;
+  top: -1px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .p-header-infomation__address {
+  position: relative;
+  top: 4px;
+  right: 0px;
+  width: fit-content;
+  color: #393939;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  gap: 4px;
+}
+.p-header-infomation__address--number {
+}
+.p-header-infomation__address--text {
 }
 .p-header-infomation__tel {
 }
@@ -43,17 +123,63 @@ Front-page_Header & Drawer
 
 //*---------- ドロワー ----------*/
 .p-drawer {
+  background-color: global.$c-primary;
+  z-index: global.$z-index-drawer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.p-drawer__inner {
 }
 .p-drawer__logo {
+  position: absolute;
+  top: 14px;
+  left: 20px;
 }
 .p-drawer__nav {
+  padding-top: calc(40px + 60px);
+  padding-inline: 60px;
 }
+
 .p-dnav {
 }
 .p-dnav__list {
 }
 .p-dnav__item {
+  position: relative;
+  border-top: 1px dotted #fff;
+  border-bottom: 1px dotted #fff;
+  padding-block: 15px;
 }
+.p-dnav__item::before {
+}
+.p-dnav__item::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  mask-size: 16px 16px;
+  mask-image: url(../img/icon-right.svg);
+  background-color: global.$c-base-light;
+}
+
 .p-dnav__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.p-dnav__text {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
 }
 //
