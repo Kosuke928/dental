@@ -1,0 +1,6 @@
+【concept】
+✅background-imageにて、heightを「"oo"vh」にすることで、画像の一部のみ固定伸縮表示させることができる
+
+✅container > div > button
+  buttonにwidthを指定せず、なおかつdivを中央寄せしたい時は、divにinline-blockをあて、親要素のcontainerにtext-align:centerを当てる
+  

@@ -1,8 +1,20 @@
 @use "../global" as global;
 
-
 //*---------- Front-page_Concept ----------*/
 .c-button-cir-sm {
+  color: global.$c-main;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 24px;
+  border: 1px solid global.$c-main;
+  background: global.$c-base-light;
+  padding-block: 9px;
+  padding-inline: 40px;
+  @include global.mq(lg) {
+    padding-block: 10px;
+    padding-inline: 45px;
+  }
 }
 
 //*---------- Front-page_Blog ----------*/
@@ -17,8 +29,6 @@
 .c-button-squ-lg {
 }
 
-
 //*---------- Front-page_Header-gnav icon ----------*/
 .c-btn__icon-path {
-  
 }
