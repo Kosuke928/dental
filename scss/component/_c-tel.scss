@@ -17,7 +17,4 @@
   font-size: 32px;
   font-weight: 700;
   letter-spacing: -0.64px;
-  @include global.mq(pc) {
-    letter-spacing: 0px;
-  }
 }

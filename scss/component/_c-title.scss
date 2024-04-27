@@ -2,11 +2,29 @@
 
 //*---------- セクション英語タイトル ----------*/
 .c-title-en {
+  color: global.$c-main;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  @include global.mq(sm) {
+    font-size: 14px;
+    letter-spacing: 1.4px;
+  }
 }
 //
 
 //*---------- セクション日本語タイトル ----------*/
 .c-title-ja {
+  color: global.$c-base-dark;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px; /* 160% */
+  letter-spacing: 1.6px;
+  @include global.mq(sm) {
+    font-size: 28px;
+    line-height: 44px; /* 157.143% */
+    letter-spacing: 2.24px;
+  }
 }
 //
 
