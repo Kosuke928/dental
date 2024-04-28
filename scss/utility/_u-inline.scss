@@ -1,0 +1,8 @@
+@use "../global" as global;
+
+//*----------  ----------*/
+.u-sm-inline {
+  all: inherit; //打ち消しはこれより下に記述する事
+  padding: 0;
+  display: inline-block;
+}
