@@ -4,8 +4,13 @@
 Front-page_Recommend
 ----------------------------------------------------------*/
 .p-recommend {
+  padding-top: 99px;
+  @include global.mq(sm) {
+    padding-top: 226px;
+  }
 }
 .p-recommend__inner {
+  padding-inline: 20px;
 }
 .p-recommend__container {
 }
@@ -14,13 +19,54 @@ Front-page_Recommend
 
 //*---------- 当院のおすすめボックス ----------*/
 .p-recommend__list {
+  padding-top: 37px;
+  @include global.mq(sm) {
+    padding-top: 58px;
+  }
 }
 
 .p-recommend-box {
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+  @include global.mq(sm) {
+    gap: 40px;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 966px;
+    width: calc(966px / 1280px * 100);
+    margin: 0 auto;
+  }
+  @include global.mq(md) {
+    gap: 60px;
+  }
 }
 .p-recommend-box__item {
+  @include global.mq(sm) {
+    width: calc((100% / 3) - 60px * 2 / 3 - 40px);
+  }
+  @include global.mq(md) {
+    width: calc((100% / 3) - 60px * 2 / 3);
+  }
 }
 .p-recommend-box__img {
+  width: 276px;
+  margin: 0 auto;
+  @include global.mq(sm) {
+    max-width: 100%;
+    aspect-ratio: 276 / 301;
+  }
 }
 .p-recommend-box__text {
+  padding-top: 20px;
+  padding-inline: 27px;
+  color: global.$c-base-dark;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+  max-width: 450px;
+  margin: 0 auto;
+  @include global.mq(sm) {
+    padding-inline: 0px;
+  }
 }

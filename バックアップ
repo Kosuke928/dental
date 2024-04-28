@@ -2,43 +2,7 @@
 
 
 
-      <section id="recommend" class="p-recommend">
-        <div class="p-recommend__inner l-inner">
-          <div class="p-recommend__container">
-            <h2 class="p-recommend__title c-title-sec">
-              当院の3つのおすすめ
-            </h2>
-            <ul class="p-recommend__list p-recommend-box">
-              <li class="p-recommend-box__item">
-                <figure class="p-recommend-box__img">
-                  <img src="./img/index_recommend_01.webp" alt="" />
-                </figure>
-                <p class="p-recommend-box__text">
-                  歯の治療において、小さな違和感は大きなストレスにつながります。<br />
-                  私たちは常に快適な歯科医療技術の研究を行っております。
-                </p>
-              </li>
-              <li class="p-recommend-box__item">
-                <figure class="p-recommend-box__img">
-                  <img src="./img/index_recommend_02.webp" alt="" />
-                </figure>
-                <p class="p-recommend-box__text">
-                  「通いやすさ」も医院選びの重要なポイントと考え、2019年のリニューアルを期に更に駅の近くへ場所を移しました。
-                </p>
-              </li>
-              <li class="p-recommend-box__item">
-                <figure class="p-recommend-box__img">
-                  <img src="./img/index_recommend_03.webp" alt="" />
-                </figure>
-                <p class="p-recommend-box__text">
-                  朝から夜までお仕事をされている方のために、診療時間を見直しました。<br />
-                  ※駆け込みでも対応可能ですが、事前にご連絡いただけるとスムーズです。
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+
 
       <section id="guid" class="p-guid">
         <div class="p-guid__inner l-inner">

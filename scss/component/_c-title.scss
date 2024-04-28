@@ -30,4 +30,45 @@
 
 //*---------- セクションタイトル ----------*/
 .c-title-sec {
+  color: global.$c-base-dark;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  @include global.mq(sm) {
+    font-size: 28px;
+    letter-spacing: 2.24px;
+  }
+}
+.c-title-sec::before,
+.c-title-sec::after {
+  content: "";
+  display: block;
+  width: 49px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url("../img/title-deco.svg") no-repeat center center;
+  background-size: 49px 16px;
+  @include global.mq(sm) {
+    width: 67px;
+    height: 20px;
+    background-size: 67px 20px;
+  }
+}
+.c-title-sec::before {
+  left: calc(-49px - 16px);
+  @include global.mq(sm) {
+    left: calc(-67px - 28px);
+  }
+}
+.c-title-sec::after {
+  right: calc(-49px - 16px);
+  @include global.mq(sm) {
+    right: calc(-67px - 28px);
+  }
 }
