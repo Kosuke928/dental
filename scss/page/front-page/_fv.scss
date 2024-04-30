@@ -42,12 +42,13 @@ Front-page_Fv
   object-fit: cover;
   object-position: -32px 0px;
   aspect-ratio: 768 / 447;
-  border-radius: 20px;
+  border-radius: 8px;
   filter: brightness(90%);
   @include global.mq(ss) {
     object-position: left;
   }
   @include global.mq(sm) {
+    border-radius: 20px;
     height: auto;
     aspect-ratio: 1160 / 520;
     object-position: 0 0;
