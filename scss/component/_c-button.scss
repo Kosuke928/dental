@@ -1,7 +1,8 @@
 @use "../global" as global;
 
-//*---------- Front-page_Concept ----------*/
-.c-button-cir-sm {
+//*---------- Front-page_Concept, Front-page_Blog ----------*/
+.c-button-cir-sm,
+.c-button-cir-sm--long {
   color: global.$c-main;
   text-align: center;
   font-size: 14px;
@@ -16,11 +17,6 @@
     padding-inline: 45px;
   }
 }
-
-//*---------- Front-page_Blog ----------*/
-.c-button-cir-sm--long {
-}
-
 //*---------- Front-page_Footer ----------*/
 .c-button-cir-md--main {
 }
