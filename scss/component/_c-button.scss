@@ -19,8 +19,61 @@
 }
 //*---------- Front-page_Footer ----------*/
 .c-button-cir-md--main {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: global.$c-base-light;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 24px;
+  background: global.$c-main;
+  padding-block: 9px;
+  padding-right: 30px;
+  padding-left: 25px;
+  @include global.mq(sm) {
+    font-size: 16px;
+    padding-block: 16px;
+    padding-right: 60px;
+    padding-left: 60px;
+    border-radius: 30px;
+  }
+}
+.c-button-cir-md--main svg {
+  width: 35px;
+  height: 20px;
+  @include global.mq(sm) {
+    width: 30px;
+    height: 20px;
+  }
 }
 .c-button-cir-md {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: global.$c-main;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 24px;
+  background: global.$c-base-light;
+  border: 1px solid global.$c-main;
+  padding-block: 8px;
+  padding-right: 20px;
+  padding-left: 16px;
+  @include global.mq(sm) {
+    font-size: 16px;
+    padding-block: 16px;
+    padding-right: 45px;
+    padding-left: 45px;
+    border-radius: 30px;
+  }
+}
+.c-button-cir-md svg {
+  width: 17px;
+  height: 17px;
+  @include global.mq(sm) {
+    width: 24px;
+    height: 24px;
+  }
 }
 .c-button-squ-lg {
 }

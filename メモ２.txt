@@ -3,4 +3,6 @@
 
 ✅container > div > button
   buttonにwidthを指定せず、なおかつdivを中央寄せしたい時は、divにinline-blockをあて、親要素のcontainerにtext-align:centerを当てる
-  
+
+【footer】
+✅繰り返しの画像については、基本的にパーツ単位で取ってくる事

@@ -23,12 +23,13 @@ Front-page_Guid
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
+  top: 0px;
   left: 50%;
   transform: translateX(-50%);
   background: url("../img/index_guid_sp_bg-top.webp") no-repeat left top;
   background-size: cover;
   @include global.mq(sm) {
+    top: 2px;
     background: url("../img/index_guid_pc_bg-top.webp") no-repeat left top;
     background-size: 100%;
   }
