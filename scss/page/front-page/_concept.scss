@@ -4,13 +4,37 @@
 Front-page_Concept
 ----------------------------------------------------------*/
 .p-concept {
+  position: relative;
   padding-top: 60px;
+  height: auto;
+  overflow: hidden;
+  @include global.mq(sm) {
+    padding-bottom: 200px;
+    background-size: contain;
+  }
+}
+.p-concept::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 60px;
+  left: 10px;
   background: url("../img/index_concept_sp_bg.webp") no-repeat left top;
   background-size: auto 82vw;
-  background-position: 12px 60px;
+  z-index: global.$z-index-concept-bg;
   @include global.mq(sm) {
-    background-size: auto 56.8vw;
-    background-position: 418px 25px;
+    background: url("../img/index_concept_pc_bg.webp") no-repeat left top;
+    background-size: cover;
+    top: 26px;
+    left: calc(50% - 223px);
+    width: 100%;
+    max-width: 1306px;
+    height: 726px;
+  }
+  @include global.mq(pc) {
+    // background-size: contain;
   }
 }
 .p-concept__inner {
