@@ -146,12 +146,17 @@ Front-page_Header & Drawer
 .p-dnav {
 }
 .p-dnav__list {
+  max-width: 254px;
+  margin: 0 auto;
 }
 .p-dnav__item {
   position: relative;
   border-top: 1px dotted #fff;
   border-bottom: 1px dotted #fff;
   padding-block: 15px;
+  @include global.mq(sm) {
+    padding-block: 18px;
+  }
 }
 .p-dnav__item::before {
 }
@@ -181,5 +186,8 @@ Front-page_Header & Drawer
   color: #fff;
   font-size: 14px;
   font-weight: 500;
+  @include global.mq(sm) {
+    font-size: 16px;
+  }
 }
 //

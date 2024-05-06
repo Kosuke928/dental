@@ -34,5 +34,20 @@ jQuery(function ($) {
         orientation: "vertical", // 縦方向に設定
       },
     });
+
+    //トップへ移動(to-top)
+    let speed = 300;
+    $("#js-to-top").hide();
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 300) {
+        $("#js-to-top").fadeIn();
+      } else {
+        $("#js-to-top").fadeOut();
+      }
+    });
+    $("#js-to-top").on("click", function (e) {
+      e.preventDefault();
+      $("body, html").animate({ scrollTop: 0 }, speed);
+    });
   });
 });

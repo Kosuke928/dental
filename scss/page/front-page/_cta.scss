@@ -1,0 +1,97 @@
+@use "../../global" as global;
+
+/*----------------------------------------------------------
+CTA
+----------------------------------------------------------*/
+//*---------- To-Top ----------*/
+.c-to-top {
+  position: fixed;
+  bottom: 98px;
+  right: 10px;
+  display: block;
+  width: 52px;
+  height: 52px;
+  background: url('../img/to-top-cta.svg') no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+  z-index: global.$z-index-to-top;
+  @include global.mq(sm) {
+    right: 20px;
+    bottom: 40px;
+  }
+}
+
+//*---------- Footer-CTA (lg:1200px以上の時のみ非表示)  ----------*/
+.p-footer-cta {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: global.$z-index-footer-cta;
+  @include global.mq(lg) {
+    display: none;
+  }
+}
+
+.p-footer-cta__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 0px;
+  right: 4px;
+}
+.p-footer-cta__tel {
+}
+
+.p-footer-cta__business-hours {
+  color: global.$c-base-dark;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.p-footer-cta__right {
+}
+
+//*---------- Side-CTA (lg:1200px以上の時のみ表示) ----------*/
+.p-side-cta {
+  top: 176px;
+  right: 0px;
+  width: 92px;
+  height: 120px;
+  border-radius: 20px 0px 0px 20px;
+  overflow: hidden;
+  z-index: global.$z-index-side-cta;
+  @include global.mq(lg) {
+    position: fixed;
+  }
+}
+.p-side-cta__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 11px;
+  background-color: global.$c-main;
+  transition: background-color 0.3s;
+}
+.p-side-cta__link:hover {
+  background-color: global.$c-primary;
+}
+
+.p-side-cta__text {
+  display: block;
+  color: global.$c-base-light;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 130%; /* 18.2px */
+}
