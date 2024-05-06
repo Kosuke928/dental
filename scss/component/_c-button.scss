@@ -17,6 +17,11 @@
     padding-inline: 45px;
   }
 }
+.c-button-cir-sm:hover,
+.c-button-cir-sm--long:hover {
+  background-color: global.$c-main;
+  color: global.$c-base-light;
+}
 //*---------- Front-page_Footer ----------*/
 .c-button-cir-md--main {
   display: flex;
@@ -26,10 +31,11 @@
   font-size: 14px;
   font-weight: 500;
   border-radius: 24px;
-  background: global.$c-main;
+  background-color: global.$c-main;
   padding-block: 9px;
   padding-right: 30px;
   padding-left: 25px;
+  transition: background-color 0.3s;
   @include global.mq(sm) {
     font-size: 16px;
     padding-block: 16px;
@@ -37,6 +43,9 @@
     padding-left: 60px;
     border-radius: 30px;
   }
+}
+.c-button-cir-md--main:hover {
+  background-color: global.$c-primary;
 }
 .c-button-cir-md--main svg {
   width: 35px;
@@ -54,11 +63,12 @@
   font-size: 14px;
   font-weight: 500;
   border-radius: 24px;
-  background: global.$c-base-light;
+  background-color: global.$c-base-light;
   border: 1px solid global.$c-main;
   padding-block: 8px;
   padding-right: 20px;
   padding-left: 16px;
+  transition: background-color 0.3s, color .3s;
   @include global.mq(sm) {
     font-size: 16px;
     padding-block: 16px;
@@ -67,15 +77,45 @@
     border-radius: 30px;
   }
 }
+.c-button-cir-md:hover {
+  background-color: global.$c-main;
+  color: global.$c-base-light;
+  .btn__icon-path {
+    fill: global.$c-base-light;
+  }
+}
 .c-button-cir-md svg {
   width: 17px;
   height: 17px;
+  transition: fill;
   @include global.mq(sm) {
     width: 24px;
     height: 24px;
   }
 }
+
+//*---------- Front-page_footer-cta ----------*/
 .c-button-squ-lg {
+  padding-left: 15px;
+  padding-right: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  width: 157px;
+  height: 47px;
+  background-color: global.$c-main;
+}
+.c-button-squ-lg__text {
+  font-weight: 700;
+  color: global.$c-base-light;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.16;
+}
+.c-button-squ-lg__text-large {
+  font-size: 16px;
 }
 
 //*---------- Front-page_Header-gnav icon ----------*/

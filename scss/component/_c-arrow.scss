@@ -17,6 +17,11 @@
   mask-image: url(../img/icon-right.svg);
   background-color: global.$c-main;
   display: block;
+  transition: right .3s, background-color;
+}
+.c-arrow-link:hover::after {
+  right: 5px;
+  background-color: global.$c-base-light;
 }
 
 svg:hover .list-icon{
