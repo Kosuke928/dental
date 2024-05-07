@@ -5,8 +5,10 @@ Front-page_Blog
 ----------------------------------------------------------*/
 .p-blog {
   padding-top: 100px;
+  padding-bottom: 108px;
   @include global.mq(sm) {
     padding-top: 160px;
+    margin-bottom: 60px;
   }
 }
 
@@ -94,7 +96,7 @@ Front-page_Blog
   object-fit: cover;
   aspect-ratio: 133 / 101;
   overflow: hidden;
-  transition: transform .3s;
+  transition: transform 0.3s;
   @include global.mq(sm) {
     aspect-ratio: 300 / 188;
   }
@@ -147,7 +149,7 @@ Front-page_Blog
   font-size: 14px;
   font-weight: 500;
   line-height: 20px; /* 142.857% */
-  transition: color .3s, transform;
+  transition: color 0.3s, transform;
   //下記で文字数制限（必要なくなれば消してください）
   overflow: hidden;
   display: -webkit-box;

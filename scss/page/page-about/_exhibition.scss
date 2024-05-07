@@ -1,8 +1,54 @@
 @use "../../global" as global;
 
 /*----------------------------------------------------------
-
+Exhibition
 ----------------------------------------------------------*/
+.p-exhibition {
+  padding-top: 100px;
+  padding-bottom: 98px;
+  @include global.mq(sm) {
+    padding-top: 200px;
+    padding-bottom: 158px;
+  }
+}
 
-//*----------  ----------*/
+.p-exhibition__inner {
+  padding-inline: 20px;
+}
 
+.l-inner {
+}
+
+.p-exhibition__title {
+}
+
+.c-title-sec {
+}
+
+//*---------- Galleryコンテンツ ----------*/
+.p-exhibition__list {
+  padding-top: 39px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 11px;
+  @include global.mq(sm) {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding-top: 60px;
+    gap: 24px;
+  }
+}
+
+.p-exhibition__item {
+  width: calc(50% - 11px / 2);
+  @include global.mq(sm) {
+    width: calc(100% / 3 - 24px * 2 / 3);
+  }
+}
+
+.p-exhibition__img {
+}
+.p-exhibition__img img {
+  border-radius: 20px;
+}

@@ -5,10 +5,10 @@ Front-page_Footer
 ----------------------------------------------------------*/
 .p-footer-decoration {
   position: relative;
-  margin-top: 108px;
+  // margin-top: 108px;
   height: 32px;
   @include global.mq(md) {
-    margin-top: 170px;
+    // margin-top: 170px;
   }
 }
 .p-footer-decoration::after {
@@ -30,14 +30,14 @@ Front-page_Footer
 .l-footer::before {
 }
 .l-footer__inner {
-  padding-top: 13px;
+  padding-top: 15px;
   padding-inline: 10px;
   background-color: global.$c-secondary;
   @include global.mq(sm) {
     padding-inline: 20px;
   }
   @include global.mq(md) {
-    padding-top: 58px;
+    padding-top: 60px;
   }
 }
 
@@ -167,7 +167,7 @@ Front-page_Footer
 //------------------------------*/
 .l-footer__nav {
   padding-top: 59px;
-  padding-bottom: 61px;
+  padding-bottom: 59px;
   padding-inline: 10px;
   @include global.mq(md) {
     padding-top: 41px;
@@ -177,7 +177,7 @@ Front-page_Footer
 .p-lnav {
   display: flex;
   flex-direction: column;
-  gap: 39px;
+  gap: 38px;
   @include global.mq(sm) {
     gap: 25px;
     flex-direction: row;
@@ -200,7 +200,7 @@ Front-page_Footer
 .p-lnav__secondary {
 }
 .p-lnav-secodary__list {
-  margin-top: 1px;
+  margin-top: 2px;
   display: flex;
   flex-direction: column;
   gap: 1px;
@@ -246,7 +246,6 @@ Front-page_Footer
   text-align: center;
   background: global.$c-main;
   @include global.mq(md) {
-    padding-top: 12px;
     padding-bottom: 102px;
     height: 55px;
   }
