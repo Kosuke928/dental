@@ -38,6 +38,9 @@ Front-page_Header & Drawer
   top: 14px;
   right: 18px;
   z-index: global.$z-index-hamburger;
+  @include global.mq(sm) {
+    top: 26px;
+  }
 }
 //
 
@@ -137,6 +140,10 @@ Front-page_Header & Drawer
   position: absolute;
   top: 14px;
   left: 20px;
+  @include global.mq(sm) {
+    top: 24px;
+    left: 40px;
+  }
 }
 .p-drawer__nav {
   padding-top: calc(40px + 60px);
