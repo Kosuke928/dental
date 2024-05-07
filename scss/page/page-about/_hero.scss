@@ -4,4 +4,121 @@
 Hero
 ----------------------------------------------------------*/
 
+.p-hero {
+  padding-top: calc(60px + 20px);
+  @include global.mq(sm) {
+    padding-top: calc(80px + 40px);
+  }
+}
+
+.p-hero__inner {
+  padding-inline: 20px;
+  @include global.mq(sm) {
+    padding-inline: 60px;
+  }
+}
+
+.l-inner {
+}
+
+.p-hero__container {
+}
+
+.p-hero__top {
+  width: 100%;
+  height: 188px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  @include global.mq(sm) {
+    height: 340px;
+    margin: 0 auto;
+    max-width: 1900px;
+  }
+}
+.p-hero__top::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.p-hero__img {
+}
+.p-hero__img img {
+  width: 100%;
+  height: 188px;
+  object-position: center;
+  object-fit: cover;
+  @include global.mq(sm) {
+    height: 340px;
+  }
+}
+
+.p-hero__catch-copy {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  @include global.mq(sm) {
+    gap: 17px;
+  }
+}
+
+.p-hero__text-jp {
+  color: global.$c-base-light;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 4.8px;
+  @include global.mq(sm) {
+    font-size: 32px;
+    letter-spacing: 3.2px;
+  }
+}
+
+.p-hero__text-en {
+  color: global.$c-base-light;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  @include global.mq(sm) {
+    font-size: 14px;
+    letter-spacing: 1.4px;
+  }
+}
+
+.breadcrumb {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  @include global.mq(sm) {
+    margin-top: 9px;
+    padding-left: 30px;
+    gap: 9px;
+  }
+}
+
+.home {
+  color: #c2c2c2;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.page-about {
+  color: global.$c-base-dark;
+  font-size: 12px;
+  font-weight: 500;
+}
+
 //*----------  ----------*/
