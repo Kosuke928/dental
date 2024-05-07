@@ -1,8 +1,93 @@
 @use "../../global" as global;
 
 /*----------------------------------------------------------
-
+Feature
 ----------------------------------------------------------*/
+.p-feature {
+  padding-top: 100px;
+  @include global.mq(sm) {
+    padding-top: 0px;
+  }
+}
+.p-feature__inner {
+  padding-inline: 20px;
+}
+.l-inner {
+}
+.p-feature__container {
+}
+.p-about-feature {
+  @include global.mq(sm) {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  @include global.mq(md) {
+    gap: calc(100vw / 1280px * 95px - 20px);
+  }
+}
 
-//*----------  ----------*/
+//*---------- 右(上)側コンテンツ ----------*/
+.p-about-feature__contents {
+  text-align: center;
+  @include global.mq(sm) {
+    text-align: left;
+    min-width: 300px;
+    flex-grow: 1;
+  }
+  @include global.mq(md) {
+    padding-top: 38px;
+    padding-left: calc(100vw / 1280px * 138px - 19px);
+  }
+}
+.p-about-feature__title-en {
+  text-align: left;
+  padding-bottom: 15px;
+  @include global.mq(sm) {
+    padding-bottom: 25px;
+  }
+}
+.p-about-feature__title-ja {
+  text-align: left;
+}
+.p-about-feature__text {
+  padding-top: 25px;
+  text-align: left;
+  color: global.$c-base-dark;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+  @include global.mq(sm) {
+    padding-top: 35px;
+  }
+}
+.p-about-feature__text:nth-of-type(3) {
+  @include global.mq(sm) {
+    padding-top: 24px;
+  }
 
+}
+
+//*---------- 左(下)側コンテンツ ----------*/
+.p-feature__img {
+  margin-top: 37px;
+  position: relative;
+  top: 0;
+  right: calc(50% - 50vw);
+  @include global.mq(sm) {
+    margin-top: 0px;
+    width: calc(640px / 1280px * 100% + 20px);
+    flex-shrink: 0;
+  }
+}
+.p-feature__img img {
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  border-radius: 20px 0px 0px 20px;
+  @include global.mq(sm) {
+    height: 438px;
+  }
+}
