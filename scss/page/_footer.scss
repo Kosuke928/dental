@@ -1,4 +1,4 @@
-@use "../../global" as global;
+@use "../global" as global;
 
 /*----------------------------------------------------------
 Front-page_Footer
@@ -247,6 +247,7 @@ Front-page_Footer
   background: global.$c-main;
   @include global.mq(md) {
     padding-top: 12px;
+    padding-bottom: 102px;
     height: 55px;
   }
   @include global.mq(lg) {
