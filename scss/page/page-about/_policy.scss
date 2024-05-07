@@ -1,7 +1,138 @@
 @use "../../global" as global;
 
 /*----------------------------------------------------------
-
+Policy
 ----------------------------------------------------------*/
 
 //*----------  ----------*/
+.p-policy {
+  position: relative;
+  padding-top: 60px;
+  height: auto;
+  overflow: hidden;
+  @include global.mq(sm) {
+    padding-top: 80px;
+    padding-bottom: 200px;
+    background-size: contain;
+  }
+}
+.p-policy::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 125px;
+  left: 10px;
+  background: url("../img/index_concept_sp_bg.webp") no-repeat left top;
+  background-size: auto 82vw;
+  z-index: global.$z-index-concept-bg;
+  @include global.mq(sm) {
+    background: url("../img/index_concept_pc_bg.webp") no-repeat left top;
+    background-size: cover;
+    top: 180px;
+    left: calc(50% - 223px);
+    width: 100%;
+    max-width: 1306px;
+    height: 726px;
+  }
+}
+
+.p-policy__inner {
+  padding-inline: 20px;
+}
+
+.l-inner {
+}
+
+.p-policy__wrapper {
+}
+
+.p-policy__title {
+}
+
+.c-title-sec {
+}
+
+.p-policy__container {
+  padding-top: 147px;
+  @include global.mq(sm) {
+    padding-top: 273px;
+  }
+}
+
+.p-about-policy {
+  @include global.mq(sm) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  @include global.mq(md) {
+    gap: calc(100vw / 1280px * 95px - 20px);
+  }
+}
+
+//*---------- 右(上)側コンテンツ ----------*/
+.p-about-policy__contents {
+  text-align: center;
+  @include global.mq(sm) {
+    text-align: left;
+    min-width: 300px;
+    flex-grow: 1;
+  }
+  @include global.mq(md) {
+    padding-top: 0px;
+    padding-right: calc(100vw / 1280px * 138px - 20px);
+  }
+}
+.p-about-policy__title-en {
+  text-align: left;
+  padding-bottom: 15px;
+  @include global.mq(sm) {
+    padding-bottom: 25px;
+  }
+}
+.p-about-policy__title-ja {
+  text-align: left;
+}
+.p-about-policy__text {
+  padding-top: 25px;
+  text-align: left;
+  color: global.$c-base-dark;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+  @include global.mq(sm) {
+    padding-top: 35px;
+  }
+}
+.p-about-policy__text:nth-of-type(3) {
+  margin-top: -2px;
+  @include global.mq(sm) {
+    margin-top: -12px;
+  }
+}
+
+//*---------- 左(下)側コンテンツ ----------*/
+.p-about-policy__img {
+  margin-top: 38px;
+  position: relative;
+  top: 0;
+  left: calc(50% - 50vw);
+  @include global.mq(sm) {
+    margin-top: 0px;
+    width: calc(640px / 1280px * 100% + 20px);
+    flex-shrink: 0;
+  }
+}
+.p-about-policy__img img {
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  border-radius: 0px 20px 20px 0px;
+  @include global.mq(sm) {
+    height: 438px;
+  }
+}

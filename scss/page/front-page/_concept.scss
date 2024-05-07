@@ -33,9 +33,6 @@ Front-page_Concept
     max-width: 1306px;
     height: 726px;
   }
-  @include global.mq(pc) {
-    // background-size: contain;
-  }
 }
 .p-concept__inner {
   padding-inline: 20px;
@@ -57,7 +54,7 @@ Front-page_Concept
   @include global.mq(md) {
     gap: calc(100vw / 1280px * 95px - 20px);
   }
-} //
+}
 
 //*---------- 右(上)側コンテンツ ----------*/
 .p-about-concept__contents {
@@ -112,7 +109,7 @@ Front-page_Concept
     width: calc(640px / 1280px * 100% + 20px);
     flex-shrink: 0;
   }
-} //
+}
 .p-about-concept__img img {
   width: 100%;
   object-fit: cover;
