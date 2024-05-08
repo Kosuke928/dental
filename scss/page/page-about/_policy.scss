@@ -4,10 +4,9 @@
 Policy
 ----------------------------------------------------------*/
 
-//*----------  ----------*/
 .p-policy {
   position: relative;
-  padding-top: 60px;
+  padding-top: 59px;
   height: auto;
   overflow: hidden;
   @include global.mq(sm) {

@@ -271,6 +271,31 @@ z-index
   font-size: 16px;
 }
 
+.c-button-cat {
+  display: block;
+  max-width: 600px;
+  padding-block: 14px;
+  color: #1391E6;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  border-radius: 12px;
+  border: 1px solid #1391E6;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .c-button-cat {
+    min-width: 140px;
+    padding-inline: 29px;
+    padding-block: 16px;
+    border-width: 2px;
+    border-radius: 12px;
+    font-size: 24px;
+    letter-spacing: 1.92px;
+  }
+}
+
 .c-site-logo {
   display: block;
   width: 270px;
@@ -515,6 +540,32 @@ z-index
 .c-tel__img--cta img {
   width: 18px;
   height: 18px;
+}
+
+.c-tag-lg {
+  display: grid;
+  place-items: center;
+  padding-block: 7px;
+  padding-inline: 12px;
+  border-radius: 24px;
+  background: #1391E6;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.12px;
+}
+
+.c-tag-lg--accent {
+  display: grid;
+  place-items: center;
+  padding-block: 7px;
+  padding-inline: 12px;
+  border-radius: 24px;
+  background: #EE5A6D;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.12px;
 }
 
 /*----------------------------------------------------------
@@ -863,7 +914,7 @@ Hero
 }
 
 .breadcrumb {
-  margin-top: 5px;
+  margin-top: 6px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2098,7 +2149,7 @@ Policy
 ----------------------------------------------------------*/
 .p-policy {
   position: relative;
-  padding-top: 60px;
+  padding-top: 59px;
   height: auto;
   overflow: hidden;
 }
@@ -2431,8 +2482,121 @@ Exhibition
 }
 
 /*----------------------------------------------------------
-
+Guid
 ----------------------------------------------------------*/
+.p-treatment {
+  padding-top: 58px;
+}
+@media screen and (min-width: 768px) {
+  .p-treatment {
+    padding-top: 80px;
+  }
+}
+
+.p-treatment__inner {
+  padding-inline: 20px;
+}
+@media screen and (min-width: 768px) {
+  .p-treatment__inner {
+    padding-left: 62px;
+  }
+}
+
+.p-treatment__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 81px;
+}
+
+.p-treatment__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 32px;
+}
+@media screen and (min-width: 768px) {
+  .p-treatment__box {
+    gap: 28px;
+  }
+}
+
+.p-treatment__box-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 23px;
+}
+
+.p-treatment__title {
+  color: #393939;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+@media screen and (min-width: 768px) {
+  .p-treatment__title {
+    font-size: 28px;
+    letter-spacing: 2.24px;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  .p-treatment__tag {
+    position: relative;
+    top: -2px;
+  }
+}
+
+.p-treatment__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+}
+@media screen and (min-width: 768px) {
+  .p-treatment__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 16px;
+  }
+}
+
+.p-treatment__item {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .p-treatment__item {
+    width: auto;
+  }
+}
+
+.p-treatment__link {
+  margin: 0 auto;
+}
+
 /*----------------------------------------------------------
 
 ----------------------------------------------------------*/
