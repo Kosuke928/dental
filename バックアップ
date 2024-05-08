@@ -1,0 +1,197 @@
+
+
+      <section id="general" class="p-general">
+        <div class="p-general__inner l-inner">
+          <div class="p-general__container">
+            <h2 class="p-general__title c-title-section">一般診療</h2>
+            <ul class="p-general__thumbnails">
+              <li class="p-general__thumbnail p-medical">
+                <div class="p-medical__decoration c-tag-flag">保険対象</div>
+                <div class="p-medical__top">
+                  <h3 class="p-medical__title">一般歯科</h3>
+                  <span class="p-medical__supplement"
+                    >虫歯治療、歯茎がしみるなど</span
+                  >
+                </div>
+                <div class="p-medical__bottom">
+                  <div class="p-medical__description">
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                  </div>
+                  <figure class="p-medical__img">
+                    <img src="./img/guid_general_pc_01" alt="" />
+                  </figure>
+                </div>
+              </li>
+              <li class="p-general__thumbnail p-medical">
+                <div class="p-medical__decoration c-tag-flag">保険対象</div>
+                <div class="p-medical__top">
+                  <h3 class="p-medical__title">小児歯科</h3>
+                  <span class="p-medical__supplement"
+                    >小さいお子様の歯の治療</span
+                  >
+                </div>
+                <div class="p-medical__bottom">
+                  <div class="p-medical__description">
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                  </div>
+                  <figure class="p-medical__img">
+                    <img src="./img/guid_general_pc_02" alt="" />
+                  </figure>
+                </div>
+              </li>
+              <li class="p-general__thumbnail p-medical">
+                <div class="p-medical__decoration c-tag-flag">保険対象</div>
+                <div class="p-medical__top">
+                  <h3 class="p-medical__title">口腔内のケア全般</h3>
+                  <span class="p-medical__supplement"
+                    >虫歯治療、歯茎がしみるなど</span
+                  >
+                </div>
+                <div class="p-medical__bottom">
+                  <div class="p-medical__description">
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                  </div>
+                  <figure class="p-medical__img">
+                    <img src="./img/guid_general_pc_03" alt="" />
+                  </figure>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="special" class="p-special">
+        <div class="p-special__inner l-inner">
+          <div class="p-special__container">
+            <h2 class="p-special__title c-title-section">特殊診療</h2>
+            <ul class="p-special__thumbnails">
+              <li class="p-special__thumbnail p-medical">
+                <div class="p-medical__decoration c-tag-flag--accent">実費</div>
+                <div class="p-medical__top">
+                  <h3 class="p-medical__title">入れ歯</h3>
+                  <span class="p-medical__supplement"
+                    >入れ歯を作りたい、調整したい</span
+                  >
+                </div>
+                <div class="p-medical__bottom">
+                  <div class="p-medical__description">
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                  </div>
+                  <figure class="p-medical__img">
+                    <img src="./img/guid_special_pc_01" alt="" />
+                  </figure>
+                </div>
+              </li>
+              <li class="p-special__thumbnail p-medical">
+                <div class="p-medical__decoration c-tag-flag--accent">実費</div>
+                <div class="p-medical__top">
+                  <h3 class="p-medical__title">矯正歯科</h3>
+                  <span class="p-medical__supplement"
+                    >歯並びが気になる</span
+                  >
+                </div>
+                <div class="p-medical__bottom">
+                  <div class="p-medical__description">
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                  </div>
+                  <figure class="p-medical__img">
+                    <img src="./img/guid_special_pc_02" alt="" />
+                  </figure>
+                </div>
+              </li>
+              <li class="p-special__thumbnail p-medical">
+                <div class="p-medical__decoration c-tag-flag--accent">実費</div>
+                <div class="p-medical__top">
+                  <h3 class="p-medical__title">ホワイトニング</h3>
+                  <span class="p-medical__supplement"
+                    >歯を白くしたい</span
+                  >
+                </div>
+                <div class="p-medical__bottom">
+                  <div class="p-medical__description">
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                  </div>
+                  <figure class="p-medical__img">
+                    <img src="./img/guid_special_pc_03" alt="" />
+                  </figure>
+                </div>
+              </li>
+              <li class="p-special__thumbnail p-medical">
+                <div class="p-medical__decoration c-tag-flag--accent">実費</div>
+                <div class="p-medical__top">
+                  <h3 class="p-medical__title">口腔外科</h3>
+                  <span class="p-medical__supplement"
+                    >インプラント、親知らずの抜歯</span
+                  >
+                </div>
+                <div class="p-medical__bottom">
+                  <div class="p-medical__description">
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                  </div>
+                  <figure class="p-medical__img">
+                    <img src="./img/guid_special_pc_04" alt="" />
+                  </figure>
+                </div>
+              </li>
+              <li class="p-special__thumbnail p-medical">
+                <div class="p-medical__decoration c-tag-flag--accent">実費</div>
+                <div class="p-medical__top">
+                  <h3 class="p-medical__title">レーザー治療</h3>
+                  <span class="p-medical__supplement"
+                    >口内炎を治したい</span
+                  >
+                </div>
+                <div class="p-medical__bottom">
+                  <div class="p-medical__description">
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                    <p class="p-medical__text">
+                      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    </p>
+                  </div>
+                  <figure class="p-medical__img">
+                    <img src="./img/guid_special_pc_05" alt="" />
+                  </figure>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>

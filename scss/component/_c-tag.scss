@@ -1,0 +1,59 @@
+@use "../global" as global;
+
+//*---------- Header ----------*/
+.c-tag-cir-md {
+}
+.c-tag-md {
+}
+
+//*---------- page-guid ----------*/
+.c-tag-lg {
+  display: grid;
+  place-items: center;
+  padding-block: 7px;
+  padding-inline: 12px;
+  border-radius: 24px;
+  background: global.$c-main;
+  color: global.$c-base-light;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.12px;
+}
+.c-tag-lg--accent {
+  display: grid;
+  place-items: center;
+  padding-block: 7px;
+  padding-inline: 12px;
+  border-radius: 24px;
+  background: global.$c-accent;
+  color: global.$c-base-light;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.12px;
+}
+.c-tag-flag {
+}
+.c-tag-flag--accent {
+}
+
+//*---------- archive ----------*/
+.c-tag-cir-sm {
+}
+.c-tag-md {
+}
+.c-tag-sm {
+}
+
+//*---------- single ----------*/
+.c-tag-md {
+}
+.c-tag-sm {
+}
+
+//*---------- page-contact ----------*/
+.c-tag-required {
+}
+
+//*---------- page-book ----------*/
+.c-tag-required {
+}

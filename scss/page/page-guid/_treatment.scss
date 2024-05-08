@@ -1,5 +1,94 @@
 @use "../../global" as global;
 
 /*----------------------------------------------------------
-
+Guid
 ----------------------------------------------------------*/
+.p-treatment {
+  padding-top: 58px;
+  @include global.mq(sm) {
+    padding-top: 80px;
+  }
+}
+
+.p-treatment__inner {
+  padding-inline: 20px;
+  @include global.mq(sm) {
+    padding-left: 62px;
+  }
+}
+
+.l-inner {
+}
+
+.p-treatment__container {
+  display: flex;
+  flex-direction: column;
+  gap: 81px;
+}
+
+.p-treatment__box {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  @include global.mq(sm) {
+    gap: 28px;
+  }
+}
+
+.p-treatment__box-top {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.p-treatment__title {
+  color: global.$c-base-dark;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  @include global.mq(sm) {
+    font-size: 28px;
+    letter-spacing: 2.24px;
+  }
+}
+
+.p-treatment__tag {
+  @include global.mq(sm) {
+    @include global.mq(sm) {
+      position: relative;
+      top: -2px;
+    }
+  }
+}
+
+.c-tag-lg {
+}
+
+.p-treatment__list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  @include global.mq(sm) {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
+.p-treatment__item {
+  width: 100%;
+  @include global.mq(sm) {
+    width: auto;
+  }
+}
+
+.p-treatment__link {
+  margin: 0 auto;
+}
+
+.c-button-cat {
+}
+
+.c-tag-lg--accent {
+}
