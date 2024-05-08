@@ -750,6 +750,149 @@ Front-page_Header & Drawer
 }
 
 /*----------------------------------------------------------
+Hero
+----------------------------------------------------------*/
+.p-hero {
+  padding-top: 80px;
+}
+@media screen and (min-width: 768px) {
+  .p-hero {
+    padding-top: 120px;
+  }
+}
+
+.p-hero__inner {
+  padding-inline: 20px;
+}
+@media screen and (min-width: 768px) {
+  .p-hero__inner {
+    padding-inline: 60px;
+  }
+}
+
+.p-hero__top {
+  width: 100%;
+  height: 188px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .p-hero__top {
+    height: 340px;
+    margin: 0 auto;
+    max-width: 1900px;
+  }
+}
+
+.p-hero__top::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.p-hero__img img {
+  width: 100%;
+  height: 188px;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .p-hero__img img {
+    height: 340px;
+  }
+}
+
+.p-hero__catch-copy {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 14px;
+}
+@media screen and (min-width: 768px) {
+  .p-hero__catch-copy {
+    gap: 17px;
+  }
+}
+
+.p-hero__text-jp {
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 4.8px;
+}
+@media screen and (min-width: 768px) {
+  .p-hero__text-jp {
+    font-size: 32px;
+    letter-spacing: 3.2px;
+  }
+}
+
+.p-hero__text-en {
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+@media screen and (min-width: 768px) {
+  .p-hero__text-en {
+    font-size: 14px;
+    letter-spacing: 1.4px;
+  }
+}
+
+.breadcrumb {
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 9px;
+}
+@media screen and (min-width: 768px) {
+  .breadcrumb {
+    margin-top: 9px;
+    padding-left: 30px;
+    gap: 9px;
+  }
+}
+
+.home {
+  color: #c2c2c2;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.page-about {
+  color: #393939;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/*----------------------------------------------------------
 Front-page_Fv
 ----------------------------------------------------------*/
 .p-fv {
@@ -1951,149 +2094,6 @@ Front-page_Blog
 }
 
 /*----------------------------------------------------------
-Hero
-----------------------------------------------------------*/
-.p-hero {
-  padding-top: 80px;
-}
-@media screen and (min-width: 768px) {
-  .p-hero {
-    padding-top: 120px;
-  }
-}
-
-.p-hero__inner {
-  padding-inline: 20px;
-}
-@media screen and (min-width: 768px) {
-  .p-hero__inner {
-    padding-inline: 60px;
-  }
-}
-
-.p-hero__top {
-  width: 100%;
-  height: 188px;
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-}
-@media screen and (min-width: 768px) {
-  .p-hero__top {
-    height: 340px;
-    margin: 0 auto;
-    max-width: 1900px;
-  }
-}
-
-.p-hero__top::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.p-hero__img img {
-  width: 100%;
-  height: 188px;
-  -o-object-position: center;
-     object-position: center;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-@media screen and (min-width: 768px) {
-  .p-hero__img img {
-    height: 340px;
-  }
-}
-
-.p-hero__catch-copy {
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: calc(50% + 2px);
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 14px;
-}
-@media screen and (min-width: 768px) {
-  .p-hero__catch-copy {
-    gap: 17px;
-  }
-}
-
-.p-hero__text-jp {
-  color: #FFFFFF;
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 4.8px;
-}
-@media screen and (min-width: 768px) {
-  .p-hero__text-jp {
-    font-size: 32px;
-    letter-spacing: 3.2px;
-  }
-}
-
-.p-hero__text-en {
-  color: #FFFFFF;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-}
-@media screen and (min-width: 768px) {
-  .p-hero__text-en {
-    font-size: 14px;
-    letter-spacing: 1.4px;
-  }
-}
-
-.breadcrumb {
-  margin-top: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 9px;
-}
-@media screen and (min-width: 768px) {
-  .breadcrumb {
-    margin-top: 9px;
-    padding-left: 30px;
-    gap: 9px;
-  }
-}
-
-.home {
-  color: #c2c2c2;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.page-about {
-  color: #393939;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-/*----------------------------------------------------------
 Policy
 ----------------------------------------------------------*/
 .p-policy {
@@ -2430,6 +2430,15 @@ Exhibition
   border-radius: 20px;
 }
 
+/*----------------------------------------------------------
+
+----------------------------------------------------------*/
+/*----------------------------------------------------------
+
+----------------------------------------------------------*/
+/*----------------------------------------------------------
+
+----------------------------------------------------------*/
 /*----------------------------------------------------------
 Front-page_Footer
 ----------------------------------------------------------*/
