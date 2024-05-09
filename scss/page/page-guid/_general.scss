@@ -1,5 +1,212 @@
 @use "../../global" as global;
 
 /*----------------------------------------------------------
-
+General
 ----------------------------------------------------------*/
+/*---------- 背景・装飾 ----------*/
+.p-general {
+  padding-top: 97px;
+  @include global.mq(sm) {
+    padding-top: 158px;
+  }
+}
+.p-general__decoration-top {
+  position: relative;
+  width: 100%;
+  height: 23vw;
+  @include global.mq(sm) {
+    height: 15.8vw;
+  }
+}
+.p-general__decoration-top::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url("../img/index_guid_sp_bg-top.webp") no-repeat left top;
+  background-size: cover;
+  @include global.mq(sm) {
+    top: 2px;
+    background: url("../img/index_guid_pc_bg-top.webp") no-repeat left top;
+    background-size: 100%;
+  }
+}
+.p-general__decoration-bottom {
+  position: relative;
+  width: 100%;
+  height: 7.6vw;
+}
+.p-general__decoration-bottom::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url("../img/index_guid_sp_bg-bottom.webp") no-repeat left top;
+  background-size: cover;
+  @include global.mq(sm) {
+    background: url("../img/index_guid_pc_bg-bottom.webp") no-repeat left top;
+    background-size: 100%;
+  }
+}
+.p-general__decoration-parts01 {
+  position: absolute;
+  width: 56px;
+  height: 60px;
+  bottom: 8px;
+  right: 8px;
+  z-index: global.$z-index-decoration;
+  @include global.mq(sm) {
+    width: 125.307px;
+    height: 138px;
+    bottom: 78px;
+    right: 20px;
+  }
+}
+.p-general__decoration-parts02 {
+  position: absolute;
+  width: 24px;
+  height: 25px;
+  bottom: 28px;
+  left: 12px;
+  z-index: global.$z-index-decoration;
+  @include global.mq(sm) {
+    width: 57px;
+    height: 56px;
+    bottom: 100px;
+    left: 40px;
+  }
+}
+
+/*---------- コンテンツ ----------*/
+.p-general__wrapper {
+  background-color: global.$c-secondary;
+  padding-bottom: 61px;
+  @include global.mq(sm) {
+    padding-bottom: 83px;
+  }
+}
+.p-general__inner {
+  padding-inline: 20px;
+}
+
+.p-general__container {
+  padding-top: 30px;
+  @include global.mq(sm) {
+    padding-top: 0px;
+  }
+}
+
+.p-general__title {
+}
+
+/*---------- サムネイル ----------*/
+.p-general__thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+  @include global.mq(sm) {
+    max-width: 1000px;
+    margin-inline: auto;
+    margin-top: 59px;
+    // gap: 40px;
+  }
+}
+.p-general__thumbnail {
+  padding-block: 20px;
+  padding-inline: 20px;
+  @include global.mq(sm) {
+    padding-top: 68px;
+    padding-bottom: 60px;
+    padding-inline: 60px;
+  }
+}
+.p-medical {
+  background-color: global.$c-base-light;
+  border-radius: 20px;
+  position: relative;
+}
+.p-medical__decoration {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  @include global.mq(sm) {
+    right: 60px;
+  }
+}
+.p-medical__top {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #c2c2c2;
+  @include global.mq(sm) {
+    flex-direction: row;
+    align-items: center;
+    gap: 38px;
+    padding-bottom: 42px;
+  }
+}
+.p-medical__title {
+  color: global.$c-base-dark;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px; /* 140% */
+  letter-spacing: 1.6px;
+  @include global.mq(sm) {
+    font-size: 28px;
+    letter-spacing: 2.24px;
+  }
+}
+.p-medical__supplement {
+  color: global.$c-main;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.12px;
+}
+.p-medical__bottom {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  @include global.mq(sm) {
+    padding-top: 36px;
+    flex-direction: row;
+    gap: calc(46px / 1000px * 100%);
+  }
+}
+.p-medical__description {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @include global.mq(sm) {
+    flex-shrink: 1;
+    flex: 1;
+  }
+}
+.p-medical__text {
+  color: global.$c-base-dark;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+}
+.p-medical__img {
+  @include global.mq(sm) {
+    max-width: 420px;
+    flex: 1;
+  }
+}
+.p-medical__img img {
+  border-radius: 20px;
+  @include global.mq(sm) {
+    width: 100%;
+  }
+}

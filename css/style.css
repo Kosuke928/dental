@@ -568,6 +568,29 @@ z-index
   letter-spacing: 1.12px;
 }
 
+.c-tag-flag {
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 80%, 0 100%);
+          clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 80%, 0 100%);
+  padding-top: 14px;
+  width: 80px;
+  height: 60px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.12px;
+  background-color: #1391E6;
+}
+@media screen and (min-width: 768px) {
+  .c-tag-flag {
+    padding-top: 24px;
+    width: 100px;
+    height: 80px;
+    font-size: 16px;
+    letter-spacing: 1.28px;
+  }
+}
+
 /*----------------------------------------------------------
 Front-page_Header & Drawer
 ----------------------------------------------------------*/
@@ -2598,8 +2621,297 @@ Guid
 }
 
 /*----------------------------------------------------------
-
+General
 ----------------------------------------------------------*/
+/*---------- 背景・装飾 ----------*/
+.p-general {
+  padding-top: 97px;
+}
+@media screen and (min-width: 768px) {
+  .p-general {
+    padding-top: 158px;
+  }
+}
+
+.p-general__decoration-top {
+  position: relative;
+  width: 100%;
+  height: 23vw;
+}
+@media screen and (min-width: 768px) {
+  .p-general__decoration-top {
+    height: 15.8vw;
+  }
+}
+
+.p-general__decoration-top::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: url("../img/index_guid_sp_bg-top.webp") no-repeat left top;
+  background-size: cover;
+}
+@media screen and (min-width: 768px) {
+  .p-general__decoration-top::after {
+    top: 2px;
+    background: url("../img/index_guid_pc_bg-top.webp") no-repeat left top;
+    background-size: 100%;
+  }
+}
+
+.p-general__decoration-bottom {
+  position: relative;
+  width: 100%;
+  height: 7.6vw;
+}
+
+.p-general__decoration-bottom::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: url("../img/index_guid_sp_bg-bottom.webp") no-repeat left top;
+  background-size: cover;
+}
+@media screen and (min-width: 768px) {
+  .p-general__decoration-bottom::after {
+    background: url("../img/index_guid_pc_bg-bottom.webp") no-repeat left top;
+    background-size: 100%;
+  }
+}
+
+.p-general__decoration-parts01 {
+  position: absolute;
+  width: 56px;
+  height: 60px;
+  bottom: 8px;
+  right: 8px;
+  z-index: 1;
+}
+@media screen and (min-width: 768px) {
+  .p-general__decoration-parts01 {
+    width: 125.307px;
+    height: 138px;
+    bottom: 78px;
+    right: 20px;
+  }
+}
+
+.p-general__decoration-parts02 {
+  position: absolute;
+  width: 24px;
+  height: 25px;
+  bottom: 28px;
+  left: 12px;
+  z-index: 1;
+}
+@media screen and (min-width: 768px) {
+  .p-general__decoration-parts02 {
+    width: 57px;
+    height: 56px;
+    bottom: 100px;
+    left: 40px;
+  }
+}
+
+/*---------- コンテンツ ----------*/
+.p-general__wrapper {
+  background-color: #DFF1FD;
+  padding-bottom: 61px;
+}
+@media screen and (min-width: 768px) {
+  .p-general__wrapper {
+    padding-bottom: 83px;
+  }
+}
+
+.p-general__inner {
+  padding-inline: 20px;
+}
+
+.p-general__container {
+  padding-top: 30px;
+}
+@media screen and (min-width: 768px) {
+  .p-general__container {
+    padding-top: 0px;
+  }
+}
+
+/*---------- サムネイル ----------*/
+.p-general__thumbnails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+@media screen and (min-width: 768px) {
+  .p-general__thumbnails {
+    max-width: 1000px;
+    margin-inline: auto;
+    margin-top: 59px;
+  }
+}
+
+.p-general__thumbnail {
+  padding-block: 20px;
+  padding-inline: 20px;
+}
+@media screen and (min-width: 768px) {
+  .p-general__thumbnail {
+    padding-top: 68px;
+    padding-bottom: 60px;
+    padding-inline: 60px;
+  }
+}
+
+.p-medical {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  position: relative;
+}
+
+.p-medical__decoration {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+@media screen and (min-width: 768px) {
+  .p-medical__decoration {
+    right: 60px;
+  }
+}
+
+.p-medical__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 21px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #c2c2c2;
+}
+@media screen and (min-width: 768px) {
+  .p-medical__top {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 38px;
+    padding-bottom: 42px;
+  }
+}
+
+.p-medical__title {
+  color: #393939;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px; /* 140% */
+  letter-spacing: 1.6px;
+}
+@media screen and (min-width: 768px) {
+  .p-medical__title {
+    font-size: 28px;
+    letter-spacing: 2.24px;
+  }
+}
+
+.p-medical__supplement {
+  color: #1391E6;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.12px;
+}
+
+.p-medical__bottom {
+  padding-top: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+@media screen and (min-width: 768px) {
+  .p-medical__bottom {
+    padding-top: 36px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 4.6%;
+  }
+}
+
+.p-medical__description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+}
+@media screen and (min-width: 768px) {
+  .p-medical__description {
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
+.p-medical__text {
+  color: #393939;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+}
+
+@media screen and (min-width: 768px) {
+  .p-medical__img {
+    max-width: 420px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
+.p-medical__img img {
+  border-radius: 20px;
+}
+@media screen and (min-width: 768px) {
+  .p-medical__img img {
+    width: 100%;
+  }
+}
+
 /*----------------------------------------------------------
 
 ----------------------------------------------------------*/
