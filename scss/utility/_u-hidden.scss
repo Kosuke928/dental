@@ -1,6 +1,6 @@
 @use "../global" as global;
 
-//*---------- sm(375px)以上の時のみ表示 ----------*/
+//*---------- sm(768px)以上の時のみ表示 ----------*/
 .u-sm-show {
   display: none;
   @include global.mq(sm) {

@@ -3234,8 +3234,232 @@ special
 }
 
 /*----------------------------------------------------------
-
+Greeting
 ----------------------------------------------------------*/
+.p-greeting {
+  padding-top: 59px;
+}
+@media screen and (min-width: 768px) {
+  .p-greeting {
+    padding-top: 80px;
+  }
+}
+
+.p-greeting__inner {
+  padding-inline: 20px;
+}
+
+/*---------- コンテンツ ----------*/
+.p-greeting__boxes {
+  padding-top: 36px;
+}
+@media screen and (min-width: 768px) {
+  .p-greeting__boxes {
+    max-width: 1000px;
+    padding-top: 60px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 8%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .p-greeting__box-left {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
+/*---------- コンテンツ上部 ----------*/
+.p-greeting-top__text {
+  padding-top: 28px;
+  color: #393939;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+}
+@media screen and (min-width: 768px) {
+  .p-greeting-top__text {
+    padding-top: 34px;
+  }
+}
+
+.p-greeting-top__text:nth-of-type(n + 2) {
+  padding-top: 23px;
+}
+@media screen and (min-width: 768px) {
+  .p-greeting-top__text:nth-of-type(n + 2) {
+    padding-top: 24px;
+  }
+}
+
+.p-greeting-top__addition {
+  margin-top: 34px;
+  color: #393939;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+}
+@media screen and (min-width: 768px) {
+  .p-greeting-top__addition {
+    margin-top: 15px;
+  }
+}
+
+.p-greeting-top__name {
+  display: block;
+}
+
+/*---------- 画像コンテンツ(SP時) ----------*/
+.p-greeting__box-img {
+  margin-top: 40px;
+  border-radius: 20px;
+  background-color: #ececec;
+  text-align: center;
+  overflow: hidden;
+  max-width: 460px;
+  margin-inline: auto;
+}
+@media screen and (min-width: 768px) {
+  .p-greeting__box-img {
+    margin-top: 0;
+  }
+}
+
+.p-greeting__box-img img {
+  width: 100%;
+}
+
+/*---------- コンテンツ下部 ----------*/
+.p-greeting__box-bottom {
+  margin-top: 40px;
+}
+@media screen and (min-width: 768px) {
+  .p-greeting__box-bottom {
+    margin-top: 56px;
+  }
+}
+
+.p-greeting-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 38px;
+}
+@media screen and (min-width: 768px) {
+  .p-greeting-bottom {
+    gap: 30px;
+  }
+}
+
+.p-greeting-bottom__title {
+  padding-bottom: 6px;
+  border-bottom: 1px solid;
+  color: #393939;
+  font-weight: 500;
+}
+
+.p-greeting-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 15px;
+  gap: 14px;
+}
+@media screen and (min-width: 768px) {
+  .p-greeting-description {
+    padding-top: 16px;
+  }
+}
+
+.p-greeting-description__contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+}
+
+.p-greeting-description__head,
+.p-greeting-description__body {
+  color: #393939;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.p-greeting-bottom__contents {
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 14px;
+}
+
+.p-greeting-bottom__text {
+  color: #393939;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/*---------- 画像コンテンツ(PC時) ----------*/
+@media screen and (min-width: 768px) {
+  .p-greeting__box-right {
+    width: 460px;
+    min-width: 335px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
+/*---------- スワイパー ----------*/
+.p-greeting__gallery {
+  margin-top: 100px;
+  width: 100vw;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .p-greeting__gallery {
+    margin-top: 160px;
+  }
+}
+
+.p-greeting__swiper {
+  width: 200px;
+  margin-inline: auto;
+}
+@media screen and (min-width: 768px) {
+  .p-greeting__swiper {
+    width: 305px;
+  }
+}
+
+.p-greeting__wrapper {
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
+.p-greeting__img img {
+  border-radius: 20px;
+  width: 100%;
+}
+
+/*---------- スワイパー基本設定 ----------*/
 /*----------------------------------------------------------
 
 ----------------------------------------------------------*/
@@ -3751,4 +3975,9 @@ CTA
 .u-text-emphasis {
   color: #EE5A6D;
   font-style: normal;
+}
+
+/*---------- page-staff-greeting(description) ----------*/
+.u-line-height-161 {
+  line-height: 161%; /* 22.54px */
 }

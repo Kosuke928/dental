@@ -364,11 +364,11 @@
       <section id="greeting" class="p-greeting">
         <div class="p-greeting__inner l-inner">
           <div class="p-greeting__container">
-            <h2 class="p-greeting__title c-title-section">院長のあいさつ</h2>
+            <h2 class="p-greeting__title c-title-sec">院長のあいさつ</h2>
             <div class="p-greeting__boxes">
               <div class="p-greeting__box-left">
                 <div class="p-greeting__box-top p-greeting-top">
-                  <h3 class="p-greeting-top__title">
+                  <h3 class="p-greeting-top__title c-title-ja">
                     気軽に相談できる<br />
                     街の歯医者さんでありたい。
                   </h3>
@@ -379,10 +379,12 @@
                     「患部を直すこと」より「未然に防ぐこと」が最も良い歯科医療と言えますので、些細なことでも気軽に話せる街の歯医者さんとして、明るい街づくりに貢献していきたいと考えております。
                   </p>
                   <p class="p-greeting-top__addition">
-                    みなみ歯科クリニック<span>院長　南 俊雄</span>
+                    みなみ歯科クリニック<span class="p-greeting-top__name"
+                      >院長　南 俊雄</span
+                    >
                   </p>
                 </div>
-                <figure class="p-greeting__box-img">
+                <figure class="p-greeting__box-img u-sm-hidden">
                   <img src="./img/staff_greeting_sp.webp" alt="" />
                 </figure>
                 <div class="p-greeting__box-bottom p-greeting-bottom">
@@ -399,7 +401,9 @@
                       </div>
                       <div class="p-greeting-description__contents">
                         <dt class="p-greeting-description__head">2008年</dt>
-                        <dd class="p-greeting-description__body">
+                        <dd
+                          class="p-greeting-description__body u-line-height-161"
+                        >
                           東京歯科大学歯学研究科大学院修了<br />
                           博士(歯学)取得
                         </dd>
@@ -424,7 +428,7 @@
                   </div>
                 </div>
               </div>
-              <div class="p-greeting__box-right">
+              <div class="p-greeting__box-right u-sm-show">
                 <figure class="p-greeting__box-img">
                   <img src="./img/staff_greeting_pc.webp" alt="" />
                 </figure>
@@ -432,240 +436,38 @@
             </div>
           </div>
         </div>
-        <div class="p-greeting__swiper greeting-swiper">
-          <ul id="js-greeting-slide" class="p-greeting__wrapper swiper-wrapper">
-            <li class="p-greeting__slide swiper-slide">
-              <figure class="p-greeting__img">
-                <img src="./img/staff_slide_01.webp" alt="" />
-              </figure>
-            </li>
-            <li class="p-greeting__slide swiper-slide">
-              <figure class="p-greeting__img">
-                <img src="./img/staff_slide_02.webp" alt="" />
-              </figure>
-            </li>
-            <li class="p-greeting__slide swiper-slide">
-              <figure class="p-greeting__img">
-                <img src="./img/staff_slide_03.webp" alt="" />
-              </figure>
-            </li>
-            <li class="p-greeting__slide swiper-slide">
-              <figure class="p-greeting__img">
-                <img src="./img/staff_slide_04.webp" alt="" />
-              </figure>
-            </li>
-            <li class="p-greeting__slide swiper-slide">
-              <figure class="p-greeting__img">
-                <img src="./img/staff_slide_05.webp" alt="" />
-              </figure>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <section id="staff" class="p-staff">
-        <div class="p-staff__inner l-inner">
-          <div class="p-staff__container">
-            <h2 class="p-staff__title c-title-section">スタッフ紹介</h2>
-            <ul class="p-staff__boxes">
-              <li class="p-staff__box">
-                <h3 class="p-staff__box-title">歯科衛生士</h3>
-                <ul class="p-staff__box-list">
-                  <li class="p-staff__box-item p-staff-thumbnail">
-                    <figure class="p-staff-thumbnail__img">
-                      <img src="./img/staff_staff_01.webp" alt="" />
-                    </figure>
-                    <div class="p-staff-thumbnail__contents">
-                      <p class="p-staff-thumbnail__name">
-                        <span class="p-staff-thumbnail__job">歯科衛生士</span>
-                        鈴木 太郎
-                      </p>
-                      <table class="p-staff-thumbnail__introduction">
-                        <tbody>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">出身地</th>
-                            <td class="p-staff-thumbnail__body">北海道</td>
-                          </tr>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">趣味</th>
-                            <td class="p-staff-thumbnail__body">スキー、料理</td>
-                          </tr>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">好きな食べ物</th>
-                            <td class="p-staff-thumbnail__body">お寿司、うなぎ</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </li>
-                  <li class="p-staff__box-item p-staff-thumbnail">
-                    <figure class="p-staff-thumbnail__img">
-                      <img src="./img/staff_staff_02.webp" alt="" />
-                    </figure>
-                    <div class="p-staff-thumbnail__contents">
-                      <p class="p-staff-thumbnail__name">
-                        <span class="p-staff-thumbnail__job">歯科衛生士</span>
-                        山田 花子
-                      </p>
-                      <table class="p-staff-thumbnail__introduction">
-                        <tbody>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">出身地</th>
-                            <td class="p-staff-thumbnail__body">北海道</td>
-                          </tr>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">趣味</th>
-                            <td class="p-staff-thumbnail__body">スキー、料理</td>
-                          </tr>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">好きな食べ物</th>
-                            <td class="p-staff-thumbnail__body">お寿司、うなぎ</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </li>
-                </ul>
+        <!-- スワイパー -->
+        <div class="p-greeting__gallery">
+          <div class="p-greeting__swiper greeting-swiper">
+            <ul
+              id="js-greeting-slide"
+              class="p-greeting__wrapper swiper-wrapper"
+            >
+              <li class="p-greeting__slide swiper-slide">
+                <figure class="p-greeting__img">
+                  <img src="./img/staff_slide_01.webp" alt="" />
+                </figure>
               </li>
-              <li class="p-staff__box">
-                <h3 class="p-staff__box-title">歯科助手</h3>
-                <ul class="p-staff__box-list">
-                  <li class="p-staff__box-item p-staff-thumbnail">
-                    <figure class="p-staff-thumbnail__img">
-                      <img src="./img/staff_staff_03.webp" alt="" />
-                    </figure>
-                    <div class="p-staff-thumbnail__contents">
-                      <p class="p-staff-thumbnail__name">
-                        <span class="p-staff-thumbnail__job">歯科衛生士</span>
-                        山田 花子
-                      </p>
-                      <table class="p-staff-thumbnail__introduction">
-                        <tbody>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">出身地</th>
-                            <td class="p-staff-thumbnail__body">北海道</td>
-                          </tr>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">趣味</th>
-                            <td class="p-staff-thumbnail__body">スキー、料理</td>
-                          </tr>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">好きな食べ物</th>
-                            <td class="p-staff-thumbnail__body">お寿司、うなぎ</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </li>
-                  <li class="p-staff__box-item p-staff-thumbnail">
-                    <figure class="p-staff-thumbnail__img">
-                      <img src="./img/staff_staff_04.webp" alt="" />
-                    </figure>
-                    <div class="p-staff-thumbnail__contents">
-                      <p class="p-staff-thumbnail__name">
-                        <span class="p-staff-thumbnail__job">歯科衛生士</span>
-                        山田 花子
-                      </p>
-                      <table class="p-staff-thumbnail__introduction">
-                        <tbody>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">出身地</th>
-                            <td class="p-staff-thumbnail__body">北海道</td>
-                          </tr>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">趣味</th>
-                            <td class="p-staff-thumbnail__body">スキー、料理</td>
-                          </tr>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">好きな食べ物</th>
-                            <td class="p-staff-thumbnail__body">お寿司、うなぎ</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </li>
-                  <li class="p-staff__box-item p-staff-thumbnail">
-                    <figure class="p-staff-thumbnail__img">
-                      <img src="./img/staff_staff_05.webp" alt="" />
-                    </figure>
-                    <div class="p-staff-thumbnail__contents">
-                      <p class="p-staff-thumbnail__name">
-                        <span class="p-staff-thumbnail__job">歯科衛生士</span>
-                        山田 花子
-                      </p>
-                      <table class="p-staff-thumbnail__introduction">
-                        <tbody>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">出身地</th>
-                            <td class="p-staff-thumbnail__body">北海道</td>
-                          </tr>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">趣味</th>
-                            <td class="p-staff-thumbnail__body">スキー、料理</td>
-                          </tr>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">好きな食べ物</th>
-                            <td class="p-staff-thumbnail__body">お寿司、うなぎ</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </li>
-                  <li class="p-staff__box-item p-staff-thumbnail">
-                    <figure class="p-staff-thumbnail__img">
-                      <img src="./img/staff_staff_06.webp" alt="" />
-                    </figure>
-                    <div class="p-staff-thumbnail__contents">
-                      <p class="p-staff-thumbnail__name">
-                        <span class="p-staff-thumbnail__job">歯科衛生士</span>
-                        山田 花子
-                      </p>
-                      <table class="p-staff-thumbnail__introduction">
-                        <tbody>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">出身地</th>
-                            <td class="p-staff-thumbnail__body">北海道</td>
-                          </tr>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">趣味</th>
-                            <td class="p-staff-thumbnail__body">スキー、料理</td>
-                          </tr>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">好きな食べ物</th>
-                            <td class="p-staff-thumbnail__body">お寿司、うなぎ</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </li>
-                  <li class="p-staff__box-item p-staff-thumbnail">
-                    <figure class="p-staff-thumbnail__img">
-                      <img src="./img/staff_staff_07.webp" alt="" />
-                    </figure>
-                    <div class="p-staff-thumbnail__contents">
-                      <p class="p-staff-thumbnail__name">
-                        <span class="p-staff-thumbnail__job">歯科衛生士</span>
-                        山田 花子
-                      </p>
-                      <table class="p-staff-thumbnail__introduction">
-                        <tbody>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">出身地</th>
-                            <td class="p-staff-thumbnail__body">北海道</td>
-                          </tr>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">趣味</th>
-                            <td class="p-staff-thumbnail__body">スキー、料理</td>
-                          </tr>
-                          <tr>
-                            <th class="p-staff-thumbnail__head">好きな食べ物</th>
-                            <td class="p-staff-thumbnail__body">お寿司、うなぎ</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </li>
-                </ul>
+              <li class="p-greeting__slide swiper-slide">
+                <figure class="p-greeting__img">
+                  <img src="./img/staff_slide_02.webp" alt="" />
+                </figure>
+              </li>
+              <li class="p-greeting__slide swiper-slide">
+                <figure class="p-greeting__img">
+                  <img src="./img/staff_slide_03.webp" alt="" />
+                </figure>
+              </li>
+              <li class="p-greeting__slide swiper-slide">
+                <figure class="p-greeting__img">
+                  <img src="./img/staff_slide_04.webp" alt="" />
+                </figure>
+              </li>
+              <li class="p-greeting__slide swiper-slide">
+                <figure class="p-greeting__img">
+                  <img src="./img/staff_slide_05.webp" alt="" />
+                </figure>
               </li>
             </ul>
           </div>
