@@ -3461,8 +3461,167 @@ Greeting
 
 /*---------- スワイパー基本設定 ----------*/
 /*----------------------------------------------------------
-
+Staff
 ----------------------------------------------------------*/
+.p-staff {
+  padding-top: 100px;
+  padding-bottom: 99px;
+}
+@media screen and (min-width: 768px) {
+  .p-staff {
+    padding-top: 160px;
+    padding-bottom: 159px;
+  }
+}
+
+.p-staff__inner {
+  padding-inline: 20px;
+}
+
+/*---------- sutahhuコンテンツ ----------*/
+.p-staff__boxes {
+  margin-top: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+}
+@media screen and (min-width: 768px) {
+  .p-staff__boxes {
+    margin-top: 60px;
+    max-width: 1000px;
+    margin-inline: auto;
+    gap: 63px;
+  }
+}
+
+.p-staff__box {
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .p-staff__box {
+    margin: 0;
+  }
+}
+
+.p-staff__box-title {
+  padding-bottom: 6px;
+  border-bottom: 1px solid;
+  color: #393939;
+  font-weight: 700;
+  letter-spacing: 1.28px;
+}
+
+.p-staff__box-list {
+  padding-top: 37px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 57px;
+}
+@media screen and (min-width: 768px) {
+  .p-staff__box-list {
+    padding-top: 39px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 80px;
+    row-gap: 62px;
+  }
+}
+
+.p-staff__box-item {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .p-staff__box-item {
+    max-width: 280px;
+  }
+}
+
+.p-staff-thumbnail__img {
+  width: 335px;
+}
+@media screen and (min-width: 768px) {
+  .p-staff-thumbnail__img {
+    width: 100%;
+  }
+}
+
+.p-staff-thumbnail__img img {
+  border-radius: 20px;
+}
+
+.p-staff-thumbnail__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 12px;
+  padding-top: 16px;
+  color: #393939;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.44px;
+}
+
+.p-staff-thumbnail__job {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.96px;
+}
+
+.p-staff-thumbnail__introduction {
+  padding-top: 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+@media screen and (min-width: 768px) {
+  .p-staff-thumbnail__introduction {
+    padding-top: 14px;
+  }
+}
+
+.p-staff-thumbnail__introduction tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: 1px solid #FFFFFF;
+}
+
+.p-staff-thumbnail__introduction th {
+  background: #DFF1FD;
+}
+
+.p-staff-thumbnail__head {
+  padding-top: 17px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  min-width: 140px;
+}
+
+.p-staff-thumbnail__body {
+  padding-top: 17px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+}
+
 /*----------------------------------------------------------
 Front-page_Footer
 ----------------------------------------------------------*/
