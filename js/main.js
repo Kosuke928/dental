@@ -35,6 +35,37 @@ jQuery(function ($) {
       },
     });
 
+    //Page-Staff Swiper
+    const parentGallery = document.querySelector("#js-greeting-slide");
+    const cloneGallery = parentGallery.cloneNode(true);
+    const cloneChildren = cloneGallery.querySelectorAll(".p-greeting__slide");
+
+    cloneChildren.forEach((cloneChild) => {
+      parentGallery.appendChild(cloneChild.cloneNode(true));
+    });
+
+    var swiper = new Swiper(".greeting-swiper", {
+      loop: true,
+      initialSlide: 2,
+      slidesPerView: 1,
+      loopAdditionalSlides: 2,
+      centeredSlides: true,
+      allowTouchMove: true,
+      touchRatio: 1,
+      spaceBetween: 10,
+      speed: 20000,
+      autoplay: {
+        delay: 0,
+      },
+      breakpoints: {
+        768: {
+          initialSlide: 1,
+          spaceBetween: 20,
+          speed: 0,
+        },
+      },
+    });
+
     //トップへ移動(to-top)
     let speed = 300;
     $("#js-to-top").hide();
