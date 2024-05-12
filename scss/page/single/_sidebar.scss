@@ -5,55 +5,208 @@ Sidebar
 .l-sidebar {
 }
 
-
-
 .p-sidebar {
+  padding-top: 70px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  @include global.mq(sm) {
+    padding-top: 78px;
+    padding-bottom: 0px;
+  }
 }
 .p-sidebar__block {
 }
 .p-sidebar-block01 {
 }
 .p-sidebar__title {
+  color: global.$c-base-dark;
+  font-weight: 700;
+  line-height: 20px; /* 125% */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #888;
+  @include global.mq(sm) {
+  }
 }
 /*---------- クリニックの紹介 ----------*/
 .p-sidebar-block01__img {
+  padding-top: 20px;
 }
 .p-sidebar-block01__description {
+  padding-top: 20px;
 }
 .p-sidebar-block01__heading {
+  color: global.$c-base-dark;
+  font-weight: 700;
 }
 .p-sidebar-block01__text {
+  padding-top: 10px;
+  color: global.$c-base-dark;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
 }
 .p-sidebar-block01__link {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-left: 3px;
+  color: global.$c-main;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /*---------- 新着記事 ----------*/
 .p-sidebar-block02 {
 }
 .p-sidebar-block02__thumbnails {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  @include global.mq(sm) {
+    gap: 19px;
+  }
 }
 .p-sidebar-block02__thumbnail {
 }
 
-.p-post-box {
+.p-sidebar-post {
 }
-.p-post-box__card {
+.p-sidebar-post__link {
+  display: flex;
+  gap: 10px;
+  max-width: 335px;
 }
-.p-post-box__heading {
+.p-blog-box__card {
+  position: relative;
 }
-.post-box__img {
+.p-blog-box__card::after {
+  content: "NEW";
+  display: grid;
+  place-items: center;
+  height: 40px;
+  width: 40px;
+  color: global.$c-base-light;
+  font-size: 10px;
+  font-weight: 700;
+  background-color: global.$c-accent;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  left: -8px;
 }
-.p-post-box__caption {
+.p-sidebar-post__img {
+  overflow: hidden;
+  flex-shrink: 0;
+  width: 133px;
+  @include global.mq(sm) {
+    width: 120px;
+  }
 }
-.p-post-box__category {
+.p-sidebar-post__img img {
+  object-fit: cover;
+  aspect-ratio: 133 / 101;
+  transition: transform 0.3s;
 }
-.p-post-box__text {
+.p-sidebar-post__link:hover .p-sidebar-post__img img {
+  transform: scale(1.1);
 }
-.p-post-box__date {
+.p-sidebar-post__caption {
+  position: relative;
+}
+.p-sidebar-post__category {
+}
+.p-sidebar-post__category::after {
+  content: "お知らせ";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-top: 5px;
+  padding-block: 2px;
+  padding-inline: 8px;
+  border-radius: 10px;
+  width: fit-content;
+  min-width: 56px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 500;
+  color: global.$c-base-light;
+  background: global.$c-main;
+  @include global.mq(sm) {
+    margin-top: 1px;
+  }
+}
+.p-sidebar-post__text {
+  padding-top: 29px;
+  text-align: left;
+  color: global.$c-base-dark;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  transition: color 0.3s, transform;
+  //下記で文字数制限（必要なくなれば消してください）
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* 任意の行数を指定 */
+  @include global.mq(sm) {
+    padding-top: 26px;
+  }
+}
+.p-sidebar-post__link:hover .p-sidebar-post__text {
+  color: global.$c-main;
+}
+.p-sidebar-post__date {
+  text-align: left;
+  display: block;
+  padding-top: 7px;
+  color: #888;
+  font-size: 11px;
+  font-weight: 500;
+  @include global.mq(sm) {
+    padding-top: 6px;
+  }
 }
 
 /*---------- カテゴリー ----------*/
 .p-sidebar-block03 {
+  @include global.mq(sm) {
+    margin-top: -1px;
+  }
+}
+.p-sidebar-block03__contents {
+  padding-top: 16px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  @include global.mq(sm) {
+    padding-top: 20px;
+  }
 }
 .p-sidebar-block03__link {
+  position: relative;
+  color: global.$c-base-dark;
+  font-weight: 500;
+  padding-left: calc(6px + 6px);
+}
+.p-sidebar-block03__link::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: url("../img/arrow-right-icon.svg") no-repeat center center;
+  background-size: 6px 12px;
 }
