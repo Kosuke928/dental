@@ -3,42 +3,231 @@
 Post
 ----------------------------------------------------------*/
 .p-post {
+  padding-top: 65px;
+  @include global.mq(sm) {
+    padding-top: 89px;
+  }
 }
 .p-post__container {
 }
 .p-post__thumbnails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  @include global.mq(sm) {
+    align-items: flex-start;
+  }
 }
 .p-post__thumbnail {
 }
 
 .p-post-box {
 }
+.p-post-box__link {
+  display: flex;
+  gap: 10px;
+  max-width: 335px;
+  @include global.mq(sm) {
+    max-width: 670px;
+    gap: 20px;
+  }
+}
 .p-post-box__card {
+  position: relative;
+  width: 100%;
+  max-width: 133px;
+  flex-shrink: 0;
+  @include global.mq(sm) {
+    max-width: 244px;
+    flex-grow: 1;
+  }
 }
-.p-post-box__heading {
+.p-post-box__card.is-new::after {
+  content: "NEW";
+  display: grid;
+  place-items: center;
+  height: 40px;
+  width: 40px;
+  color: global.$c-base-light;
+  font-size: 10px;
+  font-weight: 700;
+  background-color: global.$c-accent;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  @include global.mq(sm) {
+    top: -10px;
+  }
 }
-.post-box__img {
+.p-post-box__img {
+  overflow: hidden;
+  width: 100%;
+}
+.p-post-box__img img {
+  object-fit: cover;
+  aspect-ratio: 133 / 101;
+  transition: transform 0.3s;
+  @include global.mq(sm) {
+    width: 100%;
+    height: 100%;
+  }
+  @include global.mq(md) {
+    aspect-ratio: 244 / 153;
+  }
+}
+.p-post-box__link:hover .p-post-box__img img {
+  transform: scale(1.1);
 }
 .p-post-box__caption {
+  position: relative;
 }
 .p-post-box__category {
 }
+.p-post-box__category::after {
+  content: "お知らせ";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-top: 5px;
+  padding-block: 2px;
+  padding-inline: 8px;
+  border-radius: 10px;
+  width: fit-content;
+  min-width: 56px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 500;
+  color: global.$c-base-light;
+  background: global.$c-main;
+  @include global.mq(sm) {
+    content: "カテゴリ1";
+    left: 0px;
+    margin-top: 0px;
+    padding-block: 6px;
+    padding-inline: 12px;
+    border-radius: 12px;
+    font-size: 11px;
+  }
+  @include global.mq(md) {
+    top: 18px;
+  }
+}
+.p-post__thumbnail:nth-of-type(n + 3) .p-post-box__category::after {
+  @include global.mq(sm) {
+    top: 12px;
+  }
+}
 .p-post-box__text {
+  padding-top: 29px;
+  text-align: left;
+  color: global.$c-base-dark;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  transition: color 0.3s, transform;
+  //下記で文字数制限（必要なくなれば消してください）
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* 任意の行数を指定 */
+  @include global.mq(sm) {
+    padding-top: 35px;
+    font-size: 16px;
+    line-height: 24px; /* 150% */
+    display: block;
+  }
+  @include global.mq(md) {
+    padding-top: 58px;
+  }
+}
+.p-post__thumbnail:nth-of-type(n + 3) .p-post-box__text {
+  @include global.mq(sm) {
+    padding-top: 54px;
+  }
+}
+.p-post-box__link:hover .p-post-box__text {
+  color: global.$c-main;
 }
 .p-post-box__date {
-}
-.p-post__pagination {
+  text-align: left;
+  display: block;
+  padding-top: 7px;
+  color: #888;
+  font-size: 11px;
+  font-weight: 500;
+  @include global.mq(sm) {
+    padding-top: 14px;
+    font-size: 12px;
+  }
 }
 
 /*---------- ページネーション ----------*/
+.p-post__pagination {
+  margin-top: 60px;
+  @include global.mq(sm) {
+    margin-top: 100px;
+  }
+}
+
 .p-pagination {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  @include global.mq(sm) {
+    gap: 10px;
+  }
+}
+.p-pagenation__prev,
+.p-pagenation__next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 71px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: global.$c-main;
+  color: global.$c-base-light;
+  font-size: 11px;
+  font-weight: 500;
+  @include global.mq(sm) {
+    gap: 6px;
+    width: 82px;
+    height: 36px;
+    font-size: 14px;
+  }
 }
 .p-pagenation__prev {
 }
+.p-pagenation__next {
+}
+
 .p-pagenation__text {
 }
 .p-pagenation__numbers {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: 1px solid global.$c-main;
+  color: global.$c-main;
+  font-size: 12px;
+  font-weight: 500;
+  @include global.mq(sm) {
+    width: 34px;
+    height: 36px;
+    font-size: 14px;
+  }
 }
 
 .u-current {
+  background: global.$c-main;
+  color: global.$c-base-light;
 }
