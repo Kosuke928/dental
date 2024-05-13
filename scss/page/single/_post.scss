@@ -86,35 +86,6 @@ Post
 .p-post-box__category {
 }
 .p-post-box__category::after {
-  content: "お知らせ";
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  margin-top: 5px;
-  padding-block: 2px;
-  padding-inline: 8px;
-  border-radius: 10px;
-  width: fit-content;
-  min-width: 56px;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  font-size: 10px;
-  font-weight: 500;
-  color: global.$c-base-light;
-  background: global.$c-main;
-  @include global.mq(sm) {
-    content: "カテゴリ1";
-    left: 0px;
-    margin-top: 0px;
-    padding-block: 6px;
-    padding-inline: 12px;
-    border-radius: 12px;
-    font-size: 11px;
-  }
-  @include global.mq(md) {
-    top: 18px;
-  }
 }
 .p-post__thumbnail:nth-of-type(n + 3) .p-post-box__category::after {
   @include global.mq(sm) {
@@ -186,19 +157,24 @@ Post
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
-  width: 71px;
-  height: 30px;
   flex-shrink: 0;
+  gap: 4px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-radius: 4px;
   background: global.$c-main;
   color: global.$c-base-light;
   font-size: 11px;
   font-weight: 500;
+  @include global.mq(xs, max) {
+    flex-shrink: 1;
+  }
   @include global.mq(sm) {
     gap: 6px;
-    width: 82px;
-    height: 36px;
+    padding-left: 16px;
+    padding-right: 16px;
     font-size: 14px;
   }
 }
@@ -213,7 +189,8 @@ Post
   display: grid;
   place-items: center;
   width: 30px;
-  height: 30px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   flex-shrink: 0;
   border-radius: 4px;
   border: 1px solid global.$c-main;

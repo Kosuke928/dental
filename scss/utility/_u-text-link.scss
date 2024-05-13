@@ -1,0 +1,11 @@
+@use "../global" as global;
+
+//*---------- テキストリンク ----------*/
+/*---------- single-blog ----------*/
+.u-text-link {
+  color: global.$c-main;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration-line: underline;
+}
