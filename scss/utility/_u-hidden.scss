@@ -4,7 +4,7 @@
 .u-sm-show {
   display: none;
   @include global.mq(sm) {
-    display: block;
+    display: inline-block;
   }
 }
 //

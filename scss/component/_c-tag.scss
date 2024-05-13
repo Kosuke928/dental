@@ -76,12 +76,46 @@
 .c-tag-cir-sm {
 }
 .c-tag-md {
+  position: relative;
+}
+.c-tag-md::after {
+  content: "お知らせ";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-top: 5px;
+  padding-block: 2px;
+  padding-inline: 8px;
+  border-radius: 10px;
+  width: fit-content;
+  min-width: 56px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 500;
+  color: global.$c-base-light;
+  background: global.$c-main;
+  @include global.mq(sm) {
+    content: "カテゴリ1";
+    left: 0px;
+    margin-top: 0px;
+    padding-block: 6px;
+    padding-inline: 12px;
+    border-radius: 12px;
+    font-size: 11px;
+  }
+  @include global.mq(md) {
+    top: 18px;
+  }
 }
 .c-tag-sm {
 }
 
 //*---------- single ----------*/
 .c-tag-md {
+
+
 }
 .c-tag-sm {
 }
