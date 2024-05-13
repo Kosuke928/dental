@@ -37,12 +37,14 @@ jQuery(function ($) {
 
     //Page-Staff Swiper
     const parentGallery = document.querySelector("#js-greeting-slide");
-    const cloneGallery = parentGallery.cloneNode(true);
-    const cloneChildren = cloneGallery.querySelectorAll(".p-greeting__slide");
+    if (parentGallery) {
+      const cloneGallery = parentGallery.cloneNode(true);
+      const cloneChildren = cloneGallery.querySelectorAll(".p-greeting__slide");
+      cloneChildren.forEach((cloneChild) => {
+        parentGallery.appendChild(cloneChild.cloneNode(true));
+      });
+    }
 
-    cloneChildren.forEach((cloneChild) => {
-      parentGallery.appendChild(cloneChild.cloneNode(true));
-    });
 
     var swiper = new Swiper(".greeting-swiper", {
       loop: true,

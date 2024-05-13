@@ -930,7 +930,7 @@ Wrapper
 }
 
 @media screen and (min-width: 768px) {
-  main {
+  .l-main {
     width: calc(100% - 300px - 30px);
   }
 }
