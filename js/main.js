@@ -37,12 +37,13 @@ jQuery(function ($) {
 
     //Page-Staff Swiper
     const parentGallery = document.querySelector("#js-greeting-slide");
-    const cloneGallery = parentGallery.cloneNode(true);
-    const cloneChildren = cloneGallery.querySelectorAll(".p-greeting__slide");
-
-    cloneChildren.forEach((cloneChild) => {
-      parentGallery.appendChild(cloneChild.cloneNode(true));
-    });
+    if (parentGallery) {
+      const cloneGallery = parentGallery.cloneNode(true);
+      const cloneChildren = cloneGallery.querySelectorAll(".p-greeting__slide");
+      cloneChildren.forEach((cloneChild) => {
+        parentGallery.appendChild(cloneChild.cloneNode(true));
+      });
+    }
 
     var swiper = new Swiper(".greeting-swiper", {
       loop: true,
@@ -80,5 +81,32 @@ jQuery(function ($) {
       e.preventDefault();
       $("body, html").animate({ scrollTop: 0 }, speed);
     });
+  });
+
+  //Contact Form バリデーションエラー
+  const form = $(".p-contact-form");
+  const Elements = $(".p-contact-form__input, .p-contact-form__textarea");
+  const ErrorMessages = $(".p-contact-form__field-error");
+
+  $(form).on("submit", function (e) {
+    e.preventDefault();
+    Elements.removeClass("is-error");
+    const form = $(this)[0];
+    if (form.checkValidity()) {
+      alert("正常に送信されました");
+      form.reset();
+    }
+  });
+  Elements.on("invalid", function () {
+    const fieldId = $(this).attr("id");
+    $(this).addClass("is-error");
+    $(this).next(ErrorMessages).removeClass("u-action-hidden");
+  });
+  Elements.on("input", function () {
+    const fieldId = $(this).attr("id");
+    if (this.checkValidity()) {
+      $(this).removeClass("is-error");
+      $(this).next(ErrorMessages).addClass("u-action-hidden");
+    }
   });
 });

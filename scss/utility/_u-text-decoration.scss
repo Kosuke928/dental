@@ -1,6 +1,7 @@
 @use "../global" as global;
 
 //*---------- テキスト色強調 ----------*/
+/*---------- 基本設定 ----------*/
 .u-text-emphasis {
   color: global.$c-accent;
   font-style: normal;

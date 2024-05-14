@@ -23,7 +23,7 @@ Wrapper
   }
 }
 
-main {
+.l-main {
   @include global.mq(sm) {
     width: calc(100% - 300px - 30px);
   }

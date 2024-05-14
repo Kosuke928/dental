@@ -145,3 +145,29 @@
     letter-spacing: 1.92px;
   }
 }
+
+/*---------- Contact submit ----------*/
+.c-button-submit {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 24px;
+  border: 1px solid global.$c-main;
+  background: global.$c-base-light;
+  padding-top: calc(8px - 1px);
+  padding-bottom: calc(9px - 1px);
+  padding-left: calc(114px - 1px);
+  padding-right: calc(114px - 1px);
+  color: global.$c-main;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1.12px;
+  @include global.mq(sm) {
+    border-radius: 28px;
+    padding-top: calc(16px - 1px);
+    padding-bottom: calc(16px - 1px);
+    padding-left: calc(154px - 1px);
+    padding-right: calc(155px - 1px);
+    font-size: 16px;
+    letter-spacing: 1.28px;
+  }
+}
