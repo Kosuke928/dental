@@ -107,6 +107,19 @@ body {
   color: #393939;
 }
 
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 /*----------------------------------------------------------
 テキストカラー
 ----------------------------------------------------------*/
@@ -293,6 +306,34 @@ z-index
     border-radius: 12px;
     font-size: 24px;
     letter-spacing: 1.92px;
+  }
+}
+
+/*---------- Contact submit ----------*/
+.c-button-submit {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 24px;
+  border: 1px solid #1391E6;
+  background: #FFFFFF;
+  padding-top: 7px;
+  padding-bottom: 8px;
+  padding-left: 113px;
+  padding-right: 113px;
+  color: #1391E6;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1.12px;
+}
+@media screen and (min-width: 768px) {
+  .c-button-submit {
+    border-radius: 28px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 153px;
+    padding-right: 154px;
+    font-size: 16px;
+    letter-spacing: 1.28px;
   }
 }
 
@@ -657,6 +698,26 @@ z-index
   .c-tag-md::after {
     top: 18px;
   }
+}
+
+.c-tag-required {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 3px;
+  padding-bottom: 2px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+  background: #ee5a6d;
+  width: 36px;
+  height: 23px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 /*----------------------------------------------------------
@@ -4613,6 +4674,175 @@ Article
 }
 
 /*----------------------------------------------------------
+Contact
+----------------------------------------------------------*/
+.p-contact {
+  padding-top: 58px;
+  padding-bottom: 99px;
+}
+@media screen and (min-width: 768px) {
+  .p-contact {
+    padding-top: 78px;
+    padding-bottom: 157px;
+  }
+}
+
+.p-contact__inner {
+  padding-inline: 20px;
+}
+
+.p-contact__top {
+  max-width: 730px;
+  margin-inline: auto;
+}
+
+.p-contact__top-text {
+  color: #393939;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+}
+
+/*---------- お問い合わせフォーム ----------*/
+.p-contact__bottom {
+  padding-top: 100px;
+}
+@media screen and (min-width: 768px) {
+  .p-contact__bottom {
+    padding-top: 152px;
+  }
+}
+
+/*---------- ContactForm ----------*/
+.p-contact__form {
+  padding-top: 69px;
+  max-width: 728px;
+  margin-inline: auto;
+}
+@media screen and (min-width: 768px) {
+  .p-contact__form {
+    padding-top: 71px;
+  }
+}
+
+.p-contact-form__field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid #dddddd;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+@media screen and (min-width: 768px) {
+  .p-contact-form__field {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 0px;
+  }
+}
+
+.p-contact-form__field:nth-of-type(5) {
+  border-bottom: 1px solid #dddddd;
+}
+
+.p-contact-form__field-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+}
+@media screen and (min-width: 768px) {
+  .p-contact-form__field-head {
+    gap: 16px;
+    min-width: 240px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+}
+
+.p-contact-form__field-label {
+  color: #393939;
+  font-weight: 500;
+}
+
+.p-contact-form__field-item {
+  width: 100%;
+}
+
+.p-contact-form__input,
+.p-contact-form__textarea {
+  width: 100%;
+  padding-left: 16px;
+  border-radius: 4px;
+  background: #f6f6f6;
+  color: #393939;
+}
+
+.p-contact-form__input {
+  padding-block: 12px;
+}
+
+.p-contact-form__textarea {
+  padding-top: 12px;
+  padding-bottom: 4px;
+  overflow-y: scroll;
+}
+@media screen and (min-width: 768px) {
+  .p-contact-form__textarea {
+    padding-bottom: 44px;
+  }
+}
+
+.p-contact-form__input::-webkit-input-placeholder, .p-contact-form__textarea::-webkit-input-placeholder {
+  color: #c2c2c2;
+}
+
+.p-contact-form__input::-moz-placeholder, .p-contact-form__textarea::-moz-placeholder {
+  color: #c2c2c2;
+}
+
+.p-contact-form__input:-ms-input-placeholder, .p-contact-form__textarea:-ms-input-placeholder {
+  color: #c2c2c2;
+}
+
+.p-contact-form__input::-ms-input-placeholder, .p-contact-form__textarea::-ms-input-placeholder {
+  color: #c2c2c2;
+}
+
+.p-contact-form__input::placeholder,
+.p-contact-form__textarea::placeholder {
+  color: #c2c2c2;
+}
+
+.p-contact-form__field-error {
+  display: block;
+  padding-top: 10px;
+  color: #EE5A6D;
+}
+
+.p-contact-form__button {
+  padding-top: 70px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .p-contact-form__button {
+    padding-top: 72px;
+  }
+}
+
+/*----------------------------------------------------------
 Front-page_Footer
 ----------------------------------------------------------*/
 .p-footer-decoration {
@@ -5130,6 +5360,7 @@ CTA
   display: inline-block;
 }
 
+/*---------- 基本設定 ----------*/
 .u-text-emphasis {
   color: #EE5A6D;
   font-style: normal;
@@ -5140,6 +5371,10 @@ CTA
   line-height: 161%; /* 22.54px */
 }
 
+.u-line-height-140 {
+  line-height: 140%; /* 28px */
+}
+
 /*---------- single-blog ----------*/
 .u-text-link {
   color: #1391E6;
@@ -5147,4 +5382,8 @@ CTA
   font-weight: 500;
   line-height: 24px;
   text-decoration-line: underline;
+}
+
+.u-action-hidden {
+  display: none;
 }
