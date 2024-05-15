@@ -1,0 +1,24 @@
+@use "../../global" as global;
+/*----------------------------------------------------------
+Thunks
+----------------------------------------------------------*/
+.p-thunks {
+  padding-top: 57px;
+  padding-bottom: 99px;
+  @include global.mq(sm) {
+    padding-top: 78px;
+    padding-bottom: 157px;
+  }
+}
+.p-thunks__inner {
+  padding-inline: 20px;
+}
+.p-thunks__container {
+  max-width: 728px;
+  margin-inline: auto;
+}
+.p-thunks__text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+}

@@ -109,15 +109,19 @@ Hero
     gap: 9px;
   }
 }
-
 .home {
   color: #c2c2c2;
   font-size: 12px;
   font-weight: 500;
 }
-
 .page-page {
   color: global.$c-base-dark;
   font-size: 12px;
   font-weight: 500;
+}
+.page-thunks {
+  color: global.$c-base-dark;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: -1px;
 }

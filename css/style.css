@@ -1414,6 +1414,13 @@ Hero
   font-weight: 500;
 }
 
+.page-thunks {
+  color: #393939;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: -1px;
+}
+
 /*----------------------------------------------------------
 Front-page_Fv
 ----------------------------------------------------------*/
@@ -5173,6 +5180,35 @@ Booking
 
 .p-contact-form__button {
   padding-top: 72px;
+}
+
+/*----------------------------------------------------------
+Thunks
+----------------------------------------------------------*/
+.p-thunks {
+  padding-top: 57px;
+  padding-bottom: 99px;
+}
+@media screen and (min-width: 768px) {
+  .p-thunks {
+    padding-top: 78px;
+    padding-bottom: 157px;
+  }
+}
+
+.p-thunks__inner {
+  padding-inline: 20px;
+}
+
+.p-thunks__container {
+  max-width: 728px;
+  margin-inline: auto;
+}
+
+.p-thunks__text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
 }
 
 /*----------------------------------------------------------
