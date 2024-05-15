@@ -84,29 +84,83 @@ jQuery(function ($) {
   });
 
   //Contact Form バリデーションエラー
+
   const form = $(".p-contact-form");
-  const Elements = $(".p-contact-form__input, .p-contact-form__textarea");
-  const ErrorMessages = $(".p-contact-form__field-error");
+  const elements = $(".p-contact-form__input, .p-contact-form__textarea, .p-contact-form__radio-input, .p-contact-form__checkbox-input, .p-contact-form__select");
+  const errorMessages = $(".p-contact-form__field-error");
+
+  function showError(element) {
+    element.addClass("is-error");
+    element.closest(".p-contact-form__field-item").find(".p-contact-form__field-error").removeClass("u-action-hidden");
+  }
+
+  function hideError(element) {
+    element.removeClass("is-error");
+    element.closest(".p-contact-form__field-item").find(".p-contact-form__field-error").addClass("u-action-hidden");
+  }
 
   $(form).on("submit", function (e) {
     e.preventDefault();
-    Elements.removeClass("is-error");
+    elements.removeClass("is-error");
+    errorMessages.addClass("u-action-hidden");
+
     const form = $(this)[0];
-    if (form.checkValidity()) {
+    const radioGroup = $("input[name='your-radio']");
+    const checkBoxGroup = $("input[name='your-check']");
+    let isValid = form.checkValidity();
+
+    if (!radioGroup.is(":checked")) {
+      showError(radioGroup.closest(".p-contact-form__field-item"));
+      isValid = false;
+    }
+    if (!checkBoxGroup.is(":checked")) {
+      showError(checkBoxGroup.closest(".p-contact-form__field-item"));
+      isValid = false;
+    }
+
+    if (isValid) {
       alert("正常に送信されました");
       form.reset();
     }
   });
-  Elements.on("invalid", function () {
-    const fieldId = $(this).attr("id");
-    $(this).addClass("is-error");
-    $(this).next(ErrorMessages).removeClass("u-action-hidden");
+
+  elements.on("invalid", function () {
+    showError($(this));
   });
-  Elements.on("input", function () {
-    const fieldId = $(this).attr("id");
+
+  elements.on("input change", function () {
     if (this.checkValidity()) {
-      $(this).removeClass("is-error");
-      $(this).next(ErrorMessages).addClass("u-action-hidden");
+      hideError($(this));
     }
   });
+
+
+
+  // const form = $(".p-contact-form");
+  // const radio = $(".p-contact-form__radio-input");
+  // const Elements = $(".p-contact-form__input, .p-contact-form__textarea, .p-contact-form__radio-input");
+  // const ErrorMessages = $(".p-contact-form__field-error");
+
+  // $(form).on("submit", function (e) {
+  //   e.preventDefault();
+  //   Elements.removeClass("is-error");
+  //   const form = $(this)[0];
+  //   if (form.checkValidity()) {
+  //     alert("正常に送信されました");
+  //     form.reset();
+  //   }
+  // });
+  // Elements.on("invalid", function () {
+  //   const fieldId = $(this).attr("id");
+  //   $(this).addClass("is-error");
+  //   $(this).next(ErrorMessages).removeClass("u-action-hidden");
+  //   $(radio).parent().parent().next().removeClass("u-action-hidden");
+  // });
+  // Elements.on("input", function () {
+  //   const fieldId = $(this).attr("id");
+  //   if (this.checkValidity()) {
+  //     $(this).removeClass("is-error");
+  //     $(this).next(ErrorMessages).addClass("u-action-hidden");
+  //   }
+  // });
 });
