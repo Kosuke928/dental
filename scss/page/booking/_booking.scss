@@ -1,0 +1,276 @@
+@use "../../global" as global;
+/*----------------------------------------------------------
+Booking
+----------------------------------------------------------*/
+.p-booking {
+  padding-top: 58px;
+  @include global.mq(sm) {
+    padding-top: 80px;
+  }
+}
+.p-booking__inner {
+  padding-inline: 20px;
+}
+.p-booking__top {
+  max-width: 729px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.p-booking__block {
+}
+.p-booking-block01 {
+}
+.p-booking__block-title {
+  color: global.$c-base-dark;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  @include global.mq(sm) {
+    font-size: 28px;
+    letter-spacing: 2.24px;
+  }
+}
+.p-booking__block-text {
+  padding-top: 33px;
+  color: global.$c-base-dark;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+  @include global.mq(sm) {
+    padding-top: 37px;
+  }
+}
+
+.p-booking-block01__box {
+  padding-top: 19px;
+  position: relative;
+  @include global.mq(sm) {
+    padding-top: 22px;
+  }
+}
+.p-booking-block01__tel {
+  justify-content: start;
+}
+.p-booking-block01__business-hours {
+  color: global.$c-main;
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  bottom: -14px;
+  left: 44px;
+  @include global.mq(sm) {
+    left: 46px;
+  }
+}
+.p-booking-block01__text {
+}
+
+.p-booking-block02 {
+}
+.p-booking-block02__text {
+  padding-top: 20px;
+  @include global.mq(sm) {
+    padding-top: 25px;
+  }
+}
+
+/*---------- 予約フォーム ----------*/
+.p-booking__bottom {
+  padding-top: 96px;
+  @include global.mq(sm) {
+    padding-top: 152px;
+  }
+}
+.p-booking__title {
+}
+
+/*---------- ContactForm ----------*/
+// ラジオ
+.p-contact-form__field-radios {
+  margin-top: 7px;
+  display: flex;
+  gap: 40px;
+  @include global.mq(sm) {
+    margin-top: 0px;
+    gap: 32px;
+  }
+}
+.p-contact-form__field-radio {
+}
+.p-contact-form__radio-input {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+.p-contact-form__radio-text {
+  position: relative;
+  color: global.$c-base-dark;
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: calc(24px + 8px);
+}
+.p-contact-form__radio-text::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid global.$c-main;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.p-contact-form__radio-text::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: global.$c-main;
+  top: 50%;
+  left: 6px;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+.p-contact-form__radio-input:checked + .p-contact-form__radio-text::after {
+  opacity: 1;
+}
+
+// チェックボックス
+.p-contact-form__field-wrapper {
+  @include global.mq(sm) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.p-contact-form__field-footer {
+  padding-top: 2px;
+  color: global.$c-base-dark;
+  font-size: 11px;
+  font-weight: 500;
+}
+.p-contact-form__field-checkboxes {
+  margin-top: 7px;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 16px;
+  @include global.mq(sm) {
+    margin-top: 0;
+    column-gap: 32px;
+  }
+}
+.p-contact-form__field-checkbox {
+}
+.p-contact-form__checkbox-input {
+}
+.p-contact-form__checkbox-text {
+  position: relative;
+  padding-left: calc(24px + 4px);
+  font-size: 14px;
+  font-weight: 500;
+}
+.p-contact-form__checkbox-text::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 1px solid global.$c-main;
+  top: 50%;
+  left: -5px;
+  transform: translateY(-50%);
+}
+.p-contact-form__checkbox-text::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: url("../img/contact_checked.svg");
+  background-size: 15px 15px;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+.p-contact-form__checkbox-input:checked
+  + .p-contact-form__checkbox-text::after {
+  opacity: 1;
+}
+
+// セレクト
+.p-contact-form__custom-select-wrapper {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.p-contact-form__custom-select-wrapper::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: calc(12px + 50%);
+  right: -6px;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: url("../img/contact_arrow.svg") no-repeat;
+  mask-size: 32px 32px;
+}
+.p-contact-form__select {
+  width: 100%;
+  padding-block: 12px;
+  padding-left: 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: global.$c-base-dark;
+  background: #f6f6f6;
+}
+
+//希望日
+.p-contact-form__field-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+.p-contact-form__input-date {
+  position: relative;
+  padding-block: 12px;
+  padding-left: 10px;
+  letter-spacing: 1.5px;
+}
+.p-contact-form__input-date::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  background: transparent;
+  z-index: 1;
+}
+.p-contact-form__input-date::after {
+  content: "";
+  position: absolute;
+  top: calc(9px + 50%);
+  right: -6px;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: url("../img/contact_calendar.svg") no-repeat;
+  mask-size: 32px 32px;
+}
+.p-contact-form__textarea {
+}
+.p-contact-form__button {
+  padding-top: 72px;
+}
