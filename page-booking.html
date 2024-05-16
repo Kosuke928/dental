@@ -39,7 +39,7 @@
     <header class="l-header">
       <div class="l-header__inner">
         <h1 class="l-header__left">
-          <a href="#" class="c-site-logo"
+          <a href="./index.html" class="c-site-logo"
             ><img src="./img/site-logo.webp" alt="みなみ歯科クリニック"
           /></a>
         </h1>
@@ -54,7 +54,7 @@
           <nav class="p-gnav">
             <ul class="p-gnav__list">
               <li class="p-gnav__item is-active">
-                <a href="" class="p-gnav__link">
+                <a href="#" class="p-gnav__link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -71,7 +71,7 @@
                 </a>
               </li>
               <li class="p-gnav__item">
-                <a href="" class="p-gnav__link">
+                <a href="./page-about.html" class="p-gnav__link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -88,7 +88,7 @@
                 </a>
               </li>
               <li class="p-gnav__item">
-                <a href="" class="p-gnav__link">
+                <a href="./page-guid.html" class="p-gnav__link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -113,7 +113,7 @@
                 </a>
               </li>
               <li class="p-gnav__item">
-                <a href="" class="p-gnav__link">
+                <a href="./page-staff.html" class="p-gnav__link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -138,7 +138,7 @@
                 </a>
               </li>
               <li class="p-gnav__item">
-                <a href="" class="p-gnav__link">
+                <a href="./single.html" class="p-gnav__link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -155,7 +155,7 @@
                 </a>
               </li>
               <li class="p-gnav__item">
-                <a href="" class="p-gnav__link">
+                <a href="./page-contact.html" class="p-gnav__link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -193,13 +193,13 @@
 
         <div id="drawer" class="p-drawer" style="display: none">
           <div class="p-drawer__inner">
-            <a href="#" class="p-drawer__logo c-site-logo">
+            <a href="./index.html" class="p-drawer__logo c-site-logo">
               <img src="./img/site-logo.webp" alt="みなみ歯科クリニック" />
             </a>
             <nav class="p-drawer__nav p-dnav">
               <ul class="p-dnav__list">
                 <li class="p-dnav__item">
-                  <a href="" class="p-dnav__link">
+                  <a href="./index.html" class="p-dnav__link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -216,7 +216,7 @@
                   </a>
                 </li>
                 <li class="p-dnav__item">
-                  <a href="" class="p-dnav__link">
+                  <a href="./page-about.html" class="p-dnav__link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -233,7 +233,7 @@
                   </a>
                 </li>
                 <li class="p-dnav__item">
-                  <a href="" class="p-dnav__link">
+                  <a href="./page-guid.html" class="p-dnav__link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -258,7 +258,7 @@
                   </a>
                 </li>
                 <li class="p-dnav__item">
-                  <a href="" class="p-dnav__link">
+                  <a href="./page-staff.html" class="p-dnav__link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -283,7 +283,7 @@
                   </a>
                 </li>
                 <li class="p-dnav__item">
-                  <a href="" class="p-dnav__link">
+                  <a href="./single.html" class="p-dnav__link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -300,7 +300,7 @@
                   </a>
                 </li>
                 <li class="p-dnav__item">
-                  <a href="" class="p-dnav__link">
+                  <a href="./page-contact.html" class="p-dnav__link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -350,7 +350,11 @@
             </span>
             >
             <span property="itemListElement" typeof="ListItem">
-              <a property="item" typeof="WebPage" href="/" class="page-page"
+              <a
+                property="item"
+                typeof="WebPage"
+                href="./page-booking.html"
+                class="page-page"
                 ><span property="name">WEB予約</span></a
               >
               <meta property="position" content="2" />
@@ -361,7 +365,7 @@
     </div>
 
     <main>
-      <div class="p-booking">
+      <div id="booking" class="p-booking">
         <div class="p-booking__inner l-inner">
           <div class="p-booking__top">
             <div class="p-booking__block p-booking-block01">
@@ -397,7 +401,11 @@
             <h2 class="p-booking__title c-title-sec u-line-height-140">
               予約フォーム
             </h2>
-            <form class="p-contact__form p-contact-form">
+            <form
+              action="./page-thanks-booking.html"
+              method="post"
+              class="p-contact__form p-contact-form"
+            >
               <!-- Form -->
               <div class="p-contact-form__fields">
                 <!-- Name-field -->
@@ -553,7 +561,6 @@
                           name="your-check"
                           id="your-check1"
                           class="p-contact-form__checkbox-input"
-                          required
                         />
                         <span class="p-contact-form__checkbox-text">虫歯</span>
                       </label>
@@ -563,7 +570,6 @@
                           name="your-check"
                           id="your-check2"
                           class="p-contact-form__checkbox-input"
-                          required
                         />
                         <span class="p-contact-form__checkbox-text"
                           >被せ物がとれた</span
@@ -575,7 +581,6 @@
                           name="your-check"
                           id="your-check3"
                           class="p-contact-form__checkbox-input"
-                          required
                         />
                         <span class="p-contact-form__checkbox-text"
                           >矯正歯科</span
@@ -585,9 +590,8 @@
                         <input
                           type="checkbox"
                           name="your-check"
-                          id="your-check4
+                          id="your-check4"
                           class="p-contact-form__checkbox-input"
-                          required
                         />
                         <span class="p-contact-form__checkbox-text"
                           >咬み合わせ</span
@@ -599,7 +603,6 @@
                           name="your-check"
                           id="your-check5"
                           class="p-contact-form__checkbox-input"
-                          required
                         />
                         <span class="p-contact-form__checkbox-text"
                           >歯周病</span
@@ -611,7 +614,6 @@
                           name="your-check"
                           id="your-check6"
                           class="p-contact-form__checkbox-input"
-                          required
                         />
                         <span class="p-contact-form__checkbox-text"
                           >小児歯科</span
@@ -623,7 +625,6 @@
                           name="your-check"
                           id="your-check7"
                           class="p-contact-form__checkbox-input"
-                          required
                         />
                         <span class="p-contact-form__checkbox-text"
                           >入れ歯</span
@@ -635,7 +636,6 @@
                           name="your-check"
                           id="your-check8"
                           class="p-contact-form__checkbox-input"
-                          required
                         />
                         <span class="p-contact-form__checkbox-text"
                           >インプラント</span
@@ -647,7 +647,6 @@
                           name="your-check"
                           id="your-check9"
                           class="p-contact-form__checkbox-input"
-                          required
                         />
                         <span class="p-contact-form__checkbox-text"
                           >その他</span
@@ -731,7 +730,6 @@
                       id="your-message"
                       class="p-contact-form__textarea"
                       placeholder="ご自由にご記入ください。"
-                      required
                       cols="30"
                       rows="6"
                     ></textarea>
@@ -776,7 +774,7 @@
               </p>
               <div class="p-access-box__buttons">
                 <div class="p-access-box__bokking">
-                  <a href="#" class="c-button-cir-md--main">
+                  <a href="./page-booking.html" class="c-button-cir-md--main">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="30"
@@ -797,7 +795,7 @@
                   </a>
                 </div>
                 <div class="p-access-box__contact">
-                  <a href="#" class="c-button-cir-md">
+                  <a href="./page-contact.html" class="c-button-cir-md">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -846,44 +844,94 @@
           </div>
           <div class="l-footer__nav">
             <ul class="p-lnav">
-              <li class="p-lnav__item">TOP</li>
+              <li class="p-lnav__item"><a class="p-lnav__link" href="./index.html">TOP</a></li>
               <li class="p-lnav__item">
                 当院について
                 <ul class="p-lnav__secondary p-lnav-secodary__list">
-                  <li class="p-lnav-secondary__item">ポリシーと特徴</li>
-                  <li class="p-lnav-secondary__item">当院の様子</li>
+                  <li class="p-lnav-secondary__item">
+                    <a
+                      href="./page-about.html#policy"
+                      class="p-lnav-secondary__link"
+                    >
+                      ポリシーと特徴
+                    </a>
+                  </li>
+                  <li class="p-lnav-secondary__item">
+                    <a
+                      href="./page-about.html#exhibition"
+                      class="p-lnav-secondary__link"
+                    >
+                      当院の様子
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li class="p-lnav__item">
                 スタッフ紹介
                 <ul class="p-lnav__secondary p-lnav-secodary__list">
-                  <li class="p-lnav-secondary__item">院長のあいさつ</li>
-                  <li class="p-lnav-secondary__item">スタッフ</li>
-                  <li class="p-lnav-secondary__item">スタッフブログ</li>
+                  <li class="p-lnav-secondary__item">
+                    <a href="./page-staff.html#greeting" class="p-lnav-secondary__link">
+                      院長のあいさつ
+                    </a>
+                  </li>
+                  <li class="p-lnav-secondary__item">
+                    <a href="./page-staff.html#staff" class="p-lnav-secondary__link">スタッフ</a>
+                  </li>
+                  <li class="p-lnav-secondary__item">
+                    <a href="./single.html" class="p-lnav-secondary__link">
+                      スタッフブログ
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li class="p-lnav__item">
                 診療内容
                 <div class="p-lnav__secondary p-lnav-secodary__box">
                   <ul class="p-lnav-secodary__list">
-                    <li class="p-lnav-secondary__item">一般歯科</li>
-                    <li class="p-lnav-secondary__item">小児歯科</li>
-                    <li class="p-lnav-secondary__item">予防歯科</li>
-                    <li class="p-lnav-secondary__item">入れ歯</li>
+                    <li class="p-lnav-secondary__item">
+                      <a href="./page-guid.html#general01" class="p-lnav-secondary__link"> 一般歯科 </a>
+                    </li>
+                    <li class="p-lnav-secondary__item">
+                      <a href="./page-guid.html#general02" class="p-lnav-secondary__link"> 小児歯科 </a>
+                    </li>
+                    <li class="p-lnav-secondary__item">
+                      <a href="./page-guid.html#general03" class="p-lnav-secondary__link"> 予防歯科 </a>
+                    </li>
+                    <li class="p-lnav-secondary__item">
+                      <a href="./page-guid.html#special01" class="p-lnav-secondary__link"> 入れ歯 </a>
+                    </li>
                   </ul>
                   <ul class="p-lnav-secodary__list">
-                    <li class="p-lnav-secondary__item">矯正歯科</li>
-                    <li class="p-lnav-secondary__item">ホワイトニング</li>
-                    <li class="p-lnav-secondary__item">口腔外科</li>
-                    <li class="p-lnav-secondary__item">レーザー治療</li>
+                    <li class="p-lnav-secondary__item">
+                      <a href="./page-guid.html#special02" class="p-lnav-secondary__link"> 矯正歯科 </a>
+                    </li>
+                    <li class="p-lnav-secondary__item">
+                      <a href="./page-guid.html#special03" class="p-lnav-secondary__link">
+                        ホワイトニング
+                      </a>
+                    </li>
+                    <li class="p-lnav-secondary__item">
+                      <a href="./page-guid.html#special04" class="p-lnav-secondary__link"> 口腔外科 </a>
+                    </li>
+                    <li class="p-lnav-secondary__item">
+                      <a href="./page-guid.html#special05" class="p-lnav-secondary__link">
+                        レーザー治療
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </li>
               <li class="p-lnav__item">
                 お問い合わせ
                 <ul class="p-lnav__secondary p-lnav-secodary__list">
-                  <li class="p-lnav-secondary__item">お問い合わせフォーム</li>
-                  <li class="p-lnav-secondary__item">WEB予約</li>
+                  <li class="p-lnav-secondary__item">
+                    <a href="./page-contact.html" class="p-lnav-secondary__link">
+                      お問い合わせフォーム
+                    </a>
+                  </li>
+                  <li class="p-lnav-secondary__item">
+                    <a href="./page-booking.html" class="p-lnav-secondary__link"> WEB予約 </a>
+                  </li>
                 </ul>
               </li>
             </ul>

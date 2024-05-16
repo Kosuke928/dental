@@ -197,6 +197,10 @@ Front-page_Footer
     font-size: 16px;
   }
 }
+.p-lnav__link {
+  color: inherit;
+  font-weight: inherit;
+}
 .p-lnav__secondary {
 }
 .p-lnav-secodary__list {
@@ -208,12 +212,13 @@ Front-page_Footer
 .p-lnav-secondary__item {
   margin-top: 17px;
   padding-left: calc(6px + 6px);
+  position: relative;
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+.p-lnav-secondary__link {
   color: global.$c-base-dark;
   font-weight: 500;
-  position: relative;
-  cursor: pointer;
-  opacity: 1;
-  transition: opacity .3s;
 }
 .p-lnav-secondary__item:hover {
   opacity: 0.6;

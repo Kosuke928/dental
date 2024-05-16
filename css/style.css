@@ -5183,29 +5183,29 @@ Booking
 }
 
 /*----------------------------------------------------------
-Thunks
+Thanks
 ----------------------------------------------------------*/
-.p-thunks {
+.p-thanks {
   padding-top: 57px;
   padding-bottom: 99px;
 }
 @media screen and (min-width: 768px) {
-  .p-thunks {
+  .p-thanks {
     padding-top: 78px;
     padding-bottom: 157px;
   }
 }
 
-.p-thunks__inner {
+.p-thanks__inner {
   padding-inline: 20px;
 }
 
-.p-thunks__container {
+.p-thanks__container {
   max-width: 728px;
   margin-inline: auto;
 }
 
-.p-thunks__text {
+.p-thanks__text {
   font-size: 14px;
   font-weight: 500;
   line-height: 24px; /* 171.429% */
@@ -5447,6 +5447,11 @@ Front-page_Footer
   }
 }
 
+.p-lnav__link {
+  color: inherit;
+  font-weight: inherit;
+}
+
 .p-lnav-secodary__list {
   margin-top: 2px;
   display: -webkit-box;
@@ -5462,13 +5467,15 @@ Front-page_Footer
 .p-lnav-secondary__item {
   margin-top: 17px;
   padding-left: 12px;
-  color: #393939;
-  font-weight: 500;
   position: relative;
-  cursor: pointer;
-  opacity: 1;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
+  opacity: 1;
+}
+
+.p-lnav-secondary__link {
+  color: #393939;
+  font-weight: 500;
 }
 
 .p-lnav-secondary__item:hover {
