@@ -12,6 +12,8 @@ Guid
 
 .p-treatment__inner {
   padding-inline: 20px;
+  max-width: 1280px;
+  margin-inline: auto;
   @include global.mq(sm) {
     padding-left: 62px;
   }
