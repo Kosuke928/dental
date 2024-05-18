@@ -12,6 +12,7 @@
   background: global.$c-base-light;
   padding-block: 9px;
   padding-inline: 40px;
+  transition: background-color .3s, color .3s;
   @include global.mq(lg) {
     padding-block: 10px;
     padding-inline: 45px;
@@ -135,6 +136,7 @@
   border: 1px solid global.$c-main;
   background-color: global.$c-base-light;
   text-align: center;
+  transition: background-color .3s, color .3s;
   @include global.mq(sm) {
     min-width: 140px;
     padding-inline: calc(32px - 3px);
@@ -144,6 +146,10 @@
     font-size: 24px;
     letter-spacing: 1.92px;
   }
+}
+.c-button-cat:hover {
+  background-color: global.$c-main;
+  color: global.$c-base-light;
 }
 
 /*---------- Contact submit ----------*/
@@ -161,6 +167,7 @@
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 1.12px;
+  transition: background-color .3s, color .3s;
   @include global.mq(sm) {
     border-radius: 28px;
     padding-top: calc(16px - 1px);
@@ -170,4 +177,8 @@
     font-size: 16px;
     letter-spacing: 1.28px;
   }
+}
+.c-button-submit:hover {
+  background-color: global.$c-main;
+  color: global.$c-base-light;
 }

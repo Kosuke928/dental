@@ -8,4 +8,9 @@
   font-weight: 500;
   line-height: 24px;
   text-decoration-line: underline;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.u-text-link:hover {
+  opacity: 0.5;
 }
