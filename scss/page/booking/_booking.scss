@@ -112,6 +112,7 @@ Booking
   font-size: 14px;
   font-weight: 500;
   padding-left: calc(24px + 8px);
+  cursor: pointer;
 }
 .p-contact-form__radio-text::before {
   content: "";
@@ -177,6 +178,7 @@ Booking
   padding-left: calc(24px + 4px);
   font-size: 14px;
   font-weight: 500;
+  cursor: pointer;
 }
 .p-contact-form__checkbox-text::before {
   content: "";
@@ -233,6 +235,7 @@ Booking
   font-weight: 500;
   color: global.$c-base-dark;
   background: #f6f6f6;
+  cursor: pointer;
 }
 
 //希望日
@@ -257,6 +260,7 @@ Booking
   height: auto;
   background: transparent;
   z-index: 1;
+  cursor: pointer;
 }
 .p-contact-form__input-date::after {
   content: "";
@@ -271,6 +275,6 @@ Booking
 }
 .p-contact-form__textarea {
 }
-.p-contact-form__button {
+.p-contact-form__button--booking{
   padding-top: 72px;
 }

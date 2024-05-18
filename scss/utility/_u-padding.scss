@@ -2,10 +2,14 @@
 
 //*---------- Contact ----------*/
 .u-padding-block01 {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  @include global.mq(sm) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 .u-padding-block02 {
-  padding-top: 24px;
-  padding-bottom: 21px;
+  @include global.mq(sm) {
+    padding-top: 24px;
+    padding-bottom: 21px;
+  }
 }

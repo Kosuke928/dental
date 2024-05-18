@@ -7,7 +7,7 @@ Sidebar
 
 .p-sidebar {
   padding-top: 70px;
-  padding-bottom: 100px;
+  padding-bottom: 98px;
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -58,6 +58,11 @@ Sidebar
   color: global.$c-main;
   font-size: 14px;
   font-weight: 500;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.p-sidebar-block01__link:hover {
+  opacity: 0.5;
 }
 
 /*---------- 新着記事 ----------*/
@@ -82,24 +87,6 @@ Sidebar
   display: flex;
   gap: 10px;
   max-width: 335px;
-}
-.p-blog-box__card {
-  position: relative;
-}
-.p-blog-box__card::after {
-  content: "NEW";
-  display: grid;
-  place-items: center;
-  height: 40px;
-  width: 40px;
-  color: global.$c-base-light;
-  font-size: 10px;
-  font-weight: 700;
-  background-color: global.$c-accent;
-  border-radius: 50%;
-  position: absolute;
-  top: -8px;
-  left: -8px;
 }
 .p-sidebar-post__img {
   overflow: hidden;
@@ -197,6 +184,11 @@ Sidebar
   color: global.$c-base-dark;
   font-weight: 500;
   padding-left: calc(6px + 6px);
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.p-sidebar-block03__link:hover {
+  opacity: 0.5;
 }
 .p-sidebar-block03__link::before {
   content: "";
