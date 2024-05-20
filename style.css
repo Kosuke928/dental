@@ -2032,7 +2032,7 @@ Front-page_Recommend
         -ms-flex-pack: center;
             justify-content: center;
     max-width: 966px;
-    width: 100%;
+    width: 75.46875%;
     margin: 0 auto;
   }
 }
@@ -4907,13 +4907,13 @@ Contact
 }
 
 /*---------- ContactForm ----------*/
-.p-contact-form__fields {
+.p-contact__form {
   padding-top: 69px;
   max-width: 728px;
   margin-inline: auto;
 }
 @media screen and (min-width: 768px) {
-  .p-contact-form__fields {
+  .p-contact__form {
     padding-top: 71px;
   }
 }
@@ -5642,7 +5642,7 @@ Front-page_Footer
   font-weight: inherit;
 }
 
-.p-lnav-secondary__list {
+.p-lnav-secodary__list {
   margin-top: 2px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5686,7 +5686,7 @@ Front-page_Footer
   background-size: 6px 12px;
 }
 
-.p-lnav-secondary__box {
+.p-lnav-secodary__box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

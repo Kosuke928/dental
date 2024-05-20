@@ -36,17 +36,18 @@ Contact
 
 /*---------- ContactForm ----------*/
 .p-contact__form {
+
+}
+.p-contact-form {
+}
+
+.p-contact-form__fields {
   padding-top: 69px;
   max-width: 728px;
   margin-inline: auto;
   @include global.mq(sm) {
     padding-top: 71px;
   }
-}
-.p-contact-form {
-}
-
-.p-contact-form__fields {
 }
 
 .p-contact-form__field {
@@ -126,4 +127,3 @@ Contact
     padding-top: 72px;
   }
 }
-
