@@ -170,13 +170,8 @@ class My_Footer_Nav_Walker extends Walker_Nav_Menu {
     $indent = str_repeat("\t", $depth);
     if ($depth === 0) {
       //⇩ 組み立て($outputに値を繋げていく)
-      $output .= "\n" . $indent . '<div class="p-lnav__secondary p-lnav-secondary__box">' . "\n";
+      $output .= "\n" . $indent . '<div class="p-lnav__secondary p-lnav-secondary">' . "\n";
       $output .= $indent . '<ul class="p-lnav-secondary__list">' . "\n";
-      // ⇩ liの数を数えるカウント数を、<ul>タグが始まる度にリセットする
-      if ( $this->depth1_li_count > 1 ) {
-        $output .= "\n" . '</ul>' . "\n"; // 現在の ul を閉じる
-        $output .= "\n" . $indent . '<ul class="p-lnav-secondary__list">' . "\n"; // 新しい ul リストを開始
-      }
       $this->depth1_li_count = 0;
     }
   }
