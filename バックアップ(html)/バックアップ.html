@@ -1,0 +1,96 @@
+✅カスタムウォーカークラスの定義
+  class My_Globalnav_Walker extends Walker_Nav_Menu {}
+✅レベルの最初の部分（= <ul>）を定義
+  function start_lvl(&$output, $depth=0, $args=null) { }
+✅レベルの最後の部分（= </ul>）を定義
+  function end_lvl(&$output, $depth=0, $args=null) { }
+✅HTML要素の最初（= <li><a>）を定義
+  function start_el(&$output, $item, $depth=0, $args=null, $id=0) { }
+✅HTML要素の最後（= </li></a>）を定義
+  function end_el(&$output, $item, $depth=0, $args=null) { }
+
+
+class My_Custom_Nav_Walker extends Walker_Nav_Menu {
+
+    // Start Level
+    function start_lvl( &$output, $depth = 0, $args = null ) {
+        if ( $depth === 0 ) {
+            $output .= '<ul class="p-lnav">';
+        } elseif ( $depth === 1 ) {
+            $output .= '<ul class="p-lnav-secondary">';
+        }
+    }
+
+class My_Custom_Nav_Walker extends Walker_Nav_Menu {
+
+  // Start Level for sub-menu
+  function start_lvl(&$output, $depth = 0, $args = null) {
+      // Add custom class to sub-menu ul
+      if ($depth === 0) {
+          $menu_title = $args->menu->name;
+          if ($menu_title !== '診療内容') {
+              $output .= '<ul class="p-lnav__secondary p-lnav-secodary__list sub-menu">';
+          } else {
+              $output .= '<div class="p-lnav__secondary p-lnav-secodary__box"><ul class="p-lnav-secodary__list">';
+          }
+      }
+  }
+
+  // End Level
+  function end_lvl(&$output, $depth = 0, $args = null) {
+      if ($depth === 0) {
+          $output .= '</ul>';
+      } elseif ($depth === 1) {
+          $output .= '</ul>';
+          $output .= '</div>';
+      }
+  }
+
+  // Start Element
+  function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
+      $indent = ($depth) ? str_repeat("\t", $depth) : '';
+
+      // 初期クラス設定
+      $classes = array('p-lnav__item');
+
+      // $depth が 1 以上の場合、追加クラスを変更
+      if ($depth > 0) {
+          $classes[] = 'p-lnav-secondary__item';
+      }
+
+      // WordPressからの既存のクラスを追加
+      if (!empty($item->classes) && is_array($item->classes)) {
+          $classes = array_merge($classes, $item->classes);
+      }
+
+      $output .= $indent . '<li id="menu-item-' . $item->ID . '" class="' . implode(' ', $classes) . '">';
+
+      $atts = array();
+      $atts['title']  = !empty($item->attr_title) ? $item->attr_title : '';
+      $atts['target'] = !empty($item->target)     ? $item->target     : '';
+      $atts['rel']    = !empty($item->xfn)        ? $item->xfn        : '';
+      $atts['href']   = !empty($item->url)        ? $item->url        : '';
+
+      $atts_str = '';
+      foreach ($atts as $key => $value) {
+          if (!empty($value)) {
+              $atts_str .= ' ' . $key . '="' . $value . '"';
+          }
+      }
+
+      $output .= '<a class="p-lnav__link"' . $atts_str . '>';
+      $output .= apply_filters('the_title', $item->title, $item->ID);
+      $output .= '</a>';
+  }
+
+  // End Element
+  function end_el(&$output, $item, $depth = 0, $args = null) {
+      $indent = ($depth) ? str_repeat("\t", $depth) : '';
+      $output .= "$indent</li>\n";
+  }
+}
+
+
+
+
+

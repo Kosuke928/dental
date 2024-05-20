@@ -34,7 +34,7 @@ Front-page_Recommend
     flex-direction: row;
     justify-content: center;
     max-width: 966px;
-    width: calc(966px / 1280px * 100);
+    width: 100%;
     margin: 0 auto;
   }
   @include global.mq(md) {
