@@ -177,7 +177,7 @@ Front-page_Footer
 .p-lnav {
   display: flex;
   flex-direction: column;
-  gap: 38px;
+  gap: 39px;
   @include global.mq(sm) {
     gap: 25px;
     flex-direction: row;
@@ -203,14 +203,16 @@ Front-page_Footer
 }
 .p-lnav__secondary {
 }
-.p-lnav-secondary__list {
-  margin-top: 2px;
+.p-lnav-secondary {
   display: flex;
-  flex-direction: column;
-  gap: 1px;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: start;
+}
+.p-lnav-secondary__list {
 }
 .p-lnav-secondary__item {
-  margin-top: 17px;
+  margin-top: 18px;
   padding-left: calc(6px + 6px);
   position: relative;
   transition: opacity 0.3s;
@@ -234,11 +236,6 @@ Front-page_Footer
   transform: translateY(-50%);
   background: url("../img/arrow-right-icon.svg") no-repeat center center;
   background-size: 6px 12px;
-}
-.p-lnav-secondary__box {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
 }
 
 //*------------------------------
