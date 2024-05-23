@@ -23,3 +23,14 @@ select {
   -moz-appearance: none;
   appearance: none;
 }
+
+.wpcf7-form.invalid .wpcf7-response-output {
+  display: none;
+}
+.wpcf7-form.sent .wpcf7-response-output {
+  display: none;
+}
+
+.wpcf7-list-item{
+  margin: 0;
+}

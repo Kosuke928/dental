@@ -535,26 +535,30 @@
                   </div>
                   <span class="p-contact-form__field-item">
                     <span class="p-contact-form__field-radios">
-                      <label class="p-contact-form__field-radio">
-                        <input
-                          type="radio"
-                          name="your-radio"
-                          id="your-radio1"
-                          class="p-contact-form__radio-input"
-                          required
-                        />
-                        <span class="p-contact-form__radio-text">初診</span>
-                      </label>
-                      <label class="p-contact-form__field-radio">
-                        <input
-                          type="radio"
-                          name="your-radio"
-                          id="your-radio2"
-                          class="p-contact-form__radio-input"
-                          required
-                        />
-                        <span class="p-contact-form__radio-text">再診</span>
-                      </label>
+                      <!-- CF7時にはここから消す -->
+                      <!-- ⇩これが、CF7でradio選択時の追加クラスになる -->
+                      <span class="p-contact-form__field-radio">
+                        <label>
+                          <input
+                            type="radio"
+                            name="your-radio"
+                            id="your-radio1"
+                            required
+                          />
+                          <span>初診</span>
+                        </label>
+                      </span>
+                      <span class="p-contact-form__field-radio">
+                        <label>
+                          <input
+                            type="radio"
+                            name="your-radio"
+                            id="your-radio2"
+                            required
+                          />
+                          <span>再診</span>
+                        </label>
+                      </span>
                     </span>
                     <span class="p-contact-form__field-error u-action-hidden"
                       >必須項目に入力してください。</span
@@ -576,103 +580,97 @@
                   </div>
                   <span class="p-contact-form__field-item">
                     <span class="p-contact-form__field-checkboxes">
-                      <label class="p-contact-form__field-checkbox">
-                        <input
-                          type="checkbox"
-                          name="your-check"
-                          id="your-check1"
-                          class="p-contact-form__checkbox-input"
-                        />
-                        <span class="p-contact-form__checkbox-text">虫歯</span>
-                      </label>
-                      <label class="p-contact-form__field-checkbox">
-                        <input
-                          type="checkbox"
-                          name="your-check"
-                          id="your-check2"
-                          class="p-contact-form__checkbox-input"
-                        />
-                        <span class="p-contact-form__checkbox-text"
-                          >被せ物がとれた</span
-                        >
-                      </label>
-                      <label class="p-contact-form__field-checkbox">
-                        <input
-                          type="checkbox"
-                          name="your-check"
-                          id="your-check3"
-                          class="p-contact-form__checkbox-input"
-                        />
-                        <span class="p-contact-form__checkbox-text"
-                          >矯正歯科</span
-                        >
-                      </label>
-                      <label class="p-contact-form__field-checkbox">
-                        <input
-                          type="checkbox"
-                          name="your-check"
-                          id="your-check4"
-                          class="p-contact-form__checkbox-input"
-                        />
-                        <span class="p-contact-form__checkbox-text"
-                          >咬み合わせ</span
-                        >
-                      </label>
-                      <label class="p-contact-form__field-checkbox">
-                        <input
-                          type="checkbox"
-                          name="your-check"
-                          id="your-check5"
-                          class="p-contact-form__checkbox-input"
-                        />
-                        <span class="p-contact-form__checkbox-text"
-                          >歯周病</span
-                        >
-                      </label>
-                      <label class="p-contact-form__field-checkbox">
-                        <input
-                          type="checkbox"
-                          name="your-check"
-                          id="your-check6"
-                          class="p-contact-form__checkbox-input"
-                        />
-                        <span class="p-contact-form__checkbox-text"
-                          >小児歯科</span
-                        >
-                      </label>
-                      <label class="p-contact-form__field-checkbox">
-                        <input
-                          type="checkbox"
-                          name="your-check"
-                          id="your-check7"
-                          class="p-contact-form__checkbox-input"
-                        />
-                        <span class="p-contact-form__checkbox-text"
-                          >入れ歯</span
-                        >
-                      </label>
-                      <label class="p-contact-form__field-checkbox">
-                        <input
-                          type="checkbox"
-                          name="your-check"
-                          id="your-check8"
-                          class="p-contact-form__checkbox-input"
-                        />
-                        <span class="p-contact-form__checkbox-text"
-                          >インプラント</span
-                        >
-                      </label>
-                      <label class="p-contact-form__field-checkbox">
-                        <input
-                          type="checkbox"
-                          name="your-check"
-                          id="your-check9"
-                          class="p-contact-form__checkbox-input"
-                        />
-                        <span class="p-contact-form__checkbox-text"
-                          >その他</span
-                        >
-                      </label>
+                      <!-- CF7では以降を消す -->
+                      <span class="p-contact-form__field-checkbox">
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="your-check"
+                            id="your-check1"
+                          />
+                          <span>虫歯</span>
+                        </label>
+                      </span>
+                      <span class="p-contact-form__field-checkbox">
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="your-check"
+                            id="your-check1"
+                          />
+                          <span>被せ物がとれた</span>
+                        </label>
+                      </span>
+                      <span class="p-contact-form__field-checkbox">
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="your-check"
+                            id="your-check1"
+                          />
+                          <span>矯正歯科</span>
+                        </label>
+                      </span>
+                      <span class="p-contact-form__field-checkbox">
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="your-check"
+                            id="your-check1"
+                          />
+                          <span>咬み合わせ</span>
+                        </label>
+                      </span>
+                      <span class="p-contact-form__field-checkbox">
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="your-check"
+                            id="your-check1"
+                          />
+                          <span>歯周病</span>
+                        </label>
+                      </span>
+                      <span class="p-contact-form__field-checkbox">
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="your-check"
+                            id="your-check1"
+                          />
+                          <span>小児歯科</span>
+                        </label>
+                      </span>
+                      <span class="p-contact-form__field-checkbox">
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="your-check"
+                            id="your-check1"
+                          />
+                          <span>入れ歯</span>
+                        </label>
+                      </span>
+                      <span class="p-contact-form__field-checkbox">
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="your-check"
+                            id="your-check1"
+                          />
+                          <span>インプラント</span>
+                        </label>
+                      </span>
+                      <span class="p-contact-form__field-checkbox">
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="your-check"
+                            id="your-check1"
+                          />
+                          <span>その他</span>
+                        </label>
+                      </span>
                     </span>
                     <span class="p-contact-form__field-error u-action-hidden"
                       >必須項目に入力してください。</span
@@ -711,8 +709,7 @@
                 <!-- Datetime-field -->
                 <div class="p-contact-form__field">
                   <div class="p-contact-form__field-head">
-                    <label
-                      class="p-contact-form__field-label u-cursor-none"
+                    <label class="p-contact-form__field-label u-cursor-none"
                       >希望日</label
                     >
                   </div>

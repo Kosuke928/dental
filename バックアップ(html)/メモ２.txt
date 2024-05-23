@@ -6,3 +6,93 @@
 
 【footer】
 ✅繰り返しの画像については、基本的にパーツ単位で取ってくる事
+
+
+
+[radio radio-137 class:wpcf7-list-item default:1 "選択肢a" "選択肢b"
+"選択肢c"]
+⇩
+<span class="wpcf7-form-control-wrap your-radio">
+    <span class="wpcf7-form-control wpcf7-radio">
+
+        <span class="wpcf7-list-item first">
+            <input type="radio" name="your-radio" value="選択技1" checked="checked">
+            <span class="wpcf7-list-item-label">
+            ::before
+            選択技1
+            ::after
+            </span>
+        </span>
+
+        <span class="wpcf7-list-item">
+            <input type="radio" name="your-radio" value="選択技2">
+            <span class="wpcf7-list-item-label">
+            ::before
+            選択技2
+            ::after
+            </span>
+        </span>
+        <span class="wpcf7-list-item last">
+            <input type="radio" name="your-radio" value="選択技3">
+            <span class="wpcf7-list-item-label">
+            ::before
+            選択技3
+            ::after
+            </span>
+        </span>
+    </span>
+</span>
+
+//use_label_element
+[radio radio-137 use_label_element class:wpcf7-list-item default:1 "選択肢a" "選択肢b"
+"選択肢c"]
+⇩
+<label>
+  <input type="radio" name="your-radio" value="選択技1" checked="checked">
+  <span class="wpcf7-list-item-label">
+  ::before
+  選択技1
+  ::after
+  </span>
+<label>
+
+
+
+
+
+
+<!-- 名前 -->
+[text* your-name id:your-name class:p-contact-form__input" placeholder "山田　太郎"]
+<!-- フリガナ -->
+[text* your-furigana id:your-furigana class:p-contact-form__input" placeholder "ヤマダ　タロウ"]
+<!-- 電話番号 -->
+[text* your-tel id:your-tel class:p-contact-form__input" placeholder "000-0000-0000"]
+<!-- メール -->
+[email* your-email id:your-email class:p-contact-form__input placeholder "xxx@example.com"]
+<!-- ラジオ -->
+[radio your-radio id:your-radio class:p-contact-form__field-radio
+use_label_element default:1 "初診" "再診"]
+<!-- チェックボックス -->
+[checkbox* checkbox-877 id:aaa class:bbb use_label_element "虫歯"
+"被せ物がとれた" "矯正歯科" "歯周病" "小児歯科" "入れ歯" "インプラント" "その他"
+]
+
+
+<div class="p-contact-form__fields">
+<!-- Radio-field -->
+<div class="p-contact-form__field u-padding-block01">
+<div class="p-contact-form__field-head u-sm-gap16">
+<p class="p-contact-form__field-label u-cursor-none">初診/再診</p>
+<span class="p-contact-form__field-tag c-tag-required">必須</span>
+</div>
+<span class="p-contact-form__field-item">
+<span class="p-contact-form__field-radios">
+[radio your-radio id:your-radio class:p-contact-form__field-radio
+use_label_element default:1 "初診" "再診"]
+</span>
+<span class="p-contact-form__field-error u-action-hidden"
+>必須項目に入力してください。</span
+>
+</span>
+</div>
+</div>

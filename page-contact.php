@@ -5,8 +5,8 @@
       <div class="p-hero__top">
         <figure class="p-hero__img">
           <picture>
-            <source media="(min-width: 768px)" srcset="./img/contact_hero_pc.webp" width="1160" height="340" />
-            <img src="./img/contact_hero_sp.webp" alt="" decoding="async" width="335" height="188" />
+            <source media="(min-width: 768px)" srcset="<?= get_template_directory_uri(); ?>/img/contact_hero_pc.webp" width="1160" height="340" />
+            <img src="<?= get_template_directory_uri(); ?>/img/contact_hero_sp.webp" alt="" decoding="async" width="335" height="188" />
           </picture>
         </figure>
         <div class="p-hero__catch-copy">

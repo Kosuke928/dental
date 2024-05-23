@@ -1,0 +1,62 @@
+<!-- Form -->
+<div class="p-contact-form__fields">
+  <!-- Name-field -->
+  <div class="p-contact-form__field">
+  <div class="p-contact-form__field-head">
+  <label for="your-name" class="p-contact-form__field-label">お名前</label>
+  <span class="p-contact-form__field-tag c-tag-required">必須</span>
+  </div>
+  <span class="p-contact-form__field-item">
+  [text* your-name id:your-name class:p-contact-form__input placeholder "山田　太郎"]
+  <span class="p-contact-form__field-error u-action-hidden">必須項目に入力してください。</span>
+  </span>
+  </div>
+  <!-- Furigana-field -->
+  <div class="p-contact-form__field">
+  <div class="p-contact-form__field-head">
+  <label for="your-furigana" class="p-contact-form__field-label">フリガナ</label>
+  <span class="p-contact-form__field-tag c-tag-required">必須</span>
+  </div>
+  <span class="p-contact-form__field-item">
+  [text* your-furigana id:your-furigana class:p-contact-form__input placeholder "ヤマダ　タロウ"]
+  <span class="p-contact-form__field-error u-action-hidden">必須項目に入力してください。</span>
+  </span>
+  </div>
+  <!-- Telephone-field -->
+  <div class="p-contact-form__field">
+  <div class="p-contact-form__field-head">
+  <label for="your-tel" class="p-contact-form__field-label">電話番号</label>
+  <span class="p-contact-form__field-tag c-tag-required">必須</span>
+  </div>
+  <span class="p-contact-form__field-item">
+  [text* your-tel id:your-tel class:p-contact-form__input placeholder "000-0000-0000"]
+  <span class="p-contact-form__field-error u-action-hidden">必須項目に入力してください。</span>
+  </span>
+  </div>
+  <!-- Email-field -->
+  <div class="p-contact-form__field">
+  <div class="p-contact-form__field-head">
+  <label for="your-email" class="p-contact-form__field-label">メールアドレス</label>
+  <span class="p-contact-form__field-tag c-tag-required">必須</span>
+  </div>
+  <span class="p-contact-form__field-item">
+  [email* your-email id:your-email class:p-contact-form__input placeholder "xxx@example.com"]
+  <span class="p-contact-form__field-error u-action-hidden">必須項目に入力してください。</span>
+  </span>
+  </div>
+  <!-- TextArea-field -->
+  <div class="p-contact-form__field">
+  <div class="p-contact-form__field-head">
+  <label for="your-message" class="p-contact-form__field-label">お問い合わせ内容</label>
+  <span class="p-contact-form__field-tag c-tag-required">必須</span>
+  </div>
+  <span class="p-contact-form__field-item">
+  [textarea* your-message id:your-message class:p-contact-form__textarea 40x6 placeholder "ご自由にご記入ください。"]
+  <span class="p-contact-form__field-error u-action-hidden">必須項目に入力してください。</span>
+  </span>
+  </div>
+  <!-- Submit-field -->
+  <div class="p-contact-form__button">
+  [submit id:form-submit class:c-button-submit "送　信"]
+  </div>
+  </div>

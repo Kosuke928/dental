@@ -1,6 +1,9 @@
 jQuery(function ($) {
   $(document).ready(function () {
-    /*--- ドロワーメニュー ---*/
+    /*------------------------------------------------------------
+    ドロワーメニュー
+    ------------------------------------------------------------*/
+
     $("#js-drawer-open").on("click", function () {
       $(this).children().toggleClass("is-open");
       $("#drawer").fadeToggle(300);
@@ -14,7 +17,9 @@ jQuery(function ($) {
       $("#js-drawer-open").removeClass("is-open");
     });
 
-    /*--- Index Fv Swiper ---*/
+    /*------------------------------------------------------------
+    トップページ Swiper
+    ------------------------------------------------------------*/
     var swiper = new Swiper(".fv-swiper", {
       loop: true,
       speed: 500,
@@ -35,7 +40,9 @@ jQuery(function ($) {
       },
     });
 
-    /*--- Page-Staff Swiper ---*/
+    /*------------------------------------------------------------
+    スタッフページ Swiper
+    ------------------------------------------------------------*/
     const parentGallery = document.querySelector("#js-greeting-slide");
     if (parentGallery) {
       const cloneGallery = parentGallery.cloneNode(true);
@@ -67,7 +74,9 @@ jQuery(function ($) {
       },
     });
 
-    /*--- トップへ移動(to-top) ---*/
+    /*------------------------------------------------------------
+    トップへ移動(To-top)
+    ------------------------------------------------------------*/
     let speed = 300;
     $("#js-to-top").hide();
     $(window).scroll(function () {
@@ -82,7 +91,9 @@ jQuery(function ($) {
       $("body, html").animate({ scrollTop: 0 }, speed);
     });
 
-    //スムーススクロール
+    /*------------------------------------------------------------
+    スムーススクロール
+    ------------------------------------------------------------*/
     $("a[href^='#']").on("click", function (e) {
       e.preventDefault();
       const href = $(this).attr("href");
@@ -90,96 +101,102 @@ jQuery(function ($) {
       const position = point.offset().top - 60;
       $("html, body").animate({ scrollTop: position }, speed, "swing");
     });
-  });
 
-  /*--- Contact Form バリデーション ---*/
-  const form = $(".p-contact-form");
-  const elements = $(
-    ".p-contact-form__input, .p-contact-form__textarea, .p-contact-form__radio-input, .p-contact-form__checkbox-input, .p-contact-form__select"
-  );
-  const errorMessages = $(".p-contact-form__field-error");
+    /*------------------------------------------------------------
+  Contact Form バリデーション
+  ------------------------------------------------------------*/
+    const form = $(".wpcf7-form");
+    const elements = $(
+      ".p-contact-form__input, .p-contact-form__textarea, .p-contact-form__radio-input, .p-contact-form__checkbox-input, .p-contact-form__select"
+    );
+    const errorMessages = $(".p-contact-form__field-error");
+    const checkBoxes = $('[name="your-check"]');
+    const currentPage = window.location.pathname;
+    const currentHref = window.location.href;
+    console.log(currentPage);
+    console.log(currentHref);
 
-  /*--- エラーメッセージの表示／非表示関数 ---*/
-  function showError(element) {
-    element.addClass("is-error");
-    element
-      .closest(".p-contact-form__field-item")
-      .find(".p-contact-form__field-error")
-      .removeClass("u-action-hidden");
-  }
-
-  function hideError(element) {
-    element.removeClass("is-error");
-    element
-      .closest(".p-contact-form__field-item")
-      .find(".p-contact-form__field-error")
-      .addClass("u-action-hidden");
-  }
-
-  /*--- チェックボックスの確認 ---*/
-  const checkBoxes = $('[name="your-check"]');
-  const currentPage = window.location.pathname;
-
-  if (currentPage.includes("page-booking.html")) {
-    // チェックボックスの初期状態を確認してrequired属性を設定する
-    function updateRequired() {
-      const isCheckedCount = checkBoxes.filter(":checked").length;
-      if (isCheckedCount > 0) {
-        checkBoxes.prop("required", false);
-      } else {
-        checkBoxes.prop("required", true);
-      }
+    /* エラーメッセージの表示 */
+    function showError(element) {
+      element.addClass("is-error");
+      element
+        .closest(".p-contact-form__field-item")
+        .find(".p-contact-form__field-error")
+        .removeClass("u-action-hidden");
     }
 
-    // チェックボックスの状態変化時に処理する
-    checkBoxes.on("change", updateRequired);
-
-    // ページ読み込み時に初期状態を設定
-    updateRequired();
-  }
-
-  /*--- フォームのバリデーション ---*/
-  $(form).on("submit", function (e) {
-    e.preventDefault();
-    elements.removeClass("is-error");
-    errorMessages.addClass("u-action-hidden");
-
-    const form = $(this)[0];
-    let isValid = form.checkValidity();
-
-    if (currentPage.includes("page-booking.html")) {
-      const radioGroup = $("input[name='your-radio']");
-      // ラジオボックスにチェックがあるか確認
-      if (!radioGroup.is(":checked")) {
-        showError(radioGroup.closest(".p-contact-form__field-item"));
-        isValid = false;
-      }
-      // チェックボックスにチェックがあるか確認
-      if (!checkBoxes.is(":checked")) {
-        showError(checkBoxes.closest(".p-contact-form__field-item"));
-        isValid = false;
-      }
+    /* エラーメッセージの非表示 */
+    function hideError(element) {
+      element.removeClass("is-error");
+      element
+        .closest(".p-contact-form__field-item")
+        .find(".p-contact-form__field-error")
+        .addClass("u-action-hidden");
     }
 
-    if (isValid) {
-      // 適切なサンクスページに遷移
-      if (currentPage.includes("page-contact.html")) {
-        window.location.href = "page-thanks-contact.html";
-      } else if (currentPage.includes("page-booking.html")) {
-        window.location.href = "page-thanks-booking.html";
+    /* カスタムバリデーション */
+    function customValidation() {
+      let isValid = true;
+      elements.each(function () {
+        const $element = $(this);
+        if ($element.attr("aria-required") === "true" && !$element.val()) {
+          showError($element);
+          isValid = false;
+        }
+      });
+      return isValid;
+    }
+
+    /* フォームのバリデーション */
+    $(form).on("submit", function (e) {
+      e.preventDefault();
+      e.stopPropagation(); // イベントの伝播を止める
+
+      // バリデーションのリセット
+      elements.removeClass("is-error");
+      errorMessages.addClass("u-action-hidden");
+
+      let isValid = customValidation();
+
+      if (currentPage.includes("/page-booking/")) {
+        const radioGroup = $("input[name='your-radio']");
+        // ラジオボックスにチェックがあるか確認
+        if (!radioGroup.is(":checked")) {
+          showError(
+            radioGroup
+              .closest(".p-contact-form__field-item")
+              .find(".p-contact-form__input")
+          );
+          isValid = false;
+        }
+        // チェックボックスにチェックがあるか確認
+        if (!checkBoxes.is(":checked")) {
+          showError(
+            checkBoxes
+              .closest(".p-contact-form__field-item")
+              .find(".p-contact-form__checkbox-input")
+          );
+          isValid = false;
+        }
       }
-      form.reset();
-    }
-  });
 
-  /*--- インプット要素のイベントリスナー ---*/
-  elements.on("invalid", function () {
-    showError($(this));
-  });
+      if (isValid) {
+        // 適切なサンクスページに遷移
+        if (currentPage.includes("/contact/")) {
+          window.location.href = "/page-thanks-contact/";
+        } else if (currentPage.includes("/booking/")) {
+          window.location.href = "/page-thanks-booking/";
+        }
+        this.reset();
+      }
+    });
 
-  elements.on("input change", function () {
-    if (this.checkValidity()) {
-      hideError($(this));
-    }
+    /* フォームフィールドがユーザーによって変更されたときに、フィールドの内容が有効かどうかをチェックし、有効であればエラーメッセージを非表示にする */
+    elements.on("input change", function () {
+      const $element = $(this);
+      if ($element.val()) {
+        hideError($element);
+      }
+    });
   });
 });
