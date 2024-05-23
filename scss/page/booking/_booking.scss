@@ -90,31 +90,39 @@ Booking
 // ラジオ
 .p-contact-form__field-radios {
   margin-top: 7px;
-  display: flex;
-  gap: 40px;
   @include global.mq(sm) {
     margin-top: 0px;
-    gap: 32px;
   }
 }
 .p-contact-form__field-radio {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  @include global.mq(sm) {
+    gap: 64px;
+    margin-left: 32px;//
+  }
 }
-.p-contact-form__radio-input {
+
+// .p-contact-form__radio-input {
+.p-contact-form__field-radio input[type="radio"] {
   width: 1px;
   height: 1px;
   position: absolute;
   clip: rect(0, 0, 0, 0);
   overflow: hidden;
 }
-.p-contact-form__radio-text {
+// .p-contact-form__radio-text {
+.p-contact-form__field-radio input[type="radio"] + span {
   position: relative;
   color: global.$c-base-dark;
   font-size: 14px;
   font-weight: 500;
-  padding-left: calc(24px + 8px);
+  // padding-left: calc(24px + 8px);
   cursor: pointer;
 }
-.p-contact-form__radio-text::before {
+// .p-contact-form__radio-text::before {
+.p-contact-form__field-radio input[type="radio"] + span::before {
   content: "";
   display: block;
   position: absolute;
@@ -123,10 +131,11 @@ Booking
   border-radius: 50%;
   border: 1px solid global.$c-main;
   top: 50%;
-  left: 0;
+  left: -32px;
   transform: translateY(-50%);
 }
-.p-contact-form__radio-text::after {
+// .p-contact-form__radio-text::after {
+.p-contact-form__field-radio input[type="radio"] + span::after {
   content: "";
   display: block;
   position: absolute;
@@ -135,11 +144,13 @@ Booking
   border-radius: 50%;
   background-color: global.$c-main;
   top: 50%;
-  left: 6px;
+  left: -26px;
   transform: translateY(-50%);
   opacity: 0;
 }
-.p-contact-form__radio-input:checked + .p-contact-form__radio-text::after {
+
+// .p-contact-form__radio-input:checked + .p-contact-form__radio-text::after {
+.p-contact-form__field-radio input[type="radio"]:checked + span::after {
   opacity: 1;
 }
 
@@ -158,7 +169,10 @@ Booking
   font-weight: 500;
 }
 .p-contact-form__field-checkboxes {
+}
+.p-contact-form__field-checkbox {
   margin-top: 7px;
+  margin-left: 5px;//
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
@@ -166,21 +180,27 @@ Booking
   row-gap: 16px;
   @include global.mq(sm) {
     margin-top: 0;
-    column-gap: 32px;
+    column-gap: 36px;
   }
 }
-.p-contact-form__field-checkbox {
+.p-contact-form__field-checkbox input[type="checkbox"] {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
 }
-.p-contact-form__checkbox-input {
-}
-.p-contact-form__checkbox-text {
+// .p-contact-form__checkbox-text {
+.p-contact-form__field-checkbox input[type="checkbox"] + span {
   position: relative;
   padding-left: calc(24px + 4px);
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
 }
-.p-contact-form__checkbox-text::before {
+
+// .p-contact-form__checkbox-text::before {
+.p-contact-form__field-checkbox input[type="checkbox"] + span::before {
   content: "";
   display: block;
   position: absolute;
@@ -191,7 +211,8 @@ Booking
   left: -5px;
   transform: translateY(-50%);
 }
-.p-contact-form__checkbox-text::after {
+// .p-contact-form__checkbox-text::after {
+.p-contact-form__field-checkbox input[type="checkbox"] + span::after {
   content: "";
   display: block;
   position: absolute;
@@ -204,8 +225,9 @@ Booking
   transform: translateY(-50%);
   opacity: 0;
 }
-.p-contact-form__checkbox-input:checked
-  + .p-contact-form__checkbox-text::after {
+// .p-contact-form__checkbox-input:checked
+//   + .p-contact-form__checkbox-text::after {
+.p-contact-form__field-checkbox input[type="checkbox"]:checked + span::after {
   opacity: 1;
 }
 
@@ -275,6 +297,6 @@ Booking
 }
 .p-contact-form__textarea {
 }
-.p-contact-form__button--booking{
+.p-contact-form__button--booking {
   padding-top: 72px;
 }

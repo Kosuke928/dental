@@ -25,9 +25,9 @@
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet" />
 
   <!-- ファビコン,Swiper,リセットCSS,CSSリンク -->
-  <link rel="icon" href="./favicon.ico" />
+  <link rel="icon" href="<?= get_template_directory_uri(); ?>/favicon.ico" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <!-- <link rel="stylesheet" href="./css/style.css" /> -->
   <?php wp_head(); ?>
 </head>
 

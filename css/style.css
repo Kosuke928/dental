@@ -124,6 +124,18 @@ select {
   appearance: none;
 }
 
+.wpcf7-form.invalid .wpcf7-response-output {
+  display: none;
+}
+
+.wpcf7-form.sent .wpcf7-response-output {
+  display: none;
+}
+
+.wpcf7-list-item {
+  margin: 0;
+}
+
 /*----------------------------------------------------------
 テキストカラー
 ----------------------------------------------------------*/
@@ -4943,7 +4955,8 @@ Contact
   }
 }
 
-.p-contact-form__field:nth-of-type(5) {
+.p-contact-form__field:nth-of-type(5),
+.p-contact-form__field:nth-of-type(9) {
   border-bottom: 1px solid #dddddd;
 }
 
@@ -5034,6 +5047,14 @@ Contact
   .p-contact-form__button {
     padding-top: 72px;
   }
+}
+
+div.wpcf7 .wpcf7-spinner {
+  display: none !important;
+}
+
+.wpcf7-not-valid-tip {
+  display: none;
 }
 
 /*----------------------------------------------------------
@@ -5143,19 +5164,30 @@ Booking
 /*---------- ContactForm ----------*/
 .p-contact-form__field-radios {
   margin-top: 7px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 40px;
 }
 @media screen and (min-width: 768px) {
   .p-contact-form__field-radios {
     margin-top: 0px;
-    gap: 32px;
   }
 }
 
-.p-contact-form__radio-input {
+.p-contact-form__field-radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .p-contact-form__field-radio {
+    gap: 64px;
+    margin-left: 32px;
+  }
+}
+
+.p-contact-form__field-radio input[type=radio] {
   width: 1px;
   height: 1px;
   position: absolute;
@@ -5163,16 +5195,15 @@ Booking
   overflow: hidden;
 }
 
-.p-contact-form__radio-text {
+.p-contact-form__field-radio input[type=radio] + span {
   position: relative;
   color: #393939;
   font-size: 14px;
   font-weight: 500;
-  padding-left: 32px;
   cursor: pointer;
 }
 
-.p-contact-form__radio-text::before {
+.p-contact-form__field-radio input[type=radio] + span::before {
   content: "";
   display: block;
   position: absolute;
@@ -5181,12 +5212,12 @@ Booking
   border-radius: 50%;
   border: 1px solid #1391E6;
   top: 50%;
-  left: 0;
+  left: -32px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
-.p-contact-form__radio-text::after {
+.p-contact-form__field-radio input[type=radio] + span::after {
   content: "";
   display: block;
   position: absolute;
@@ -5195,13 +5226,13 @@ Booking
   border-radius: 50%;
   background-color: #1391E6;
   top: 50%;
-  left: 6px;
+  left: -26px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   opacity: 0;
 }
 
-.p-contact-form__radio-input:checked + .p-contact-form__radio-text::after {
+.p-contact-form__field-radio input[type=radio]:checked + span::after {
   opacity: 1;
 }
 
@@ -5227,8 +5258,9 @@ Booking
   font-weight: 500;
 }
 
-.p-contact-form__field-checkboxes {
+.p-contact-form__field-checkbox {
   margin-top: 7px;
+  margin-left: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5243,15 +5275,23 @@ Booking
   row-gap: 16px;
 }
 @media screen and (min-width: 768px) {
-  .p-contact-form__field-checkboxes {
+  .p-contact-form__field-checkbox {
     margin-top: 0;
-    -webkit-column-gap: 32px;
-       -moz-column-gap: 32px;
-            column-gap: 32px;
+    -webkit-column-gap: 36px;
+       -moz-column-gap: 36px;
+            column-gap: 36px;
   }
 }
 
-.p-contact-form__checkbox-text {
+.p-contact-form__field-checkbox input[type=checkbox] {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.p-contact-form__field-checkbox input[type=checkbox] + span {
   position: relative;
   padding-left: 28px;
   font-size: 14px;
@@ -5259,7 +5299,7 @@ Booking
   cursor: pointer;
 }
 
-.p-contact-form__checkbox-text::before {
+.p-contact-form__field-checkbox input[type=checkbox] + span::before {
   content: "";
   display: block;
   position: absolute;
@@ -5272,7 +5312,7 @@ Booking
           transform: translateY(-50%);
 }
 
-.p-contact-form__checkbox-text::after {
+.p-contact-form__field-checkbox input[type=checkbox] + span::after {
   content: "";
   display: block;
   position: absolute;
@@ -5287,7 +5327,7 @@ Booking
   opacity: 0;
 }
 
-.p-contact-form__checkbox-input:checked + .p-contact-form__checkbox-text::after {
+.p-contact-form__field-checkbox input[type=checkbox]:checked + span::after {
   opacity: 1;
 }
 

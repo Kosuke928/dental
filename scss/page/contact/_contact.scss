@@ -64,7 +64,8 @@ Contact
     gap: 0px;
   }
 }
-.p-contact-form__field:nth-of-type(5) {
+.p-contact-form__field:nth-of-type(5),
+.p-contact-form__field:nth-of-type(9) {
   border-bottom: 1px solid #dddddd;
 }
 
@@ -126,4 +127,11 @@ Contact
   @include global.mq(sm) {
     padding-top: 72px;
   }
+}
+//WP化次のボタン横のスピナーを非表示
+div.wpcf7 .wpcf7-spinner {
+  display: none !important;
+}
+.wpcf7-not-valid-tip {
+  display: none;
 }
