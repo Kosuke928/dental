@@ -195,6 +195,13 @@ z-index
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
+@media screen and (max-width: 374px) {
+  .c-button-cir-md--main {
+    font-size: 12px;
+    padding-right: 15px;
+    padding-left: 10px;
+  }
+}
 @media screen and (min-width: 768px) {
   .c-button-cir-md--main {
     font-size: 16px;
@@ -239,6 +246,13 @@ z-index
   padding-left: 16px;
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
+}
+@media screen and (max-width: 374px) {
+  .c-button-cir-md {
+    font-size: 12px;
+    padding-right: 10px;
+    padding-left: 6px;
+  }
 }
 @media screen and (min-width: 768px) {
   .c-button-cir-md {
@@ -372,6 +386,11 @@ z-index
 .c-site-logo {
   display: block;
   width: 270px;
+}
+@media screen and (max-width: 374px) {
+  .c-site-logo {
+    width: 230px;
+  }
 }
 
 .c-hamburger {
@@ -691,13 +710,6 @@ z-index
 
 .c-tag-md {
   position: relative;
-}
-
-.c-tag-md::after {
-  content: "お知らせ";
-  position: absolute;
-  top: 0px;
-  left: 0px;
   margin-top: 5px;
   padding-block: 2px;
   padding-inline: 8px;
@@ -716,19 +728,12 @@ z-index
   background: #1391E6;
 }
 @media screen and (min-width: 768px) {
-  .c-tag-md::after {
-    content: "カテゴリ1";
-    left: 0px;
+  .c-tag-md {
     margin-top: 0px;
     padding-block: 6px;
     padding-inline: 12px;
     border-radius: 12px;
     font-size: 11px;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .c-tag-md::after {
-    top: 18px;
   }
 }
 
@@ -989,7 +994,7 @@ Wrapper
 ----------------------------------------------------------*/
 @media screen and (min-width: 768px) {
   .l-wrapper {
-    padding-bottom: 156px;
+    padding-bottom: 158px;
   }
 }
 
@@ -1125,9 +1130,9 @@ Sidebar
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 20px;
 }
 @media screen and (min-width: 768px) {
@@ -1175,11 +1180,7 @@ Sidebar
   position: relative;
 }
 
-.p-sidebar-post__category::after {
-  content: "お知らせ";
-  position: absolute;
-  top: 0px;
-  left: 0px;
+.p-sidebar-post__category {
   margin-top: 5px;
   padding-block: 2px;
   padding-inline: 8px;
@@ -1198,13 +1199,13 @@ Sidebar
   background: #1391E6;
 }
 @media screen and (min-width: 768px) {
-  .p-sidebar-post__category::after {
+  .p-sidebar-post__category {
     margin-top: 1px;
   }
 }
 
 .p-sidebar-post__text {
-  padding-top: 29px;
+  padding-top: 5px;
   text-align: left;
   color: #393939;
   font-size: 14px;
@@ -1221,7 +1222,7 @@ Sidebar
 }
 @media screen and (min-width: 768px) {
   .p-sidebar-post__text {
-    padding-top: 26px;
+    padding-top: 5px;
   }
 }
 
@@ -1478,13 +1479,29 @@ Front-page_Fv
 }
 
 .p-slide {
+  height: 447px;
   position: relative;
   z-index: 0;
   max-width: 1160px;
   margin-inline: auto;
 }
+@media screen and (min-width: 768px) {
+  .p-slide {
+    height: 325px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .p-slide {
+    height: 520px;
+  }
+}
 
 .p-slide__swiper {
+  overflow: hidden;
+}
+
+.p-slide__slide {
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -1499,7 +1516,6 @@ Front-page_Fv
   -o-object-position: -32px 0px;
      object-position: -32px 0px;
   aspect-ratio: 768/447;
-  border-radius: 8px;
   -webkit-filter: brightness(90%);
           filter: brightness(90%);
 }
@@ -1960,12 +1976,12 @@ Front-page_Concept
 }
 
 .p-about-concept__button {
-  margin-top: 44px;
+  margin-top: 47px;
   display: inline-block;
 }
 @media screen and (min-width: 768px) {
   .p-about-concept__button {
-    margin-top: 46px;
+    margin-top: 48px;
   }
 }
 
@@ -2665,12 +2681,12 @@ Front-page_Blog
 }
 
 .p-blog-box__button {
-  margin-top: 46px;
+  margin-top: 48px;
   display: inline-block;
 }
 @media screen and (min-width: 768px) {
   .p-blog-box__button {
-    margin-top: 69px;
+    margin-top: 72px;
   }
 }
 
@@ -3925,11 +3941,13 @@ Greeting
 
 .p-greeting__swiper {
   width: 200px;
+  height: 150px;
   margin-inline: auto;
 }
 @media screen and (min-width: 768px) {
   .p-greeting__swiper {
     width: 305px;
+    height: 230px;
   }
 }
 
@@ -3979,7 +3997,7 @@ Staff
     margin-top: 60px;
     max-width: 1000px;
     margin-inline: auto;
-    gap: 63px;
+    gap: 62px;
   }
 }
 
@@ -4098,6 +4116,7 @@ Staff
   padding-bottom: 16px;
   padding-left: 20px;
   min-width: 140px;
+  text-align: left;
 }
 
 .p-staff-thumbnail__body {
@@ -4224,15 +4243,20 @@ Post
 .p-post-box__caption {
   position: relative;
 }
+@media screen and (min-width: 768px) {
+  .p-post-box__caption {
+    padding-top: 18px;
+  }
+}
 
 @media screen and (min-width: 768px) {
-  .p-post__thumbnail:nth-of-type(n + 3) .p-post-box__category::after {
-    top: 12px;
+  .p-post__thumbnail:nth-of-type(n + 3) .p-post-box__caption {
+    padding-top: 12px;
   }
 }
 
 .p-post-box__text {
-  padding-top: 29px;
+  padding-top: 5px;
   text-align: left;
   color: #393939;
   font-size: 14px;
@@ -4249,7 +4273,7 @@ Post
 }
 @media screen and (min-width: 768px) {
   .p-post-box__text {
-    padding-top: 35px;
+    padding-top: 5px;
     font-size: 16px;
     line-height: 24px; /* 150% */
     display: block;
@@ -4257,13 +4281,13 @@ Post
 }
 @media screen and (min-width: 1000px) {
   .p-post-box__text {
-    padding-top: 58px;
+    padding-top: 12px;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1000px) {
   .p-post__thumbnail:nth-of-type(n + 3) .p-post-box__text {
-    padding-top: 54px;
+    padding-top: 13px;
   }
 }
 
@@ -4301,13 +4325,23 @@ Post
   display: -ms-flexbox;
   display: flex;
   gap: 7px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 @media screen and (min-width: 768px) {
   .p-pagination {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
     gap: 10px;
+    margin-left: calc(50vw - 50%);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .p-pagination {
+    margin-left: 0px;
   }
 }
 
@@ -4351,8 +4385,9 @@ Post
 }
 @media screen and (min-width: 768px) {
   .p-pagenation__prev {
-    padding-left: 39px;
     font-size: 15px;
+    width: 82px;
+    height: 36px;
   }
 }
 
@@ -4362,8 +4397,9 @@ Post
 }
 @media screen and (min-width: 768px) {
   .p-pagenation__next {
-    padding-right: 39px;
     font-size: 14px;
+    width: 82px;
+    height: 36px;
   }
 }
 
@@ -4431,6 +4467,7 @@ Post
   display: grid;
   place-items: center;
   width: 30px;
+  height: 30px;
   padding-top: 5px;
   padding-bottom: 5px;
   -ms-flex-negative: 0;
@@ -4449,7 +4486,7 @@ Post
   }
 }
 
-.u-current {
+.u-current span {
   background: #1391E6;
   color: #FFFFFF;
 }
@@ -4883,12 +4920,12 @@ Contact
 ----------------------------------------------------------*/
 .p-contact {
   padding-top: 58px;
-  padding-bottom: 99px;
+  padding-bottom: 83px;
 }
 @media screen and (min-width: 768px) {
   .p-contact {
     padding-top: 78px;
-    padding-bottom: 157px;
+    padding-bottom: 142px;
   }
 }
 
@@ -5175,14 +5212,17 @@ Booking
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 40px;
+  gap: 72px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 10px;
+  margin-left: 32px;
 }
 @media screen and (min-width: 768px) {
   .p-contact-form__field-radio {
     gap: 64px;
+    margin-top: 0px;
     margin-left: 32px;
   }
 }
@@ -5252,14 +5292,14 @@ Booking
 }
 
 .p-contact-form__field-footer {
-  padding-top: 2px;
+  padding-top: 3px;
   color: #393939;
   font-size: 11px;
   font-weight: 500;
 }
 
 .p-contact-form__field-checkbox {
-  margin-top: 7px;
+  margin-top: 9px;
   margin-left: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5269,10 +5309,10 @@ Booking
           justify-content: start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-column-gap: 24px;
-     -moz-column-gap: 24px;
-          column-gap: 24px;
-  row-gap: 16px;
+  -webkit-column-gap: 28px;
+     -moz-column-gap: 28px;
+          column-gap: 28px;
+  row-gap: 19px;
 }
 @media screen and (min-width: 768px) {
   .p-contact-form__field-checkbox {
@@ -5280,6 +5320,7 @@ Booking
     -webkit-column-gap: 36px;
        -moz-column-gap: 36px;
             column-gap: 36px;
+    row-gap: 19px;
   }
 }
 
@@ -5409,7 +5450,12 @@ Booking
 }
 
 .p-contact-form__button--booking {
-  padding-top: 72px;
+  padding-top: 70px;
+}
+@media screen and (min-width: 768px) {
+  .p-contact-form__button--booking {
+    padding-top: 73px;
+  }
 }
 
 /*----------------------------------------------------------
@@ -5477,7 +5523,7 @@ Front-page_Footer
 }
 @media screen and (min-width: 1000px) {
   .l-footer__inner {
-    padding-top: 60px;
+    padding-top: 58px;
   }
 }
 
@@ -5492,7 +5538,7 @@ Front-page_Footer
   text-align: center;
   padding-top: 30px;
   padding-inline: 10px;
-  padding-bottom: 13px;
+  padding-bottom: 20px;
   background-color: #FFFFFF;
   border-radius: 8px;
 }
@@ -5508,7 +5554,7 @@ Front-page_Footer
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding-top: 37px;
+    padding-top: 38px;
     padding-inline: 49px;
     padding-bottom: 40px;
     border-radius: 20px;
@@ -5584,6 +5630,7 @@ Front-page_Footer
 }
 @media screen and (min-width: 1000px) {
   .p-access-box__calendar {
+    margin-top: 18px;
     width: 477px;
     max-width: 477px;
     height: 166px;
@@ -5624,13 +5671,13 @@ Front-page_Footer
 }
 
 .l-footer__nav {
-  padding-top: 59px;
-  padding-bottom: 59px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   padding-inline: 10px;
 }
 @media screen and (min-width: 1000px) {
   .l-footer__nav {
-    padding-top: 41px;
+    padding-top: 44px;
   }
 }
 
@@ -5642,7 +5689,7 @@ Front-page_Footer
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 39px;
+  gap: 38px;
 }
 @media screen and (min-width: 768px) {
   .p-lnav {
@@ -5729,7 +5776,7 @@ Front-page_Footer
 }
 
 .l-footer__under {
-  padding-top: 15px;
+  padding-top: 20px;
   width: 100%;
   height: 112px;
   text-align: center;
@@ -5743,6 +5790,7 @@ Front-page_Footer
 }
 @media screen and (min-width: 1200px) {
   .l-footer__under {
+    padding-top: 16px;
     padding-bottom: 30px;
   }
 }
@@ -6009,7 +6057,7 @@ CTA
 
 @media screen and (min-width: 768px) {
   .u-padding-block02 {
-    padding-top: 24px;
+    padding-top: 26px;
     padding-bottom: 21px;
   }
 }

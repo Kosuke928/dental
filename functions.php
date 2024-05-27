@@ -51,15 +51,24 @@ add_action('init', 'my_menu_init');
 カスタムウォーカー(Header / Drawer)
 --------------------------------------------------------*/
 class My_Custom_Nav_Walker extends Walker_Nav_Menu {
+  /*----- start_el（リストアイテム:liの設定） -----*/
   function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+    // WP側のメニューの追加クラス名の有無を確認(追加がなければ空配列、あれば各々配列として$classesに代入)
     $classes = empty($item->classes) ? array() : (array) $item->classes;
+    // apply_filters()=>$item(現在のメニューアイテムオブジェクト)内のクラス($classes)に対し、array_filter()で空白(false)を除去
     $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item));
+    // $class_namesが空でない(true)なら、class=""の形で連結、そうでなければクラス無し
     $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
-
+    //  ⇩ 組み立て($outputに値を繋げていく)
     $output .= '<li' . $class_names . '>';
+
+
+    //  変数定義
     $icon_svg = '';
 
+    // 力技で条件分岐(メニューテキスト毎にsvgを設定)
     // 'global / drawer' テーマロケーションの時はクラス名を変更する
+    //⇩globalナビ(PC表示)
     if ($args->theme_location === 'global') {
       $link_class = 'p-gnav__link';
       $text_class = 'p-gnav__text';
@@ -140,12 +149,15 @@ class My_Custom_Nav_Walker extends Walker_Nav_Menu {
       }
     }
 
+    /*----- start_el（リンク開始タグ:aの設定）※footerメニューとほぼ一緒 -----*/
+    //⇩ $attributesに、クラス名+リンクの属性値を連結していく（WPのカスタムメニューで、各メニューに設定したリンク等の情報を取得）
     $attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
     $attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
     $attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
     $attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
     $attributes .= ' class="' . $link_class . '"';
 
+    // <a> svg <span>メニュー名</span> </a> という形で連結
     $item_output = $args->before;
     $item_output .= '<a' . $attributes . '>';
     $item_output .= $args->link_before . $icon_svg . '<span class="' . $text_class . '">' . apply_filters('the_title', $item->title, $item->ID) . '</span>' . $args->link_after;
@@ -240,4 +252,118 @@ class My_Footer_Nav_Walker extends Walker_Nav_Menu {
     //⇩ 組み立て($outputに値を繋げていく)
     $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
   }
+}
+
+
+/*--------------------------------------------------------
+テンプレートパーツ
+--------------------------------------------------------*/
+/*----- Heroセクションの画像をページ毎に変える -----*/
+function get_hero_paths() {
+  // 初期値を設定
+  $args = [
+    'pc' => get_template_directory_uri() . '/img/dummy.webp',
+    'sp' => get_template_directory_uri() . '/img/dummy.webp',
+    'jp' => 'デフォルト',
+    'en' => 'DEFAULT',
+    'home' => 'ホーム',
+  ];
+  // ページに応じて値を上書き
+  if (is_page('contact') || is_page('contact-thanks')) { // 「お問い合わせ」ページの場合
+    $args['pc'] = get_template_directory_uri() . '/img/contact_hero_pc.webp';
+    $args['sp'] = get_template_directory_uri() . '/img/contact_hero_sp.webp';
+    $args['jp'] = 'お問い合わせ';
+    $args['en'] = 'CONTACT';
+  } elseif (is_page('reservation') || is_page('reservation-thanks')) { // 「WEB予約」ページの場合
+    $args['pc'] = get_template_directory_uri() . '/img/contact_hero_pc.webp';
+    $args['sp'] = get_template_directory_uri() . '/img/contact_hero_sp.webp';
+    $args['jp'] = 'WEB予約';
+    $args['en'] = 'RESERVE';
+  } elseif (is_page('medical')) { // 「診療案内」ページの場合
+    $args['pc'] = get_template_directory_uri() . '/img/guid_hero_pc.webp';
+    $args['sp'] = get_template_directory_uri() . '/img/dui_hero_sp.webp';
+    $args['jp'] = '診療案内';
+    $args['en'] = 'MEDICAL';
+  } elseif (is_page('about')) { // 「当院について」ページの場合
+    $args['pc'] = get_template_directory_uri() . '/img/about_hero_pc.webp';
+    $args['sp'] = get_template_directory_uri() . '/img/about_hero_sp.webp';
+    $args['jp'] = '当院について';
+    $args['en'] = 'ABOUT OUR CLINIC';
+  } elseif (is_page('staff')) { // 「スタッフ紹介」ページの場合
+    $args['pc'] = get_template_directory_uri() . '/img/staff_hero_pc.webp';
+    $args['sp'] = get_template_directory_uri() . '/img/staff_hero_sp.webp';
+    $args['jp'] = 'スタッフ紹介';
+    $args['en'] = 'STAFF';
+  } elseif (is_single() || is_archive()) { // 「スタッフブログ」ページの場合
+    $args['pc'] = get_template_directory_uri() . '/img/post_hero_pc.webp';
+    $args['sp'] = get_template_directory_uri() . '/img/post_hero_sp.webp';
+    $args['jp'] = 'スタッフブログ';
+    $args['en'] = 'STAFF BLOG';
+  }
+
+  return $args;
+}
+
+
+/*--------------------------------------------------------
+アーカイブ(archive.php、taxonomy.php)投稿ループ表示
+--------------------------------------------------------*/
+
+/*--------------------------------------------------------
+ページネーション(archive.php、taxonomy.php)
+--------------------------------------------------------*/
+function custom_pagination($query) {
+  $pagination = paginate_links(array(
+    'total' => $query->max_num_pages,
+    'current' => max(1, get_query_var('paged')),
+    'end_size' => 1,
+    'mid_size' => 4,
+    'prev_text' => '<span class="p-pagenation__prev">前へ</span>',
+    'next_text' => '<span class="p-pagenation__next">次へ</span>',
+    'before_page_number' => '<span class="p-pagenation__numbers">',
+    'after_page_number' => '</span>',
+    'link_before' => '<span class="p-pagenation__numbers">',
+    'link_after' => '</span>',
+  ));
+
+  // 現在のページと総ページ数を取得
+  $current_page = max(1, get_query_var('paged'));
+  $total_pages = $query->max_num_pages;
+
+  // u-md-show--gridを追加する条件を確認
+  if ($total_pages >= 6 && $current_page >= 2 && $current_page <= ($total_pages - 6)) {
+    $pagination = preg_replace_callback(
+      '/<a class="page-numbers" href="([^"]+)"><span class="p-pagenation__numbers">(\d+)<\/span><\/a>/',
+      function ($matches) use ($current_page) {
+        $page_number = intval($matches[2]);
+        if ($page_number >= $current_page + 2 && $page_number <= $current_page + 4) {
+          return '<a class="page-numbers u-md-show--grid" href="' . $matches[1] . '"><span class="p-pagenation__numbers">' . $matches[2] . '</span></a>';
+        } else {
+          return '<a class="page-numbers" href="' . $matches[1] . '"><span class="p-pagenation__numbers">' . $matches[2] . '</span></a>';
+        }
+      },
+      $pagination
+    );
+  }
+  if ($total_pages >= 6 && $current_page >= 7) {
+    $pagination = preg_replace_callback(
+      '/<a class="page-numbers" href="([^"]+)"><span class="p-pagenation__numbers">(\d+)<\/span><\/a>/',
+      function ($matches) use ($current_page) {
+        $page_number = intval($matches[2]);
+        if ($page_number >= $current_page - 4 && $page_number <= $current_page - 3) {
+          return '<a class="page-numbers u-md-show--grid" href="' . $matches[1] . '"><span class="p-pagenation__numbers">' . $matches[2] . '</span></a>';
+        } else {
+          return '<a class="page-numbers" href="' . $matches[1] . '"><span class="p-pagenation__numbers">' . $matches[2] . '</span></a>';
+        }
+      },
+      $pagination
+    );
+  }
+
+  // 現在のページのクラスを設定
+  $pagination = str_replace('class="page-numbers current"', 'class="page-numbers u-current"', $pagination);
+  // ページ数が表示されているspan要素のクラスを設定
+  $pagination = preg_replace('/<span class="page-numbers dots">/', '<span class="p-pagenation__numbers dots">', $pagination);
+
+  return $pagination;
 }

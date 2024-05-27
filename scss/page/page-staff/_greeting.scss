@@ -176,9 +176,11 @@ Greeting
 }
 .p-greeting__swiper {
   width: 200px;
+  height: 150px;
   margin-inline: auto;
   @include global.mq(sm) {
     width: 305px;
+    height: 230px;
   }
 }
 .p-greeting__wrapper {

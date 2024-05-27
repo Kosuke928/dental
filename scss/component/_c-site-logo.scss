@@ -4,4 +4,7 @@
 .c-site-logo {
   display: block;
   width: 270px;
+  @include global.mq(sp, max) {
+    width: 230px;
+  }
 }

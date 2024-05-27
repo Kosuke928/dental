@@ -25,10 +25,17 @@ Front-page_Fv
 }
 
 .p-slide {
+  height: 447px;
   position: relative;
   z-index: global.$z-index-slide;
   max-width: 1160px;
   margin-inline: auto;
+  @include global.mq(sm) {
+    height: 325px;
+  }
+  @include global.mq(pc) {
+    height: 520px;
+  }
 }
 .p-slide__swiper {
   overflow: hidden;
@@ -36,6 +43,9 @@ Front-page_Fv
 .p-slide__wrapper {
 }
 .p-slide__slide {
+
+  border-radius: 8px;
+  overflow: hidden;
 }
 .p-slide__card {
   text-align: center;
@@ -45,7 +55,6 @@ Front-page_Fv
   object-fit: cover;
   object-position: -32px 0px;
   aspect-ratio: 768 / 447;
-  border-radius: 8px;
   filter: brightness(90%);
   @include global.mq(ss) {
     object-position: left;

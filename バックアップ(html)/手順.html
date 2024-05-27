@@ -1,0 +1,52 @@
+✅環境構築
+  ⭕️初期設定
+    🔹WPの日本語化
+    🔹使用するプラグインの導入
+    🔹
+  ⭕️トップページの表示確認
+    🔹index.phpの作成
+    🔹style.cssのテーマ名入力
+    🔹header.phpの作成
+    🔹footer.phpの作成
+    🔹functions.phpの作成、コード入力（css/jsの読み込み、サムネイルの表示等）
+  ⭕️各種テーマファイルの作成と表示確認
+    🔹front-page.phpの作成
+      ⇨「ホームボタン」から表示確認
+    🔹page.phpの作成
+      ⇨「固定ページ」から表示確認
+    🔹singe.phpの作成
+      ⇨「投稿」から表示確認
+    🔹archive.phpの作成
+      ⇨「投稿→カテゴリー」から表示確認
+    🔹search.phpの作成
+      ⇨html末尾に「」入力して表示確認
+    🔹404.phpの作成
+      ⇨html末尾に「」入力して表示確認
+✅トップページ(front-page.php)の編集
+  🔹画像のパスを通す
+    ⇨echo get_template_directory_uri( )
+
+✅ヘッダー/ドロワー/フッターメニューの作成
+  🔹カスタムウォーカー使用
+✅コンタクトフォームの作成
+✅各種ページの共通パーツ作成(template-parts)
+✅sidebar.phpの作成
+✅各種ページの作成 & ピクパ調整
+
+✅CPT UIにて、投稿タイプ/タクソノミーの追加
+  ⇨「階層 : true」でカテゴリー化
+  ⇨「クイック編集 / 一括編集 : true」でクイック編集可能にする
+✅Yoast Duplicate Post
+ ⇨権限から、タクソノミーでも複製可能にしておく
+
+✅投稿記事一覧の作成(archive.php)
+
+
+
+⭐️ターム情報の取得
+<?php $terms = get_the_terms(get_the_ID(), 'blog-category'); ?>
+<?php foreach ($terms as $term) : ?>
+  <?= '<pre>'; ?>
+  <?= print_r($term); ?>
+  <?= '</pre>'; ?>
+<?php endforeach; ?>

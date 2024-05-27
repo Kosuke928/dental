@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ja">
 
 <head prefix="og: https://ogp.me/ns#">

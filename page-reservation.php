@@ -1,33 +1,5 @@
 <?php get_header(); ?>
-<div id="hero" class="p-hero">
-  <div class="p-hero__inner l-inner">
-    <div class="p-hero__container">
-      <div class="p-hero__top">
-        <figure class="p-hero__img">
-          <picture>
-            <source media="(min-width: 768px)" srcset="<?= get_template_directory_uri(); ?>/img/contact_hero_pc.webp" width="1160" height="340" />
-            <img src="<?= get_template_directory_uri(); ?>/img/contact_hero_sp.webp" alt="" decoding="async" width="335" height="188" />
-          </picture>
-        </figure>
-        <div class="p-hero__catch-copy">
-          <p class="p-hero__text-jp">WEB予約</p>
-          <p class="p-hero__text-en">RESERVE</p>
-        </div>
-      </div>
-      <div class="breadcrumb">
-        <span property="itemListElement" typeof="ListItem">
-          <a property="item" typeof="WebPage" href="/" class="home"><span property="name">ホーム</span></a>
-          <meta property="position" content="1" />
-        </span>
-        >
-        <span property="itemListElement" typeof="ListItem">
-          <a property="item" typeof="WebPage" href="./page-booking.html" class="page-page"><span property="name">WEB予約</span></a>
-          <meta property="position" content="2" />
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
+<?php get_template_part( 'template-parts/hero' ); ?>
 
 <main>
   <div id="booking" class="p-booking">
