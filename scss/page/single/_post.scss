@@ -82,18 +82,21 @@ Post
 }
 .p-post-box__caption {
   position: relative;
+  @include global.mq(sm) {
+    padding-top: 18px;
+  }
+}
+.p-post__thumbnail:nth-of-type(n + 3) .p-post-box__caption {
+  @include global.mq(sm) {
+    padding-top: 12px;
+  }
 }
 .p-post-box__category {
 }
 .p-post-box__category::after {
 }
-.p-post__thumbnail:nth-of-type(n + 3) .p-post-box__category::after {
-  @include global.mq(sm) {
-    top: 12px;
-  }
-}
 .p-post-box__text {
-  padding-top: 29px;
+  padding-top: 5px;
   text-align: left;
   color: global.$c-base-dark;
   font-size: 14px;
@@ -106,18 +109,18 @@ Post
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2; /* 任意の行数を指定 */
   @include global.mq(sm) {
-    padding-top: 35px;
+    padding-top: 5px;
     font-size: 16px;
     line-height: 24px; /* 150% */
     display: block;
   }
   @include global.mq(md) {
-    padding-top: 58px;
+    padding-top: 12px;
   }
 }
 .p-post__thumbnail:nth-of-type(n + 3) .p-post-box__text {
-  @include global.mq(sm) {
-    padding-top: 54px;
+  @include global.mq(md) {
+    padding-top: 13px;
   }
 }
 .p-post-box__link:hover .p-post-box__text {
@@ -147,9 +150,15 @@ Post
 .p-pagination {
   display: flex;
   gap: 7px;
+  flex-wrap: wrap;
   justify-content: center;
   @include global.mq(sm) {
+    flex-wrap: nowrap;
     gap: 10px;
+    margin-left: calc(50vw - 50%);
+  }
+  @include global.mq(lg) {
+    margin-left: 0px;
   }
 }
 .p-pagenation__prev,
@@ -177,16 +186,18 @@ Post
   padding-left: 34px;
   padding-right: 15px;
   @include global.mq(sm) {
-    padding-left: 39px;
     font-size: 15px;
+    width: 82px;
+    height: 36px;
   }
 }
 .p-pagenation__next {
   padding-left: 15px;
   padding-right: 34px;
   @include global.mq(sm) {
-    padding-right: 39px;
     font-size: 14px;
+    width: 82px;
+    height: 36px;
   }
 }
 .p-pagenation__prev::after,
@@ -233,6 +244,7 @@ Post
   display: grid;
   place-items: center;
   width: 30px;
+  height: 30px;
   padding-top: calc(6px - 1px);
   padding-bottom: calc(6px - 1px);
   flex-shrink: 0;
@@ -248,7 +260,7 @@ Post
   }
 }
 
-.u-current {
+.u-current span {
   background: global.$c-main;
   color: global.$c-base-light;
 }

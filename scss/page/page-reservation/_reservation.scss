@@ -96,10 +96,13 @@ Booking
 }
 .p-contact-form__field-radio {
   display: flex;
-  gap: 40px;
+  gap: 72px;
   align-items: center;
+  margin-top: 10px;
+  margin-left: 32px;
   @include global.mq(sm) {
     gap: 64px;
+    margin-top: 0px;
     margin-left: 32px;//
   }
 }
@@ -163,7 +166,7 @@ Booking
   }
 }
 .p-contact-form__field-footer {
-  padding-top: 2px;
+  padding-top: 3px;
   color: global.$c-base-dark;
   font-size: 11px;
   font-weight: 500;
@@ -171,16 +174,17 @@ Booking
 .p-contact-form__field-checkboxes {
 }
 .p-contact-form__field-checkbox {
-  margin-top: 7px;
+  margin-top: 9px;
   margin-left: 5px;//
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
-  column-gap: 24px;
-  row-gap: 16px;
+  column-gap: 28px;
+  row-gap: 19px;
   @include global.mq(sm) {
     margin-top: 0;
     column-gap: 36px;
+    row-gap: 19px;
   }
 }
 .p-contact-form__field-checkbox input[type="checkbox"] {
@@ -298,5 +302,8 @@ Booking
 .p-contact-form__textarea {
 }
 .p-contact-form__button--booking {
-  padding-top: 72px;
+  padding-top: 70px;
+  @include global.mq(sm) {
+    padding-top: 73px;
+  }
 }

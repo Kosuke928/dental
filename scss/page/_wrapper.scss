@@ -4,7 +4,7 @@ Wrapper
 ----------------------------------------------------------*/
 .l-wrapper {
   @include global.mq(sm) {
-    padding-bottom: 156px;
+    padding-bottom: 158px;
   }
 }
 .l-wrapper__inner {
