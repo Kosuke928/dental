@@ -1719,11 +1719,18 @@ Front-page_Fv
   font-weight: 500;
   text-decoration: underline;
   text-underline-offset: 3px;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 @media screen and (min-width: 1000px) {
   .p-news-topic-box__right {
     font-size: 12px;
   }
+}
+
+.p-news-topic-box__right:hover {
+  opacity: 0.7;
 }
 
 .p-news-topic__contents {
