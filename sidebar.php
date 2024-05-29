@@ -4,6 +4,27 @@ $page = get_page_by_path('about');
 $about_link = esc_url(get_permalink($page->ID)); //aboutページリンク
 ?>
 
+<?php
+// 現在のページ番号を取得
+$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+// URLからタームスラッグを取得する
+$url_path = $_SERVER['REQUEST_URI']; // 例: /blog-category/blog-cat3/?page=2
+$parsed_url = parse_url($url_path, PHP_URL_PATH); // 例: /blog-category/blog-cat3/
+$path_segments = explode('/', trim($parsed_url, '/')); // 例: ['blog-category', 'blog-cat3']
+$cat = isset($path_segments[1]) ? $path_segments[0] : "blog-category";  // 'category' or 'blog-category'
+// $post_type = $path_segments[0] === "category" || $path_segments[0] === "news" ? "post" : "blog"; //'post' or 'blog'
+
+if($path_segments[0] === "category" || $path_segments[0] === "news"){
+  $post_type = "post";
+} elseif(strpos($path_segments[0], 'news') !== false) {
+  $post_type = "post";
+} else {
+  $post_type = "blog";
+}
+
+?>
+
+
 <!-- 本文 -->
 <aside class="l-sidebar p-sidebar">
   <div class="p-sidebar__block p-sidebar-block01">
@@ -41,7 +62,7 @@ $about_link = esc_url(get_permalink($page->ID)); //aboutページリンク
 
       <?php
       $args = array(
-        'post_type' => 'blog',
+        'post_type' => $post_type,
         'posts_per_page' => '5',
         'orderby' => 'date',
         'order' => 'DESC',
@@ -54,20 +75,42 @@ $about_link = esc_url(get_permalink($page->ID)); //aboutページリンク
             <a href="<?php the_permalink(); ?>" class="p-sidebar-post__link">
               <div class="p-sidebar-post__card">
                 <figure class="p-sidebar-post__img">
-                  <?php if (has_post_thumbnail()) : ?>
-                    <?php the_post_thumbnail(); ?>
-                  <?php else : ?>
-                    <img src="<?= get_template_directory_uri(); ?>/img/dummy.webp" alt="新着記事画像" width="244" height="153" />
-                  <?php endif; ?>
+                  <?php display_acf_image('img2-1', get_template_directory_uri() . '/img/dummy.webp'); ?>
                 </figure>
               </div>
               <div class="p-sidebar-post__caption">
-                <?php $terms = get_the_terms(get_the_ID(), 'blog-category'); ?>
+
+                <?php if ($post_type == "post") : ?>
+                  <?php
+                  // 現在の投稿のカテゴリーを取得
+                  $categories = get_the_category();
+                  ?>
+                  <?php if ($categories && !is_wp_error($categories)) : ?>
+                    <?php foreach ($categories as $category) : ?>
+                      <div class="p-post-box__category c-tag-md"><?= esc_html($category->name); ?></div>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                <?php else : ?>
+                  <?php
+                  // 現在の投稿のタームを取得
+                  $terms = get_the_terms(get_the_ID(), 'blog-category');
+                  ?>
+                  <?php if ($terms && !is_wp_error($terms)) : ?>
+                    <?php foreach ($terms as $term) : ?>
+                      <div class="p-post-box__category c-tag-md"><?= esc_html($term->name); ?></div>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                <?php endif; ?>
+
+
+
+
+                <!-- <?php $terms = get_the_terms(get_the_ID(), 'blog-category'); ?>
                 <?php if ($terms && !is_wp_error($terms)) : ?>
                   <?php foreach ($terms as $term) : ?>
                     <div class="p-sidebar-post__category"><?= $term->name; ?></div>
                   <?php endforeach; ?>
-                <?php endif; ?>
+                <?php endif; ?> -->
 
 
                 <p class="p-sidebar-post__text">
@@ -93,13 +136,21 @@ $about_link = esc_url(get_permalink($page->ID)); //aboutページリンク
     <div class="p-sidebar-block03__contents">
 
       <?php
-      $terms = get_terms(array(
-        'taxonomy' => 'blog-category',
-        'hide_empty' => false, // 非表示のタームも含む
-      ));
+      if (is_archive() && $post_type !== "post" || is_single() && $post_type !== "post" || is_tax()) {
+        $terms = get_terms(array(
+          'taxonomy' => 'blog-category',
+          'hide_empty' => false, // 非表示のタームも含む
+        ));
+      } else {
+        $terms = get_categories(array(
+          'hide_empty' => false, // 非表示のカテゴリーも含む
+        ));
+      }
       ?>
       <?php foreach ($terms as $term) : ?>
-        <a href="<?= get_term_link($term); ?>" class="p-sidebar-block03__link"><?= $term->name; ?></a>
+        <a href="<?php echo (is_taxonomy($term)) ? get_term_link($term) : get_category_link($term); ?>" class="p-sidebar-block03__link">
+          <?php echo $term->name; ?>
+        </a>
       <?php endforeach; ?>
     </div>
   </div>

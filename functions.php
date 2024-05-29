@@ -258,6 +258,13 @@ class My_Footer_Nav_Walker extends Walker_Nav_Menu {
 /*--------------------------------------------------------
 テンプレートパーツ
 --------------------------------------------------------*/
+// URLのセグメントを取得する関数
+function get_url_segment() {
+  $path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+  $segments = explode('/', $path);
+  return $segments;
+}
+
 /*----- Heroセクションの画像をページ毎に変える -----*/
 function get_hero_paths() {
   // 初期値を設定
@@ -294,11 +301,32 @@ function get_hero_paths() {
     $args['sp'] = get_template_directory_uri() . '/img/staff_hero_sp.webp';
     $args['jp'] = 'スタッフ紹介';
     $args['en'] = 'STAFF';
-  } elseif (is_single() || is_archive()) { // 「スタッフブログ」ページの場合
+  } elseif (is_home() || is_category()) { // 「home.php」もしくは「category.php」ページの場合 ※必ず、下のis_archiveより前に多くこと
     $args['pc'] = get_template_directory_uri() . '/img/post_hero_pc.webp';
     $args['sp'] = get_template_directory_uri() . '/img/post_hero_sp.webp';
-    $args['jp'] = 'スタッフブログ';
-    $args['en'] = 'STAFF BLOG';
+    $args['jp'] = 'お知らせ';
+    $args['en'] = 'NEWS';
+  } elseif (is_single() || is_archive()) { // 「single.php」もしくは「archive.php(他)」ページの場合
+    $segments = get_url_segment();
+    if (is_single() && strpos($segments[0], 'news') !== false) {
+      // single.php で URL に 'news' が含まれる場合
+      $args['pc'] = get_template_directory_uri() . '/img/post_hero_pc.webp';
+      $args['sp'] = get_template_directory_uri() . '/img/post_hero_sp.webp';
+      $args['jp'] = 'お知らせ';
+      $args['en'] = 'NEWS';
+    } elseif (is_single() && strpos($segments[0], 'blog') !== false) {
+      // single.php で URL に 'blog' が含まれる場合
+      $args['sp'] = get_template_directory_uri() . '/img/post_hero_pc.webp';
+      $args['pc'] = get_template_directory_uri() . '/img/post_hero_sp.webp';
+      $args['jp'] = 'スタッフブログ';
+      $args['en'] = 'STAFF BLOG';
+    } else {
+      // その他の single.php もしくは archive.php ページの場合
+      $args['pc'] = get_template_directory_uri() . '/img/post_hero_pc.webp';
+      $args['sp'] = get_template_directory_uri() . '/img/post_hero_sp.webp';
+      $args['jp'] = 'スタッフブログ';
+      $args['en'] = 'STAFF BLOG';
+    }
   }
 
   return $args;
@@ -306,8 +334,47 @@ function get_hero_paths() {
 
 
 /*--------------------------------------------------------
-アーカイブ(archive.php、taxonomy.php)投稿ループ表示
+ACFテキスト内リンク表示
 --------------------------------------------------------*/
+function acf_text_with_link($text_field, $link_field = '', $link_class = '') {
+  // ACFフィールドからテキストを取得
+  $text = get_field($text_field);
+  // リンクフィールドが指定されていない場合、そのままのテキストを返す
+  if (empty($link_field)) {
+    return $text;
+  }
+  // ACFフィールドからリンクを取得
+  $link = get_field($link_field);
+  // リンクのURLとタイトルを取得
+  if ($link && isset($link['url']) && isset($link['title'])) {
+    $link_url = $link['url'];
+    $link_title = $link['title'];
+    // クラス名を設定
+    $class_attribute = !empty($link_class) ? ' class="' . esc_attr($link_class) . '"' : '';
+    // テキスト内の特定のキーワードをリンクに変換
+    $link_html = '<a href="' . esc_url($link_url) . '"' . $class_attribute . '>' . esc_html($link_title) . '</a>';
+    $text_with_link = str_replace($link_title, $link_html, $text);
+    // 出力
+    return $text_with_link;
+  } else {
+    // リンクフィールドが空の場合、そのままのテキストを返す
+    return $text;
+  }
+}
+
+/*--------------------------------------------------------
+ACF画像表示
+--------------------------------------------------------*/
+function display_acf_image($field_key, $dummy_image_url, $dummy_image_alt = 'ダミー画像', $dummy_image_width = 670, $dummy_image_height = 419) {
+  $image = get_field($field_key);
+  if (!empty($image) && is_array($image)) {
+    $image_url = $image['url'];
+    $alt_text = isset($image['alt']) ? $image['alt'] : '';
+    echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($alt_text) . '">';
+  } else {
+    echo '<img src="' . esc_url($dummy_image_url) . '" alt="' . esc_attr($dummy_image_alt) . '" width="' . intval($dummy_image_width) . '" height="' . intval($dummy_image_height) . '">';
+  }
+}
 
 /*--------------------------------------------------------
 ページネーション(archive.php、taxonomy.php)

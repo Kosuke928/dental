@@ -8,10 +8,23 @@
           <div class="p-post__container">
             <ul class="p-post__thumbnails">
 
+              <!-- http://dental.local/news/ →home.phpなので関係なし -->
+              <!-- http://dental.local/category/news-cat1/ →archive.php-->
+
+              <!-- http://dental.local/blog/ →archive.php-->
+
               <?php
+              // 現在のページ番号を取得
               $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+              // URLからタームスラッグを取得する
+              $url_path = $_SERVER['REQUEST_URI']; // 例: /blog-category/blog-cat3/?page=2
+              $parsed_url = parse_url($url_path, PHP_URL_PATH); // 例: /blog-category/blog-cat3/
+              $path_segments = explode('/', trim($parsed_url, '/')); // 例: ['blog-category', 'blog-cat3']
+              $cat_type = isset($path_segments[1]) ? $path_segments[0] : "blog-category";  // 'category' or 'blog-category'
+              $post_type = $path_segments[0] === "category" ? "post" : $path_segments[0]; //'post' or 'blog'
+
               $args = array(
-                'post_type' => 'blog',
+                'post_type' => $post_type,
                 'posts_per_page' => 10,
                 'orderby' => 'date',
                 'order' => 'DESC',
@@ -31,20 +44,33 @@
                     <a href="<?php the_permalink(); ?>" class="p-post-box__link">
                       <div class="p-post-box__card  <?php if ($is_new) echo 'is-new'; ?>">
                         <figure class="p-post-box__img">
-                          <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail(); ?>
-                          <?php else : ?>
-                            <img src="<?= get_template_directory_uri(); ?>/img/dummy.webp" alt="新着記事画像" width="244" height="153" />
-                          <?php endif; ?>
+                          <?php display_acf_image('img2-1', get_template_directory_uri() . '/img/dummy.webp'); ?>
                         </figure>
                       </div>
                       <div class="p-post-box__caption">
-                        <?php $terms = get_the_terms(get_the_ID(), 'blog-category'); ?>
-                        <?php if ($terms && !is_wp_error($terms)) : ?>
-                          <?php foreach ($terms as $term) : ?>
-                            <div class="p-post-box__category c-tag-md"><?= $term->name; ?></div>
-                          <?php endforeach; ?>
+
+                        <?php if ($post_type == "post") : ?>
+                          <?php
+                          // 現在の投稿のカテゴリーを取得
+                          $categories = get_the_category();
+                          ?>
+                          <?php if ($categories && !is_wp_error($categories)) : ?>
+                            <?php foreach ($categories as $category) : ?>
+                              <div class="p-post-box__category c-tag-md"><?= esc_html($category->name); ?></div>
+                            <?php endforeach; ?>
+                          <?php endif; ?>
+                        <?php else : ?>
+                          <?php
+                          // 現在の投稿のタームを取得
+                          $terms = get_the_terms(get_the_ID(), 'blog-category');
+                          ?>
+                          <?php if ($terms && !is_wp_error($terms)) : ?>
+                            <?php foreach ($terms as $term) : ?>
+                              <div class="p-post-box__category c-tag-md"><?= esc_html($term->name); ?></div>
+                            <?php endforeach; ?>
+                          <?php endif; ?>
                         <?php endif; ?>
+
                         <p class="p-post-box__text">
                           <?php the_title(); ?>
                         </p>

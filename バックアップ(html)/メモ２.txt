@@ -96,3 +96,26 @@ use_label_element default:1 "初診" "再診"]
 </span>
 </div>
 </div>
+
+
+
+
+              // 現在のページ番号を取得
+              $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+              // URLからタームスラッグを取得する
+              $url_path = $_SERVER['REQUEST_URI']; // 例: /blog-category/blog-cat3/?page=2
+              $parsed_url = parse_url($url_path, PHP_URL_PATH); // 例: /blog-category/blog-cat3/
+              $path_segments = explode('/', trim($parsed_url, '/')); // 例: ['blog-category', 'blog-cat3']
+
+              if (isset($path_segments[0]) && $path_segments[0] === "category") {
+                $term_slug = "category";
+                $post_type = "post";
+              } elseif (isset($path_segments[1])) {
+                $term_slug = $path_segments[1];
+                $post_type = "blog";
+              } elseif (isset($path_segments[0])) {
+                $term_slug = $path_segments[0];
+                $post_type = "blog";
+              }
+              echo $term_slug;
+              echo $post_type;
