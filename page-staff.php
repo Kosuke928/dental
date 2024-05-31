@@ -110,268 +110,90 @@
       <div class="p-staff__container">
         <h2 class="p-staff__title c-title-sec">スタッフ紹介</h2>
         <ul class="p-staff__boxes">
-          <li class="p-staff__box">
-            <h3 class="p-staff__box-title">歯科衛生士</h3>
-            <ul class="p-staff__box-list">
-              <li class="p-staff__box-item p-staff-thumbnail">
-                <figure class="p-staff-thumbnail__img">
-                  <picture>
-                    <source media="(min-width: 768px)" srcset="<?= get_template_directory_uri(); ?>/img//staff_staff_pc_01.webp" width="280" height="280" />
-                    <img src="<?= get_template_directory_uri(); ?>/img/staff_staff_sp_01.webp" alt="スタッフの画像" decoding="async" width="335" height="336" />
-                  </picture>
-                </figure>
-                <div class="p-staff-thumbnail__contents">
-                  <p class="p-staff-thumbnail__name">
-                    <span class="p-staff-thumbnail__job">歯科衛生士</span>
-                    鈴木 太郎
-                  </p>
-                  <table class="p-staff-thumbnail__introduction">
-                    <tbody>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">出身地</th>
-                        <td class="p-staff-thumbnail__body">北海道</td>
-                      </tr>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">趣味</th>
-                        <td class="p-staff-thumbnail__body">
-                          スキー、料理
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">
-                          好きな食べ物
-                        </th>
-                        <td class="p-staff-thumbnail__body">
-                          お寿司、うなぎ
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </li>
-              <li class="p-staff__box-item p-staff-thumbnail">
-                <figure class="p-staff-thumbnail__img">
-                  <picture>
-                    <source media="(min-width: 768px)" srcset="<?= get_template_directory_uri(); ?>/img//staff_staff_pc_02.webp" width="280" height="280" />
-                    <img src="<?= get_template_directory_uri(); ?>/img/staff_staff_sp_02.webp" alt="スタッフの画像" decoding="async" width="335" height="336" />
-                  </picture>
-                </figure>
-                <div class="p-staff-thumbnail__contents">
-                  <p class="p-staff-thumbnail__name">
-                    <span class="p-staff-thumbnail__job">歯科衛生士</span>
-                    山田 花子
-                  </p>
-                  <table class="p-staff-thumbnail__introduction">
-                    <tbody>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">出身地</th>
-                        <td class="p-staff-thumbnail__body">北海道</td>
-                      </tr>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">趣味</th>
-                        <td class="p-staff-thumbnail__body">
-                          スキー、料理
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">
-                          好きな食べ物
-                        </th>
-                        <td class="p-staff-thumbnail__body">
-                          お寿司、うなぎ
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li class="p-staff__box">
-            <h3 class="p-staff__box-title">歯科助手</h3>
-            <ul class="p-staff__box-list">
-              <li class="p-staff__box-item p-staff-thumbnail">
-                <figure class="p-staff-thumbnail__img">
-                  <picture>
-                    <source media="(min-width: 768px)" srcset="<?= get_template_directory_uri(); ?>/img//staff_staff_pc_03.webp" width="280" height="280" />
-                    <img src="<?= get_template_directory_uri(); ?>/img/staff_staff_sp_03.webp" alt="スタッフの画像" decoding="async" width="335" height="336" />
-                  </picture>
-                </figure>
-                <div class="p-staff-thumbnail__contents">
-                  <p class="p-staff-thumbnail__name">
-                    <span class="p-staff-thumbnail__job">歯科衛生士</span>
-                    山田 花子
-                  </p>
-                  <table class="p-staff-thumbnail__introduction">
-                    <tbody>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">出身地</th>
-                        <td class="p-staff-thumbnail__body">北海道</td>
-                      </tr>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">趣味</th>
-                        <td class="p-staff-thumbnail__body">
-                          スキー、料理
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">
-                          好きな食べ物
-                        </th>
-                        <td class="p-staff-thumbnail__body">
-                          お寿司、うなぎ
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </li>
-              <li class="p-staff__box-item p-staff-thumbnail">
-                <figure class="p-staff-thumbnail__img">
-                  <picture>
-                    <source media="(min-width: 768px)" srcset="<?= get_template_directory_uri(); ?>/img//staff_staff_pc_04.webp" width="280" height="280" />
-                    <img src="<?= get_template_directory_uri(); ?>/img/staff_staff_sp_04.webp" alt="スタッフの画像" decoding="async" width="335" height="336" />
-                  </picture>
-                </figure>
-                <div class="p-staff-thumbnail__contents">
-                  <p class="p-staff-thumbnail__name">
-                    <span class="p-staff-thumbnail__job">歯科衛生士</span>
-                    山田 花子
-                  </p>
-                  <table class="p-staff-thumbnail__introduction">
-                    <tbody>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">出身地</th>
-                        <td class="p-staff-thumbnail__body">北海道</td>
-                      </tr>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">趣味</th>
-                        <td class="p-staff-thumbnail__body">
-                          スキー、料理
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">
-                          好きな食べ物
-                        </th>
-                        <td class="p-staff-thumbnail__body">
-                          お寿司、うなぎ
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </li>
-              <li class="p-staff__box-item p-staff-thumbnail">
-                <figure class="p-staff-thumbnail__img">
-                  <picture>
-                    <source media="(min-width: 768px)" srcset="<?= get_template_directory_uri(); ?>/img//staff_staff_pc_05.webp" width="280" height="280" />
-                    <img src="<?= get_template_directory_uri(); ?>/img/staff_staff_sp_05.webp" alt="スタッフの画像" decoding="async" width="335" height="336" />
-                  </picture>
-                </figure>
-                <div class="p-staff-thumbnail__contents">
-                  <p class="p-staff-thumbnail__name">
-                    <span class="p-staff-thumbnail__job">歯科衛生士</span>
-                    山田 花子
-                  </p>
-                  <table class="p-staff-thumbnail__introduction">
-                    <tbody>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">出身地</th>
-                        <td class="p-staff-thumbnail__body">北海道</td>
-                      </tr>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">趣味</th>
-                        <td class="p-staff-thumbnail__body">
-                          スキー、料理
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">
-                          好きな食べ物
-                        </th>
-                        <td class="p-staff-thumbnail__body">
-                          お寿司、うなぎ
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </li>
-              <li class="p-staff__box-item p-staff-thumbnail">
-                <figure class="p-staff-thumbnail__img">
-                  <picture>
-                    <source media="(min-width: 768px)" srcset="<?= get_template_directory_uri(); ?>/img//staff_staff_pc_06.webp" width="280" height="280" />
-                    <img src="<?= get_template_directory_uri(); ?>/img/staff_staff_sp_06.webp" alt="スタッフの画像" decoding="async" width="335" height="336" />
-                  </picture>
-                </figure>
-                <div class="p-staff-thumbnail__contents">
-                  <p class="p-staff-thumbnail__name">
-                    <span class="p-staff-thumbnail__job">歯科衛生士</span>
-                    山田 花子
-                  </p>
-                  <table class="p-staff-thumbnail__introduction">
-                    <tbody>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">出身地</th>
-                        <td class="p-staff-thumbnail__body">北海道</td>
-                      </tr>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">趣味</th>
-                        <td class="p-staff-thumbnail__body">
-                          スキー、料理
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">
-                          好きな食べ物
-                        </th>
-                        <td class="p-staff-thumbnail__body">
-                          お寿司、うなぎ
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </li>
-              <li class="p-staff__box-item p-staff-thumbnail">
-                <figure class="p-staff-thumbnail__img">
-                  <picture>
-                    <source media="(min-width: 768px)" srcset="<?= get_template_directory_uri(); ?>/img//staff_staff_pc_07.webp" width="280" height="280" />
-                    <img src="<?= get_template_directory_uri(); ?>/img/staff_staff_sp_07.webp" alt="スタッフの画像" decoding="async" width="335" height="336" />
-                  </picture>
-                </figure>
-                <div class="p-staff-thumbnail__contents">
-                  <p class="p-staff-thumbnail__name">
-                    <span class="p-staff-thumbnail__job">歯科衛生士</span>
-                    山田 花子
-                  </p>
-                  <table class="p-staff-thumbnail__introduction">
-                    <tbody>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">出身地</th>
-                        <td class="p-staff-thumbnail__body">北海道</td>
-                      </tr>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">趣味</th>
-                        <td class="p-staff-thumbnail__body">
-                          スキー、料理
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="p-staff-thumbnail__head">
-                          好きな食べ物
-                        </th>
-                        <td class="p-staff-thumbnail__body">
-                          お寿司、うなぎ
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </li>
-            </ul>
-          </li>
+
+
+          <?php
+          // カスタムタクソノミーのタームを取得
+          $terms = get_terms(array(
+            'taxonomy' => 'staff-category', // タクソノミースラッグ
+            'hide_empty' => false,
+            'parent' => 0,
+            'orderby' => 'description', // 説明フィールドで並べ替え
+            'order' => 'ASC'
+          ));
+
+          // タームが存在する場合に処理
+          if (!is_wp_error($terms) && !empty($terms)) {
+            foreach ($terms as $term) {
+              // 各タームの情報を取得
+              $term_slug = $term->slug;
+              $term_name = $term->name;
+
+              // WP_Queryのパラメータを設定
+              $args = array(
+                'post_type' => 'staffs',
+                'post_status' => 'publish',
+                'posts_per_page' => -1,
+                'orderby' => 'menu_order',
+                'order' => 'ASC',
+                'tax_query' => array(
+                  array(
+                    'taxonomy' => 'staff-category',
+                    'field'    => 'slug',
+                    'terms'    => $term_slug,
+                  ),
+                ),
+              );
+              // クエリを実行
+              $query = new WP_Query($args);
+              if ($query->have_posts()) : ?>
+                <li class="p-staff__box">
+                  <h3 class="p-staff__box-title"><?= $term_name; ?></h3>
+                  <ul class="p-staff__box-list">
+                    <?php while ($query->have_posts()) : $query->the_post(); ?>
+                      <li class="p-staff__box-item p-staff-thumbnail">
+                        <figure class="p-staff-thumbnail__img">
+                          <picture>
+                            <?php display_acf_image('img1', get_template_directory_uri() . '/img/dummy.webp'); ?>
+                          </picture>
+                        </figure>
+                        <div class="p-staff-thumbnail__contents">
+                          <p class="p-staff-thumbnail__name">
+                            <span class="p-staff-thumbnail__job"><?= $term_name; ?></span>
+                            <?= the_title(); ?>
+                          </p>
+                          <table class="p-staff-thumbnail__introduction">
+                            <tbody>
+                              <tr>
+                                <th class="p-staff-thumbnail__head">出身地</th>
+                                <td class="p-staff-thumbnail__body"><?php the_field("text1"); ?></td>
+                              </tr>
+                              <tr>
+                                <th class="p-staff-thumbnail__head">趣味</th>
+                                <td class="p-staff-thumbnail__body">
+                                  <?php the_field("text2"); ?>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th class="p-staff-thumbnail__head">
+                                  好きな食べ物
+                                </th>
+                                <td class="p-staff-thumbnail__body">
+                                  <?php the_field("text3"); ?>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </li>
+                    <?php endwhile; ?>
+                  </ul>
+                </li>
+          <?php endif;
+              wp_reset_postdata();
+            }
+          }
+          ?>
         </ul>
       </div>
     </div>
