@@ -7,50 +7,60 @@
       <!-- ヘッダー部分 -->
       <div class="p-treatment__container">
         <?php
-        // カテゴリ別にタームを設定
-        $categories = array(
-          'general' => '一般診療',
-          'special' => '特殊診療',
-        );
-        //ターム種類分(general/special)だけループ処理
-        foreach ($categories as $slug => $title) {
-          // WP_Queryのパラメータを設定
-          $args = array(
-            'post_type' => 'plan',
-            'post_status' => 'publish',
-            'posts_per_page' => -1,
-            'orderby' => 'menu_order',
-            'order' => 'ASC',
-            'tax_query' => array(
-              array(
-                'taxonomy' => 'plan-category',
-                'field'    => 'slug',
-                'terms'    => $slug,
+        // カスタムタクソノミーのタームを取得
+        $terms = get_terms(array(
+          'taxonomy' => 'plan-category', // タクソノミースラッグ
+          'hide_empty' => false,
+          'parent' => 0,
+          'orderby' => 'description', // 説明フィールドで並べ替え
+          'order' => 'ASC'
+        ));
+
+        // タームが存在する場合に処理
+        if (!is_wp_error($terms) && !empty($terms)) {
+          foreach ($terms as $term) {
+            // 各タームの情報を取得
+            $term_slug = $term->slug;
+            $term_name = $term->name;
+
+            // WP_Queryのパラメータを設定
+            $args = array(
+              'post_type' => 'plan',
+              'post_status' => 'publish',
+              'posts_per_page' => -1,
+              'orderby' => 'menu_order',
+              'order' => 'ASC',
+              'tax_query' => array(
+                array(
+                  'taxonomy' => 'plan-category',
+                  'field'    => 'slug',
+                  'terms'    => $term_slug,
+                ),
               ),
-            ),
-          );
-          // クエリを実行
-          $query = new WP_Query($args);
-          if ($query->have_posts()) : ?>
-            <div class="p-treatment__box">
-              <div class="p-treatment__box-top">
-                <h2 class="p-treatment__title"><?= esc_html($title); ?></h2>
-                <?php if ($slug == 'general') : ?>
-                  <span class="p-treatment__tag c-tag-lg">保険対象</span>
-                <? elseif ($slug == 'special') : ?>
-                  <span class="p-treatment__tag c-tag-lg--accent">実費</span>
-                <?php endif; ?>
+            );
+            // クエリを実行
+            $query = new WP_Query($args);
+            if ($query->have_posts()) : ?>
+              <div class="p-treatment__box">
+                <div class="p-treatment__box-top">
+                  <h2 class="p-treatment__title"><?= esc_html($term_name); ?></h2>
+                  <?php if ($term_slug == 'general') : ?>
+                    <span class="p-treatment__tag c-tag-lg">保険対象</span>
+                  <? elseif ($term_slug == 'special') : ?>
+                    <span class="p-treatment__tag c-tag-lg--accent">実費</span>
+                  <?php endif; ?>
+                </div>
+                <ul class="p-treatment__list">
+                  <?php while ($query->have_posts()) : $query->the_post(); ?>
+                    <li class="p-treatment__item">
+                      <a href="#<?= esc_attr(get_post_field('post_name')); ?>" class="p-treatment__link c-button-cat"><?= the_title() ?></a>
+                    </li>
+                  <?php endwhile; ?>
+                </ul>
               </div>
-              <ul class="p-treatment__list">
-                <?php while ($query->have_posts()) : $query->the_post(); ?>
-                  <li class="p-treatment__item">
-                    <a href="#<?= esc_attr(get_post_field('post_name')); ?>" class="p-treatment__link c-button-cat"><?= the_title() ?></a>
-                  </li>
-                <?php endwhile; ?>
-              </ul>
-            </div>
         <?php endif;
-          wp_reset_postdata();
+            wp_reset_postdata();
+          }
         }
         ?>
       </div>
