@@ -3223,6 +3223,10 @@ General
   }
 }
 
+.p-decoration-parts img {
+  width: 100%;
+}
+
 .p-general__decoration-parts01 {
   position: absolute;
   width: 56px;

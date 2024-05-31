@@ -34,7 +34,7 @@
   <header class="l-header">
     <div class="l-header__inner">
       <h1 class="l-header__left">
-        <a href="<?php home_url('/') ?>" class="c-site-logo"><img src="<?= get_template_directory_uri(); ?>/img/site-logo.webp" alt="みなみ歯科クリニック" width="270" height="32" /></a>
+        <a href="<?= home_url('/'); ?>" class="c-site-logo"><img src="<?= get_template_directory_uri(); ?>/img/site-logo.webp" alt="みなみ歯科クリニック" width="270" height="32" /></a>
       </h1>
       <div id="js-drawer-open" class="l-header__button u-lg-hidden">
         <button class="c-hamburger" aria-label="Menu">
