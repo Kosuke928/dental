@@ -87,7 +87,7 @@ if($path_segments[0] === "category" || $path_segments[0] === "news"){
                   ?>
                   <?php if ($categories && !is_wp_error($categories)) : ?>
                     <?php foreach ($categories as $category) : ?>
-                      <div class="p-post-box__category c-tag-md"><?= esc_html($category->name); ?></div>
+                      <div class="p-post-box__category c-tag-md--side"><?= esc_html($category->name); ?></div>
                     <?php endforeach; ?>
                   <?php endif; ?>
                 <?php else : ?>
@@ -97,7 +97,7 @@ if($path_segments[0] === "category" || $path_segments[0] === "news"){
                   ?>
                   <?php if ($terms && !is_wp_error($terms)) : ?>
                     <?php foreach ($terms as $term) : ?>
-                      <div class="p-post-box__category c-tag-md"><?= esc_html($term->name); ?></div>
+                      <div class="p-post-box__category c-tag-md--side"><?= esc_html($term->name); ?></div>
                     <?php endforeach; ?>
                   <?php endif; ?>
                 <?php endif; ?>

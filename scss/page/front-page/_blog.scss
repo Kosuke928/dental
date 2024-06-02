@@ -114,6 +114,9 @@ Front-page_Blog
   }
 }
 .p-blog-box__category{
+  position: absolute;
+  top: 0px;
+  left: 0px;
   margin-top: 5px;
   padding-block: 2px;
   padding-inline: 8px;
@@ -128,6 +131,8 @@ Front-page_Blog
   color: global.$c-base-light;
   background: global.$c-main;
   @include global.mq(sm) {
+    top: -15px;
+    left: 24px;
     margin-top: 0px;
     padding-block: 6px;
     padding-inline: 12px;
@@ -171,7 +176,7 @@ Front-page_Blog
 }
 
 .p-blog-box__button {
-  margin-top: 48px;
+  margin-top: 49px;
   display: inline-block;
   @include global.mq(sm) {
     margin-top: 72px;

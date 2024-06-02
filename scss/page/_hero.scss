@@ -100,6 +100,7 @@ Hero
 }
 
 //*---------- パンくず ----------*/
+
 .breadcrumb {
   margin-top: 6px;
   display: flex;
@@ -111,19 +112,29 @@ Hero
     gap: 9px;
   }
 }
-.home {
-  color: #c2c2c2;
-  font-size: 12px;
-  font-weight: 500;
-}
-.page-page {
-  color: global.$c-base-dark;
-  font-size: 12px;
-  font-weight: 500;
-}
+
+.home,
+.page-page,
 .page-thanks {
-  color: global.$c-base-dark;
+  color: global.$c-base-dark; /* グローバル変数で指定している色を使用 */
   font-size: 12px;
   font-weight: 500;
-  margin-left: -1px;
+}
+
+.breadcrumb span[property="itemListElement"] {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.breadcrumb span[property="itemListElement"]:nth-of-type(n + 3) {
+  flex-shrink: 1;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.breadcrumb span[property="itemListElement"]:nth-of-type(n + 3) a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

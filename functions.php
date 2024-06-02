@@ -299,7 +299,7 @@ function get_hero_paths() {
     }
   } elseif (is_page('medical')) { // 「診療案内」ページの場合
     $args['pc'] = get_template_directory_uri() . '/img/guid_hero_pc.webp';
-    $args['sp'] = get_template_directory_uri() . '/img/dui_hero_sp.webp';
+    $args['sp'] = get_template_directory_uri() . '/img/guid_hero_sp.webp';
     $args['jp'] = '診療案内';
     $args['en'] = 'MEDICAL';
   } elseif (is_page('about')) { // 「当院について」ページの場合

@@ -32,7 +32,7 @@ Staff
   margin-top: 36px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 42px;
   @include global.mq(sm) {
     margin-top: 60px;
     max-width: 1000px;
@@ -57,7 +57,7 @@ Staff
   padding-top: 37px;
   display: flex;
   flex-direction: column;
-  gap: 57px;
+  gap: 58px;
   @include global.mq(sm) {
     padding-top: 39px;
     flex-direction: row;
@@ -75,7 +75,7 @@ Staff
 .p-staff-thumbnail {
 }
 .p-staff-thumbnail__img {
-  width: 335px;
+  max-width: 335px;
   @include global.mq(sm) {
     width: 100%;
   }
