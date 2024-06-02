@@ -56,6 +56,7 @@ Front-page_Header & Drawer
 
 .p-gnav {
 }
+
 .p-gnav__list {
   display: flex;
   align-items: flex-end;
@@ -64,13 +65,56 @@ Front-page_Header & Drawer
 .p-gnav__item {
 }
 .p-gnav__link {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: global.$c-base-dark;
+  transition: color .3s;
   .btn__icon-path {
     fill: global.$c-base-dark;
+    transition: fill .3s;
   }
 }
+.p-gnav__link:hover {
+  color: global.$c-main;
+  .btn__icon-path {
+    fill: global.$c-main;
+  }
+}
+.p-gnav__link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  height: 2px;
+  width: 0px;
+  background-color: global.$c-main;
+}
+.p-gnav__link.is-page {
+  color: global.$c-main;
+  .btn__icon-path {
+    fill: global.$c-main;
+  }
+}
+.p-gnav__link.is-page::after {
+  background-color: global.$c-main;
+  width: 20px;
+}
+.p-gnav__link:hover::after {
+  animation: expandWidth 0.3s forwards;
+}
+@keyframes expandWidth {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 20px;
+  }
+}
+
 .p-gnav__text {
   font-size: 11px;
   font-weight: 700;

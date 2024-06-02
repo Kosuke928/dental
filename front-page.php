@@ -105,7 +105,7 @@ $news_page_link = get_permalink($news_page->ID);
             お子様からご高齢の方まで、快適な空間で治療が受けられる場を作り、地域医療に貢献しきたいと考えております。
           </p>
           <div class="p-about-concept__button">
-            <a href="./page-about.html" class="c-button-cir-sm c-arrow-link">当院について</a>
+            <a href="<?= home_url('/about/'); ?>" class="c-button-cir-sm c-arrow-link">当院について</a>
           </div>
         </div>
         <figure class="p-about-concept__img">
@@ -169,7 +169,7 @@ $news_page_link = get_permalink($news_page->ID);
           <div class="p-guid__contents p-guid-box">
             <ul class="p-guid-box__thumbnails">
               <li class="p-guid-box__thumbnail">
-                <a href="./page-guid.html#general" class="p-guid-box__thumbnail-link">
+                <a href="<?= home_url('/medical/#general'); ?>" class="p-guid-box__thumbnail-link">
                   <figure class="p-guid-box__img">
                     <img src="<?= get_template_directory_uri(); ?>/img/index_guid_01.webp" alt="歯ブラシが瓶の中に立てかけてある画像" width="460" height="290" />
                   </figure>
@@ -183,7 +183,7 @@ $news_page_link = get_permalink($news_page->ID);
                 </a>
               </li>
               <li class="p-guid-box__thumbnail">
-                <a href="./page-guid.html#special" class="p-guid-box__thumbnail-link">
+                <a href="<?= home_url('/medical/#special'); ?>" class="p-guid-box__thumbnail-link">
                   <figure class="p-guid-box__img">
                     <img src="<?= get_template_directory_uri(); ?>/img/index_guid_02.webp" alt="入れ歯のモデルサンプル画像" width="460" height="290" />
                   </figure>
@@ -232,105 +232,53 @@ $news_page_link = get_permalink($news_page->ID);
         <h2 class="p-blog__title c-title-sec">スタッフブログ</h2>
         <div class="p-blog__contents p-blog-box">
           <ul class="p-blog-box__thumbnails">
-            <li class="p-blog-box__thumbnail">
-              <a href="./single-blog.html" class="p-blog-box__link">
-                <div class="p-blog-box__card is-new">
-                  <figure class="p-blog-box__img">
-                    <img src="<?= get_template_directory_uri(); ?>/img/index_blog_01.webp" alt="記事の画像" width="300" height="188" />
-                  </figure>
-                </div>
-                <div class="p-blog-box__caption">
-                  <div class="p-blog-box__category"></div>
-                  <p class="p-blog-box__text">
-                    記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。
-                  </p>
-                  <time class="p-blog-box__date" datetime="2020-02-14">2020.02.14</time>
-                </div>
-              </a>
-            </li>
-            <li class="p-blog-box__thumbnail">
-              <a href="./single-blog.html" class="p-blog-box__link">
-                <div class="p-blog-box__card is-new">
-                  <figure class="p-blog-box__img">
-                    <img src="<?= get_template_directory_uri(); ?>/img/index_blog_01.webp" alt="記事の画像" width="300" height="188" />
-                  </figure>
-                </div>
-                <div class="p-blog-box__caption">
-                  <div class="p-blog-box__category"></div>
-                  <p class="p-blog-box__text">
-                    記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。
-                  </p>
-                  <time class="p-blog-box__date" datetime="2020-02-14">2020.02.14</time>
-                </div>
-              </a>
-            </li>
-            <li class="p-blog-box__thumbnail">
-              <a href="./single-blog.html" class="p-blog-box__link">
-                <div class="p-blog-box__card">
-                  <figure class="p-blog-box__img">
-                    <img src="<?= get_template_directory_uri(); ?>/img/index_blog_01.webp" alt="記事の画像" width="300" height="188" />
-                  </figure>
-                </div>
-                <div class="p-blog-box__caption">
-                  <div class="p-blog-box__category"></div>
-                  <p class="p-blog-box__text">
-                    記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。
-                  </p>
-                  <time class="p-blog-box__date" datetime="2020-02-14">2020.02.14</time>
-                </div>
-              </a>
-            </li>
-            <li class="p-blog-box__thumbnail">
-              <a href="./single-blog.html" class="p-blog-box__link">
-                <div class="p-blog-box__card">
-                  <figure class="p-blog-box__img">
-                    <img src="<?= get_template_directory_uri(); ?>/img/index_blog_01.webp" alt="記事の画像" width="300" height="188" />
-                  </figure>
-                </div>
-                <div class="p-blog-box__caption">
-                  <div class="p-blog-box__category"></div>
-                  <p class="p-blog-box__text">
-                    記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。
-                  </p>
-                  <time class="p-blog-box__date" datetime="2020-02-14">2020.02.14</time>
-                </div>
-              </a>
-            </li>
-            <li class="p-blog-box__thumbnail">
-              <a href="./single-blog.html" class="p-blog-box__link">
-                <div class="p-blog-box__card">
-                  <figure class="p-blog-box__img">
-                    <img src="<?= get_template_directory_uri(); ?>/img/index_blog_01.webp" alt="記事の画像" width="300" height="188" />
-                  </figure>
-                </div>
-                <div class="p-blog-box__caption">
-                  <div class="p-blog-box__category"></div>
-                  <p class="p-blog-box__text">
-                    記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。
-                  </p>
-                  <time class="p-blog-box__date" datetime="2020-02-14">2020.02.14</time>
-                </div>
-              </a>
-            </li>
-            <li class="p-blog-box__thumbnail">
-              <a href="./single-blog.html" class="p-blog-box__link">
-                <div class="p-blog-box__card">
-                  <figure class="p-blog-box__img">
-                    <img src="<?= get_template_directory_uri(); ?>/img/index_blog_01.webp" alt="記事の画像" width="300" height="188" />
-                  </figure>
-                </div>
-                <div class="p-blog-box__caption">
-                  <div class="p-blog-box__category"></div>
-                  <p class="p-blog-box__text">
-                    記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。
-                  </p>
-                  <time class="p-blog-box__date" datetime="2020-02-14">2020.02.14</time>
-                </div>
-              </a>
-            </li>
+
+            <?php
+            $args = array(
+              'post_type' => 'blog',
+              'posts_per_page' => 6,
+              'orderby' => 'date',
+              'order' => 'DESC',
+            );
+            $the_query = new WP_Query($args);
+            if ($the_query->have_posts()) :
+              while ($the_query->have_posts()) : $the_query->the_post();
+                // 投稿の投稿日を取得
+                $post_date = get_the_date('Y-m-d');
+                // 現在の日付を取得
+                $current_date = date('Y-m-d');
+                // 日付を比較して3日以内の場合に「is-new」というクラスを追加
+                $is_new = (strtotime($current_date) - strtotime($post_date)) < 259200; // 259200は3日間の秒数
+            ?>
+                <li class="p-blog-box__thumbnail">
+                  <a href="<?php the_permalink(); ?>" class="p-blog-box__link">
+                    <div class="p-blog-box__card <?php if ($is_new) echo 'is-new'; ?>">
+                      <figure class="p-blog-box__img">
+                        <?php display_acf_image('img2-1', get_template_directory_uri() . '/img/dummy.webp'); ?>
+                      </figure>
+                    </div>
+                    <div class="p-blog-box__caption">
+                      <?php
+                      // 現在の投稿のタームを取得
+                      $terms = get_the_terms(get_the_ID(), 'blog-category');
+                      ?>
+                      <?php if ($terms && !is_wp_error($terms)) : ?>
+                        <?php foreach ($terms as $term) : ?>
+                          <div class="p-blog-box__category"><?= esc_html($term->name); ?></div>
+                        <?php endforeach; ?>
+                      <?php endif; ?>
+                      <p class="p-blog-box__text"><?= the_title(); ?></p>
+                      <time class="p-blog-box__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.j'); ?></time>
+                    </div>
+                  </a>
+                </li>
+            <?php endwhile;
+            endif; ?>
+            <?php wp_reset_postdata(); ?>
+
           </ul>
           <div class="p-blog-box__button">
-            <a href="./single.html" class="c-button-cir-sm--long c-arrow-link">スタッフブログ一覧はこちら</a>
+            <a href="<?= home_url('/blog/'); ?>" class="c-button-cir-sm--long c-arrow-link">スタッフブログ一覧はこちら</a>
           </div>
         </div>
       </div>

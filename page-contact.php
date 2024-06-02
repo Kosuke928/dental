@@ -30,3 +30,7 @@
   </div>
 </main>
 <?php get_footer(); ?>
+
+
+<!-- 
+<span class="p-contact-form__field-error u-action-hidden">必須項目に入力してください。</span> -->

@@ -72,6 +72,10 @@ class My_Custom_Nav_Walker extends Walker_Nav_Menu {
     if ($args->theme_location === 'global') {
       $link_class = 'p-gnav__link';
       $text_class = 'p-gnav__text';
+      // 現在のページの場合にクラスを追加
+      if (in_array('current-menu-item', $item->classes)) {
+        $link_class .= ' is-page';
+      }
       switch ($item->title) {
         case 'ホーム':
           $icon_svg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-3 -1 24 24" fill="none">
@@ -271,8 +275,9 @@ function get_hero_paths() {
   $args = [
     'pc' => get_template_directory_uri() . '/img/dummy.webp',
     'sp' => get_template_directory_uri() . '/img/dummy.webp',
-    'jp' => 'デフォルト',
-    'en' => 'DEFAULT',
+    'jp' => '404 Error',
+    'jp2' => '',
+    'en' => 'このページは存在しません',
     'home' => 'ホーム',
   ];
   // ページに応じて値を上書き
@@ -281,11 +286,17 @@ function get_hero_paths() {
     $args['sp'] = get_template_directory_uri() . '/img/contact_hero_sp.webp';
     $args['jp'] = 'お問い合わせ';
     $args['en'] = 'CONTACT';
+    if (is_page('contact-thanks')) {
+      $args['jp2'] = 'お問い合わせ完了';
+    }
   } elseif (is_page('reservation') || is_page('reservation-thanks')) { // 「WEB予約」ページの場合
     $args['pc'] = get_template_directory_uri() . '/img/contact_hero_pc.webp';
     $args['sp'] = get_template_directory_uri() . '/img/contact_hero_sp.webp';
     $args['jp'] = 'WEB予約';
     $args['en'] = 'RESERVE';
+    if (is_page('reservation-thanks')) {
+      $args['jp2'] = 'WEB予約完了';
+    }
   } elseif (is_page('medical')) { // 「診療案内」ページの場合
     $args['pc'] = get_template_directory_uri() . '/img/guid_hero_pc.webp';
     $args['sp'] = get_template_directory_uri() . '/img/dui_hero_sp.webp';
@@ -313,12 +324,14 @@ function get_hero_paths() {
       $args['pc'] = get_template_directory_uri() . '/img/post_hero_pc.webp';
       $args['sp'] = get_template_directory_uri() . '/img/post_hero_sp.webp';
       $args['jp'] = 'お知らせ';
+      $args['jp2'] = get_the_title();
       $args['en'] = 'NEWS';
     } elseif (is_single() && strpos($segments[0], 'blog') !== false) {
       // single.php で URL に 'blog' が含まれる場合
       $args['sp'] = get_template_directory_uri() . '/img/post_hero_pc.webp';
       $args['pc'] = get_template_directory_uri() . '/img/post_hero_sp.webp';
       $args['jp'] = 'スタッフブログ';
+      $args['jp2'] = get_the_title();
       $args['en'] = 'STAFF BLOG';
     } else {
       // その他の single.php もしくは archive.php ページの場合
