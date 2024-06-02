@@ -99,6 +99,18 @@ table {
 }
 
 /*----------------------------------------------------------
+テキストカラー
+----------------------------------------------------------*/
+/*----------------------------------------------------------
+フォント
+----------------------------------------------------------*/
+/*----------------------------------------------------------
+z-index
+----------------------------------------------------------*/
+/*----------------------------------------------------------
+ブレイクポイント
+----------------------------------------------------------*/
+/*----------------------------------------------------------
 Baseスタイル
 ----------------------------------------------------------*/
 body {
@@ -124,30 +136,26 @@ select {
   appearance: none;
 }
 
-.wpcf7-form.invalid .wpcf7-response-output {
-  display: none;
-}
-
-.wpcf7-form.sent .wpcf7-response-output {
-  display: none;
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.sent .wpcf7-response-output,
+.wpcf7 form.failed .wpcf7-response-output {
+  display: none !important;
 }
 
 .wpcf7-list-item {
   margin: 0;
 }
 
-/*----------------------------------------------------------
-テキストカラー
-----------------------------------------------------------*/
-/*----------------------------------------------------------
-フォント
-----------------------------------------------------------*/
-/*----------------------------------------------------------
-z-index
-----------------------------------------------------------*/
-/*----------------------------------------------------------
-ブレイクポイント
-----------------------------------------------------------*/
+div.wpcf7 .wpcf7-spinner {
+  display: none !important;
+}
+
+.wpcf7-not-valid-tip {
+  display: block;
+  padding-top: 10px;
+  color: #EE5A6D;
+}
+
 .c-button-cir-sm,
 .c-button-cir-sm--long {
   color: #1391E6;
@@ -832,6 +840,7 @@ Front-page_Header & Drawer
 }
 
 .p-gnav__link {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -842,11 +851,70 @@ Front-page_Header & Drawer
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #393939;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 .p-gnav__link .btn__icon-path {
   fill: #393939;
+  -webkit-transition: fill 0.3s;
+  transition: fill 0.3s;
 }
 
+.p-gnav__link:hover {
+  color: #1391E6;
+}
+.p-gnav__link:hover .btn__icon-path {
+  fill: #1391E6;
+}
+
+.p-gnav__link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: block;
+  height: 2px;
+  width: 0px;
+  background-color: #1391E6;
+}
+
+.p-gnav__link.is-page {
+  color: #1391E6;
+}
+.p-gnav__link.is-page .btn__icon-path {
+  fill: #1391E6;
+}
+
+.p-gnav__link.is-page::after {
+  background-color: #1391E6;
+  width: 20px;
+}
+
+.p-gnav__link:hover::after {
+  -webkit-animation: expandWidth 0.3s forwards;
+          animation: expandWidth 0.3s forwards;
+}
+
+@-webkit-keyframes expandWidth {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 20px;
+  }
+}
+
+@keyframes expandWidth {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 20px;
+  }
+}
 .p-gnav__text {
   font-size: 11px;
   font-weight: 700;
@@ -2609,11 +2677,7 @@ Front-page_Blog
   }
 }
 
-.p-blog-box__category::after {
-  content: "お知らせ";
-  position: absolute;
-  top: 0px;
-  left: 0px;
+.p-blog-box__category {
   margin-top: 5px;
   padding-block: 2px;
   padding-inline: 8px;
@@ -2632,10 +2696,7 @@ Front-page_Blog
   background: #1391E6;
 }
 @media screen and (min-width: 768px) {
-  .p-blog-box__category::after {
-    content: "その他";
-    top: -15px;
-    left: 23px;
+  .p-blog-box__category {
     margin-top: 0px;
     padding-block: 6px;
     padding-inline: 12px;
@@ -5081,12 +5142,6 @@ Contact
   color: #c2c2c2;
 }
 
-.p-contact-form__field-error {
-  display: block;
-  padding-top: 10px;
-  color: #EE5A6D;
-}
-
 .p-contact-form__button {
   padding-top: 70px;
   text-align: center;
@@ -5095,14 +5150,6 @@ Contact
   .p-contact-form__button {
     padding-top: 72px;
   }
-}
-
-div.wpcf7 .wpcf7-spinner {
-  display: none !important;
-}
-
-.wpcf7-not-valid-tip {
-  display: none;
 }
 
 /*----------------------------------------------------------

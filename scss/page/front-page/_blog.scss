@@ -113,11 +113,7 @@ Front-page_Blog
     padding-bottom: 12px;
   }
 }
-.p-blog-box__category::after {
-  content: "お知らせ";
-  position: absolute;
-  top: 0px;
-  left: 0px;
+.p-blog-box__category{
   margin-top: 5px;
   padding-block: 2px;
   padding-inline: 8px;
@@ -132,9 +128,6 @@ Front-page_Blog
   color: global.$c-base-light;
   background: global.$c-main;
   @include global.mq(sm) {
-    content: "その他";
-    top: -15px;
-    left: 23px;
     margin-top: 0px;
     padding-block: 6px;
     padding-inline: 12px;

@@ -105,98 +105,159 @@ jQuery(function ($) {
     /*------------------------------------------------------------
   Contact Form バリデーション
   ------------------------------------------------------------*/
-    const form = $(".wpcf7-form");
-    const elements = $(
-      ".p-contact-form__input, .p-contact-form__textarea, .p-contact-form__radio-input, .p-contact-form__checkbox-input, .p-contact-form__select"
-    );
-    const errorMessages = $(".p-contact-form__field-error");
-    const checkBoxes = $('[name="your-check"]');
-    const currentPage = window.location.pathname;
-    const currentHref = window.location.href;
-    console.log(currentPage);
-    console.log(currentHref);
+  const form = $(".wpcf7-form");
+  const elements = $(
+    ".p-contact-form__input, .p-contact-form__textarea, .p-contact-form__radio-input, .p-contact-form__checkbox-input, .p-contact-form__select"
+  );
+  const checkBoxes = $('[name="your-check[]"]');
+  const currentPage = window.location.pathname;
+  const currentHref = window.location.href;
 
-    /* エラーメッセージの表示 */
-    function showError(element) {
-      element.addClass("is-error");
-      element
-        .closest(".p-contact-form__field-item")
-        .find(".p-contact-form__field-error")
-        .removeClass("u-action-hidden");
-    }
-
-    /* エラーメッセージの非表示 */
-    function hideError(element) {
-      element.removeClass("is-error");
-      element
-        .closest(".p-contact-form__field-item")
-        .find(".p-contact-form__field-error")
-        .addClass("u-action-hidden");
-    }
-
-    /* カスタムバリデーション */
-    function customValidation() {
-      let isValid = true;
-      elements.each(function () {
-        const $element = $(this);
-        if ($element.attr("aria-required") === "true" && !$element.val()) {
-          showError($element);
-          isValid = false;
-        }
-      });
-      return isValid;
-    }
-
-    /* フォームのバリデーション */
-    $(form).on("submit", function (e) {
-      e.preventDefault();
-      e.stopPropagation(); // イベントの伝播を止める
-
-      // バリデーションのリセット
-      elements.removeClass("is-error");
-      errorMessages.addClass("u-action-hidden");
-
-      let isValid = customValidation();
-
-      if (currentPage.includes("/page-booking/")) {
-        const radioGroup = $("input[name='your-radio']");
-        // ラジオボックスにチェックがあるか確認
-        if (!radioGroup.is(":checked")) {
-          showError(
-            radioGroup
-              .closest(".p-contact-form__field-item")
-              .find(".p-contact-form__input")
-          );
-          isValid = false;
-        }
-        // チェックボックスにチェックがあるか確認
-        if (!checkBoxes.is(":checked")) {
-          showError(
-            checkBoxes
-              .closest(".p-contact-form__field-item")
-              .find(".p-contact-form__checkbox-input")
-          );
-          isValid = false;
-        }
-      }
-
-      if (isValid) {
-        // 適切なサンクスページに遷移
-        if (currentPage.includes("/contact/")) {
-          window.location.href = "/page-thanks-contact/";
-        } else if (currentPage.includes("/booking/")) {
-          window.location.href = "/page-thanks-booking/";
-        }
-        this.reset();
-      }
-    });
-
-    /* フォームフィールドがユーザーによって変更されたときに、フィールドの内容が有効かどうかをチェックし、有効であればエラーメッセージを非表示にする */
-    elements.on("input change", function () {
+  /* カスタムバリデーション */
+  function customValidation() {
+    let isValid = true;
+    elements.each(function () {
       const $element = $(this);
-      if ($element.val()) {
-        hideError($element);
+      if ($element.attr("aria-required") === "true" && !$element.val()) {
+        isValid = false;
       }
     });
+    return isValid;
+  }
+
+  /* フォームのバリデーション */
+  $(form).on("submit", function (e) {
+    e.preventDefault();
+    e.stopPropagation(); // イベントの伝播を止める
+
+    let isValid = customValidation();
+
+    if (currentPage.includes("/reservation/")) {
+      const radioGroup = $("input[name='your-radio']");
+      // ラジオボックスにチェックがあるか確認
+      if (!radioGroup.is(":checked")) {
+        isValid = false;
+      }
+      // チェックボックスにチェックがあるか確認
+      if (!checkBoxes.is(":checked")) {
+        isValid = false;
+      }
+    }
+
+    if (isValid) {
+      // 適切なサンクスページに遷移
+      if (currentPage.includes("/contact/")) {
+        window.location.href = "/contact-thanks/";
+      } else if (currentPage.includes("/reservation/")) {
+        window.location.href = "/reservation-thanks/";
+      }
+      this.reset();
+    }
+  });
+
+  /* フォームフィールドがユーザーによって変更されたときに、フィールドの内容が有効かどうかをチェックし、有効であればエラーメッセージを非表示にする */
+  elements.on("input change", function () {
+    const $element = $(this);
+    if ($element.val()) {
+      hideError($element);
+    }
   });
 });
+});
+
+
+
+
+
+
+
+// const form = $(".wpcf7-form");
+// const elements = $(
+//   ".p-contact-form__input, .p-contact-form__textarea, .p-contact-form__radio-input, .p-contact-form__checkbox-input, .p-contact-form__select"
+// );
+// const errorMessages = $(".p-contact-form__field-error");
+// const checkBoxes = $('[name="your-check[]"]');
+// const currentPage = window.location.pathname;
+// const currentHref = window.location.href;
+
+// /* エラーメッセージの表示 */
+// function showError(element) {
+//   element.addClass("is-error");
+//   element
+//     .closest(".p-contact-form__field-item")
+//     .find(".p-contact-form__field-error")
+//     .removeClass("u-action-hidden");
+// }
+
+// /* エラーメッセージの非表示 */
+// function hideError(element) {
+//   element.removeClass("is-error");
+//   element
+//     .closest(".p-contact-form__field-item")
+//     .find(".p-contact-form__field-error")
+//     .addClass("u-action-hidden");
+// }
+
+// /* カスタムバリデーション */
+// function customValidation() {
+//   let isValid = true;
+//   elements.each(function () {
+//     const $element = $(this);
+//     if ($element.attr("aria-required") === "true" && !$element.val()) {
+//       showError($element);
+//       isValid = false;
+//     }
+//   });
+//   return isValid;
+// }
+
+// /* フォームのバリデーション */
+// $(form).on("submit", function (e) {
+//   e.preventDefault();
+//   e.stopPropagation(); // イベントの伝播を止める
+
+//   // バリデーションのリセット
+//   elements.removeClass("is-error");
+//   errorMessages.addClass("u-action-hidden");
+
+//   let isValid = customValidation();
+
+//   if (currentPage.includes("/reservation/")) {
+//     const radioGroup = $("input[name='your-radio']");
+//     // ラジオボックスにチェックがあるか確認
+//     if (!radioGroup.is(":checked")) {
+//       showError(
+//         radioGroup
+//         .closest(".p-contact-form__field-item")
+//       );
+//       isValid = false;
+//     }
+//     // チェックボックスにチェックがあるか確認
+//     if (!checkBoxes.is(":checked")) {
+//       console.log(checkBoxes);
+//       showError(
+//         checkBoxes
+//           .closest(".p-contact-form__field-item")
+//       );
+//       isValid = false;
+//     }
+//   }
+
+//   if (isValid) {
+//     // 適切なサンクスページに遷移
+//     if (currentPage.includes("/contact/")) {
+//       window.location.href = "/contact-thanks/";
+//     } else if (currentPage.includes("/reservation/")) {
+//       window.location.href = "/reservation-thanks/";
+//     }
+//     this.reset();
+//   }
+// });
+
+// /* フォームフィールドがユーザーによって変更されたときに、フィールドの内容が有効かどうかをチェックし、有効であればエラーメッセージを非表示にする */
+// elements.on("input change", function () {
+//   const $element = $(this);
+//   if ($element.val()) {
+//     hideError($element);
+//   }
+// });
