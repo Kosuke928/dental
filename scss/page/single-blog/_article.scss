@@ -62,7 +62,7 @@ Article
   padding-top: 57px;
   display: flex;
   flex-direction: column;
-  gap: 23px;
+  gap: 24px;
   @include global.mq(sm) {
     padding-top: 48px;
   }
@@ -114,6 +114,13 @@ Article
 .p-article02__img {
   padding-top: 26px;
 }
+.p-article02__img img {
+  @include global.mq(sm) {
+    width: 670px;
+    // height: 419px;
+    aspect-ratio: 670 / 419;
+  }
+}
 
 /*---------- 見出し3 ----------*/
 .p-article__sec03 {
@@ -133,7 +140,6 @@ Article
   @include global.mq(sm) {
     font-size: 20px;
     letter-spacing: 1.6px;
-    padding-bottom: 5px;
   }
 }
 .p-article03__text {

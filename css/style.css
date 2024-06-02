@@ -716,7 +716,9 @@ div.wpcf7 .wpcf7-spinner {
   }
 }
 
-.c-tag-md {
+.c-tag-md,
+.c-tag-md--side,
+.c-tag-md--single {
   position: relative;
   margin-top: 5px;
   padding-block: 2px;
@@ -736,7 +738,9 @@ div.wpcf7 .wpcf7-spinner {
   background: #1391E6;
 }
 @media screen and (min-width: 768px) {
-  .c-tag-md {
+  .c-tag-md,
+  .c-tag-md--side,
+  .c-tag-md--single {
     margin-top: 0px;
     padding-block: 6px;
     padding-inline: 12px;
@@ -745,6 +749,16 @@ div.wpcf7 .wpcf7-spinner {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .c-tag-md--side {
+    padding-block: 2px;
+  }
+}
+
+.c-tag-md--single {
+  padding-block: 6px;
+  margin-top: 0px;
+}
 .c-tag-required {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -871,7 +885,7 @@ Front-page_Header & Drawer
 .p-gnav__link::after {
   content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: -7px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -1114,7 +1128,7 @@ Sidebar
 ----------------------------------------------------------*/
 .p-sidebar {
   padding-top: 70px;
-  padding-bottom: 98px;
+  padding-bottom: 134px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1501,23 +1515,34 @@ Hero
   }
 }
 
-.home {
-  color: #c2c2c2;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.page-page {
-  color: #393939;
-  font-size: 12px;
-  font-weight: 500;
-}
-
+.home,
+.page-page,
 .page-thanks {
-  color: #393939;
+  color: #393939; /* グローバル変数で指定している色を使用 */
   font-size: 12px;
   font-weight: 500;
-  margin-left: -1px;
+}
+
+.breadcrumb span[property=itemListElement] {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.breadcrumb span[property=itemListElement]:nth-of-type(n + 3) {
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  overflow: hidden;
+}
+
+.breadcrumb span[property=itemListElement]:nth-of-type(n + 3) a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*----------------------------------------------------------
@@ -1873,18 +1898,30 @@ Front-page_Fv
   }
 }
 
+.p-news-topic__contents::before {
+  content: attr(data-custom-date);
+  font-size: 12px;
+  font-weight: 500;
+  padding-left: 7px;
+}
 @media screen and (min-width: 1000px) {
   .p-news-topic__contents::before {
-    content: attr(data-custom-date);
     padding-left: 13px;
-    font-size: 12px;
-    font-weight: 500;
   }
 }
 
 .p-news-topic_text {
   font-size: 14px;
   font-weight: 500;
+}
+@media screen and (max-width: 373px) {
+  .p-news-topic_text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 50%;
+    display: inline-block;
+  }
 }
 
 .swiper-button-next::after,
@@ -2678,6 +2715,9 @@ Front-page_Blog
 }
 
 .p-blog-box__category {
+  position: absolute;
+  top: 0px;
+  left: 0px;
   margin-top: 5px;
   padding-block: 2px;
   padding-inline: 8px;
@@ -2697,6 +2737,8 @@ Front-page_Blog
 }
 @media screen and (min-width: 768px) {
   .p-blog-box__category {
+    top: -15px;
+    left: 24px;
     margin-top: 0px;
     padding-block: 6px;
     padding-inline: 12px;
@@ -2749,7 +2791,7 @@ Front-page_Blog
 }
 
 .p-blog-box__button {
-  margin-top: 48px;
+  margin-top: 49px;
   display: inline-block;
 }
 @media screen and (min-width: 768px) {
@@ -3083,6 +3125,7 @@ Exhibition
 }
 
 .p-exhibition__item {
+  text-align: center;
   width: calc(50% - 5.5px);
 }
 @media screen and (min-width: 768px) {
@@ -3968,6 +4011,7 @@ Greeting
   color: #393939;
   font-size: 14px;
   font-weight: 500;
+  min-width: 50px;
 }
 
 .p-greeting-bottom__contents {
@@ -4062,7 +4106,7 @@ Staff
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 40px;
+  gap: 42px;
 }
 @media screen and (min-width: 768px) {
   .p-staff__boxes {
@@ -4099,7 +4143,7 @@ Staff
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 57px;
+  gap: 58px;
 }
 @media screen and (min-width: 768px) {
   .p-staff__box-list {
@@ -4125,7 +4169,7 @@ Staff
 }
 
 .p-staff-thumbnail__img {
-  width: 335px;
+  max-width: 335px;
 }
 @media screen and (min-width: 768px) {
   .p-staff-thumbnail__img {
@@ -4642,7 +4686,7 @@ Article
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 23px;
+  gap: 24px;
 }
 @media screen and (min-width: 768px) {
   .p-article01__description {
@@ -4706,6 +4750,13 @@ Article
   padding-top: 26px;
 }
 
+@media screen and (min-width: 768px) {
+  .p-article02__img img {
+    width: 670px;
+    aspect-ratio: 670/419;
+  }
+}
+
 /*---------- 見出し3 ----------*/
 .p-article__sec03 {
   padding-top: 40px;
@@ -4727,7 +4778,6 @@ Article
   .p-article03__title {
     font-size: 20px;
     letter-spacing: 1.6px;
-    padding-bottom: 5px;
   }
 }
 

@@ -41,6 +41,7 @@ Exhibition
 }
 
 .p-exhibition__item {
+  text-align: center;
   width: calc(50% - 11px / 2);
   @include global.mq(sm) {
     width: calc(100% / 3 - 24px * 2 / 3);

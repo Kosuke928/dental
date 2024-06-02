@@ -75,7 +75,9 @@
 //*---------- archive ----------*/
 .c-tag-cir-sm {
 }
-.c-tag-md {
+.c-tag-md,
+.c-tag-md--side,
+.c-tag-md--single {
   position: relative;
   margin-top: 5px;
   padding-block: 2px;
@@ -96,6 +98,17 @@
     padding-inline: 12px;
     border-radius: 12px;
     font-size: 11px;
+  }
+}
+.c-tag-md--side {
+  @include global.mq(sm) {
+    padding-block: 2px;
+  }
+}
+.c-tag-md--single {
+  padding-block: 6px;
+  margin-top: 0px;
+  @include global.mq(sm) {
   }
 }
 .c-tag-sm {

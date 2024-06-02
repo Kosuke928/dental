@@ -47,7 +47,7 @@
                       ?>
                       <?php if ($categories && !is_wp_error($categories)) : ?>
                         <?php foreach ($categories as $category) : ?>
-                          <a href="<?= get_category_link($category->term_id); ?>" class="p-post-box__category c-tag-md"><?= esc_html($category->name); ?></a>
+                          <a href="<?= get_category_link($category->term_id); ?>" class="p-post-box__category c-tag-md--single"><?= esc_html($category->name); ?></a>
                         <?php endforeach; ?>
                       <?php endif; ?>
                     <?php else : ?>
@@ -57,7 +57,7 @@
                       ?>
                       <?php if ($terms && !is_wp_error($terms)) : ?>
                         <?php foreach ($terms as $term) : ?>
-                          <a href="<?=  get_term_link($term->term_id); ?>" class="p-post-box__category c-tag-md"><?= esc_html($term->name); ?></a>
+                          <a href="<?=  get_term_link($term->term_id); ?>" class="p-post-box__category c-tag-md--single"><?= esc_html($term->name); ?></a>
                         <?php endforeach; ?>
                       <?php endif; ?>
                     <?php endif; ?>
@@ -66,7 +66,7 @@
                   </div>
                   <div class="p-article01__description">
                     <p class="p-article01__text">
-                      <?= acf_text_with_link('text1-1', "link1", "u-text-link"); ?>
+                      <?= acf_text_with_link('text1-1', "link1-1", "u-text-link"); ?>
                     </p>
                     <p class="p-article01__text">
                       <?= acf_text_with_link('text1-2'); ?>

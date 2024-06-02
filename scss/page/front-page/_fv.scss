@@ -279,16 +279,24 @@ Front-page_Fv
 }
 //PC表示の時だけ日付を"."表記にする
 .p-news-topic__contents::before {
+  content: attr(data-custom-date);
+  font-size: 12px;
+  font-weight: 500;
+  padding-left: 7px;
   @include global.mq(md) {
-    content: attr(data-custom-date);
     padding-left: 13px;
-    font-size: 12px;
-    font-weight: 500;
   }
 }
 .p-news-topic_text {
   font-size: 14px;
   font-weight: 500;
+  @include global.mq(xs, max) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 50%;
+    display: inline-block;
+  }
 }
 //
 
