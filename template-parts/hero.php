@@ -18,8 +18,15 @@
             $url_path = $_SERVER['REQUEST_URI']; // 例: /blog-category/blog-cat3/?page=2
             $parsed_url = parse_url($url_path, PHP_URL_PATH); // 例: /blog-category/blog-cat3/
             $path_segments = explode('/', trim($parsed_url, '/')); // 例: ['blog-category', 'blog-cat3']
-            $slug1 = isset($path_segments[0]) ? $path_segments[0] : "";  // 'category' or 'blog-category'
-            $slug2 = isset($path_segments[1]) ? $path_segments[1] : "";  // 'category' or 'blog-category'
+            if (strpos($path_segments[0], 'news') !== false || is_category()) {
+              $slug1 = 'news';
+              $slug2 = $path_segments[0];
+            } elseif(is_tax()) {
+              $slug1 = 'blog';
+            } else {
+              $slug1 = isset($path_segments[0]) ? $path_segments[0] : "";  // 'category' or 'blog-category'
+              $slug2 = isset($path_segments[1]) ? $path_segments[1] : "";  // 'category' or 'blog-category'
+            }
             ?>
             <source media="(min-width: 768px)" srcset="<?= $img_pc; ?>" width="1160" height="340" />
             <img src="<?= $img_sp; ?>" alt="" decoding="async" width="335" height="188" />

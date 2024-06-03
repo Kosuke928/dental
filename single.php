@@ -16,9 +16,11 @@
             $path_segments = explode('/', trim($parsed_url, '/')); // 例: ['news-post8'] or ['blog', 'blog-post15']
             // 初期値としてのpost_typeを設定
             $post_type = 'post';
+            $post_archive = 'news';
             // post_typeをURLに基づいて設定
             if (strpos($path_segments[0], 'blog') !== false) {
               $post_type = 'blog';
+              $post_archive = 'blog';
             }
             ?>
 
@@ -110,7 +112,7 @@
               <?php if (get_previous_post(false)) : ?>
                 <?php previous_post_link('%link', '<span class="p-article__pagination-prev">前の記事<span class="u-sm-show">へ</span></span>', false); ?>
               <?php endif; ?>
-                <a href="<?= get_post_type_archive_link('blog'); ?>" class="p-article__pagination-archive">記事一覧</a>
+                <a href="<?= home_url($post_archive); ?>" class="p-article__pagination-archive">記事一覧</a>
               <?php if (get_next_post(false)) : ?>
                 <?php next_post_link('%link', '<span class="p-article__pagination-next">次の記事<span class="u-sm-show">へ</span></span>', false); ?>
               <?php endif; ?>

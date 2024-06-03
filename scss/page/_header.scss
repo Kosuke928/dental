@@ -225,6 +225,7 @@ Front-page_Header & Drawer
   mask-size: 16px 16px;
   mask-image: url(../img/icon-right.svg);
   background-color: global.$c-base-light;
+  pointer-events: none;
 }
 
 .p-dnav__link {

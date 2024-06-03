@@ -117,6 +117,7 @@ Article
 .p-article02__img img {
   @include global.mq(sm) {
     width: 670px;
+    object-fit: cover;
     // height: 419px;
     aspect-ratio: 670 / 419;
   }

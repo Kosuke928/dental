@@ -1047,6 +1047,7 @@ Front-page_Header & Drawer
   -webkit-mask-image: url(../img/icon-right.svg);
           mask-image: url(../img/icon-right.svg);
   background-color: #FFFFFF;
+  pointer-events: none;
 }
 
 .p-dnav__link {
@@ -4753,6 +4754,8 @@ Article
 @media screen and (min-width: 768px) {
   .p-article02__img img {
     width: 670px;
+    -o-object-fit: cover;
+       object-fit: cover;
     aspect-ratio: 670/419;
   }
 }
