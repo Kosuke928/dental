@@ -313,7 +313,7 @@
   ✅Basic認証の設定
   ✅ローカル環境のDBへアクセス
     ※「Local」であれば、DataBase⇨OpenAdminerEvo
-  ✅DBをインポート
+  ✅DBをエクスポート
   ✅上記のsqlファイルの「siteurl」「home」にある'http://localhost/~~'を取得したサブドメイン名に変更
   ✅sqlファイルを圧縮
   ✅Xserverの管理画面から、phpMyAdminへアクセス
